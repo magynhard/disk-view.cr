@@ -51,7 +51,7 @@ describe DiskView::Disks do
     sda.partitioned.should be_true
     sda.filesystems.map(&.source).should eq(["/dev/sda2", "/dev/sda10"])
     sda.filesystems.first.paths.should eq(["/"])
-    sda.filesystems.last.state.should eq("Nicht eingehängt")
+    sda.filesystems.last.state.should eq(DiskView::DiskState::NotMounted)
     inventory.other_filesystems.should be_empty
   end
 
@@ -76,7 +76,8 @@ describe DiskView::Disks do
       DiskView::BlockDevice.new("sda2", "8:2", 200_u64, "sda", 2),
     ]
     inventory = DiskView::Disks.hierarchy(blocks, [] of DiskView::Disk, Set{"/dev/sda2"})
-    inventory.drives.first.filesystems.map(&.state).should eq(["Verwendet von dm-0", "Swap (aktiv)"])
+    inventory.drives.first.filesystems.map(&.state).should eq([DiskView::DiskState::Mapped, DiskView::DiskState::Swap])
+    inventory.drives.first.filesystems.first.holders.should eq(["dm-0"])
   end
 end
 

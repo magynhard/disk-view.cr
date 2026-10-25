@@ -2,4 +2,5 @@
 /lib/
 /.shards/
 *.gresource
+*.mo
 .idea

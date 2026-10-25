@@ -1,8 +1,14 @@
 require "set"
 
 module DiskView
+  enum DiskState
+    NotMounted
+    Mapped
+    Swap
+  end
+
   record Mount, device_id : String, source : String, path : String, filesystem : String
-  record Disk, source : String, paths : Array(String), filesystem : String, capacity : UInt64? = nil, state : String = "Nicht eingehängt", device_id : String? = nil
+  record Disk, source : String, paths : Array(String), filesystem : String, capacity : UInt64? = nil, state : DiskState = DiskState::NotMounted, device_id : String? = nil, holders : Array(String) = [] of String
   record BlockDevice, name : String, device_id : String, capacity : UInt64, parent : String? = nil, partition_number : Int32 = 0, model : String = "", holders : Array(String) = [] of String
   record Drive, name : String, model : String, capacity : UInt64, filesystems : Array(Disk), partitioned : Bool
   record Inventory, drives : Array(Drive), other_filesystems : Array(Disk)
@@ -88,13 +94,13 @@ module DiskView
             Disk.new(source, disk.paths, disk.filesystem, block.capacity, device_id: block.device_id)
           else
             state = if !block.holders.empty?
-                      "Verwendet von #{block.holders.join(", ")}"
+                      DiskState::Mapped
                     elsif swaps.includes?(source)
-                      "Swap (aktiv)"
+                      DiskState::Swap
                     else
-                      "Nicht eingehängt"
+                      DiskState::NotMounted
                     end
-            Disk.new(source, [] of String, "", block.capacity, state, block.device_id)
+            Disk.new(source, [] of String, "", block.capacity, state, block.device_id, block.holders)
           end
         end
         Drive.new(drive.name, drive.model, drive.capacity, filesystems, !partitions.empty?)

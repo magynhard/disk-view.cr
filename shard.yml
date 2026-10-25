@@ -1,9 +1,10 @@
 name: disk-view
 version: 0.1.0
 authors:
-  - Matthäus J. N. Beyrle
+  - "Matthäus J. N. Beyrle <disk-view.github.com@mail.magynhard.de>"
 license: MIT
 description: A small GTK4 disk usage overview for Linux
+repository: https://github.com/magynhard/disk-view.cr
 crystal: ">= 1.20.0"
 
 targets:
@@ -11,5 +12,7 @@ targets:
     main: src/disk-view.cr
 
 dependencies:
+  gettext:
+    git: https://codeberg.org/GeopJr/gettext.cr.git
   libadwaita:
     github: hugopl/libadwaita.cr

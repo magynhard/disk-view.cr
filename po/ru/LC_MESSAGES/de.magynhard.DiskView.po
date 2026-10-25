@@ -1,0 +1,140 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Disk View 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/magynhard/disk-view.cr/issues\n"
+"POT-Creation-Date: 2026-10-25 20:49+0100\n"
+"PO-Revision-Date: 2026-10-25 00:00+0000\n"
+"Last-Translator: Matthäus J. N. Beyrle\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+
+#: src/window.cr:17 src/window.cr:24
+msgid "Refresh"
+msgstr "Обновить"
+
+#: src/window.cr:22
+msgid "Main menu"
+msgstr "Главное меню"
+
+#: src/window.cr:25
+msgid "About Disk View"
+msgstr "О приложении Disk View"
+
+#: src/window.cr:26
+msgid "Close"
+msgstr "Закрыть"
+
+#: src/window.cr:36
+msgid "Drives & Partitions"
+msgstr "Накопители и разделы"
+
+#: src/window.cr:37
+msgid "Used space · refreshes automatically every 15 seconds"
+msgstr "Занятое место · автоматическое обновление каждые 15 секунд"
+
+#: src/window.cr:97
+msgid ""
+"Drives, partitions and disk usage at a glance.\n"
+"Built with Crystal, GTK4 and libadwaita."
+msgstr ""
+"Накопители, разделы и использование дискового пространства на одном экране.\n"
+"Разработано с помощью Crystal, GTK4 и libadwaita."
+
+#: src/window.cr:123
+msgid "Other filesystems / Network"
+msgstr "Другие файловые системы / Сеть"
+
+#: src/window.cr:131
+msgid "%{count} drive"
+msgid_plural "%{count} drives"
+msgstr[0] "%{count} накопитель"
+msgstr[1] "%{count} накопителя"
+msgstr[2] "%{count} накопителей"
+
+#: src/window.cr:131
+msgid "%{drives} · Updated %{time}"
+msgstr "%{drives} · Обновлено в %{time}"
+
+#: src/window.cr:133
+msgid "Could not read drives: %{error}"
+msgstr "Не удалось прочитать накопители: %{error}"
+
+#: src/window.cr:163
+msgid "Reading …"
+msgstr "Чтение…"
+
+#: src/window.cr:204 src/window.cr:238 src/window.cr:261
+msgid "%{size} total"
+msgstr "%{size} всего"
+
+#: src/window.cr:205 src/window.cr:252
+msgid "%{state} · Usage unknown"
+msgstr "%{state} · Занятое место неизвестно"
+
+#: src/window.cr:227
+msgid "Usage unknown · no measurable filesystems"
+msgstr "Занятое место неизвестно · нет файловых систем, доступных для оценки"
+
+#: src/window.cr:230 src/window.cr:259
+msgid "%{size} used (%{percent} %%)"
+msgstr "%{size} занято (%{percent} %%)"
+
+#: src/window.cr:232
+msgid "At least %{size} used (%{percent} %%)"
+msgstr "Занято не менее %{size} (%{percent} %%)"
+
+#: src/window.cr:234 src/window.cr:260
+msgid "%{size} available"
+msgstr "%{size} доступно"
+
+#: src/window.cr:235 src/window.cr:262
+msgid "%{size} reserved"
+msgstr "%{size} зарезервировано"
+
+#: src/window.cr:236
+msgid "%{known}/%{total} measured"
+msgstr "%{known}/%{total} учтено"
+
+#: src/window.cr:240
+msgid ""
+"Usage is relative to the full drive capacity. Unmounted or multi-device "
+"filesystems are excluded from the total. Unpartitioned space is not "
+"available filesystem space."
+msgstr ""
+"Использование рассчитано относительно полной ёмкости накопителя. "
+"Несмонтированные файловые системы и файловые системы на нескольких "
+"устройствах не включены в итог. Неразмеченное пространство не является "
+"доступным местом файловой системы."
+
+#: src/window.cr:263
+msgid "%{size} filesystem size"
+msgstr "%{size} — размер файловой системы"
+
+#: src/window.cr:267
+msgid "Usage unavailable"
+msgstr "Данные об использовании недоступны"
+
+#: src/window.cr:277
+msgid "Not mounted"
+msgstr "Не смонтирован"
+
+#: src/window.cr:279
+msgid "Used by %{devices}"
+msgstr "Используется %{devices}"
+
+#: src/window.cr:281
+msgid "Swap (active)"
+msgstr "Подкачка (активна)"
+
+#: src/window.cr:294
+msgid "The filesystem does not report disk usage."
+msgstr "Файловая система не сообщает об использовании дискового пространства."
+
+#: src/window.cr:307
+msgid "Could not read filesystem."
+msgstr "Не удалось прочитать файловую систему."

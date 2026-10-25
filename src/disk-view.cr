@@ -1,4 +1,5 @@
 require "libadwaita"
+require "./i18n"
 require "./metadata"
 require "./disks"
 require "./window"
@@ -7,6 +8,7 @@ module DiskView
   # Adwaita's default color scheme follows the system, including live changes.
   class App < Adw::Application
     def initialize
+      I18n.setup
       super(application_id: APP_ID, flags: Gio::ApplicationFlags::None)
       RESOURCE._register
     end

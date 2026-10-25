@@ -1,0 +1,136 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Disk View 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/magynhard/disk-view.cr/issues\n"
+"POT-Creation-Date: 2026-10-25 20:49+0100\n"
+"PO-Revision-Date: 2026-10-25 00:00+0000\n"
+"Last-Translator: Matthäus J. N. Beyrle\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/window.cr:17 src/window.cr:24
+msgid "Refresh"
+msgstr "更新"
+
+#: src/window.cr:22
+msgid "Main menu"
+msgstr "メインメニュー"
+
+#: src/window.cr:25
+msgid "About Disk View"
+msgstr "Disk View について"
+
+#: src/window.cr:26
+msgid "Close"
+msgstr "閉じる"
+
+#: src/window.cr:36
+msgid "Drives & Partitions"
+msgstr "ドライブとパーティション"
+
+#: src/window.cr:37
+msgid "Used space · refreshes automatically every 15 seconds"
+msgstr "使用済み領域 · 15秒ごとに自動更新"
+
+#: src/window.cr:97
+msgid ""
+"Drives, partitions and disk usage at a glance.\n"
+"Built with Crystal, GTK4 and libadwaita."
+msgstr ""
+"ドライブ、パーティション、ディスク使用量をひと目で確認できます。\n"
+"Crystal、GTK4、libadwaita で開発されています。"
+
+#: src/window.cr:123
+msgid "Other filesystems / Network"
+msgstr "その他のファイルシステム / ネットワーク"
+
+#: src/window.cr:131
+msgid "%{count} drive"
+msgid_plural "%{count} drives"
+msgstr[0] "%{count} 台のドライブ"
+
+#: src/window.cr:131
+msgid "%{drives} · Updated %{time}"
+msgstr "%{drives} · 更新時刻 %{time}"
+
+#: src/window.cr:133
+msgid "Could not read drives: %{error}"
+msgstr "ドライブを読み取れませんでした：%{error}"
+
+#: src/window.cr:163
+msgid "Reading …"
+msgstr "読み取り中…"
+
+#: src/window.cr:204 src/window.cr:238 src/window.cr:261
+msgid "%{size} total"
+msgstr "合計 %{size}"
+
+#: src/window.cr:205 src/window.cr:252
+msgid "%{state} · Usage unknown"
+msgstr "%{state} · 使用量不明"
+
+#: src/window.cr:227
+msgid "Usage unknown · no measurable filesystems"
+msgstr "使用量不明 · 測定可能なファイルシステムがありません"
+
+#: src/window.cr:230 src/window.cr:259
+msgid "%{size} used (%{percent} %%)"
+msgstr "%{size} 使用中（%{percent} %%）"
+
+#: src/window.cr:232
+msgid "At least %{size} used (%{percent} %%)"
+msgstr "少なくとも %{size} 使用中（%{percent} %%）"
+
+#: src/window.cr:234 src/window.cr:260
+msgid "%{size} available"
+msgstr "%{size} 利用可能"
+
+#: src/window.cr:235 src/window.cr:262
+msgid "%{size} reserved"
+msgstr "%{size} 予約済み"
+
+#: src/window.cr:236
+msgid "%{known}/%{total} measured"
+msgstr "%{known}/%{total} 測定済み"
+
+#: src/window.cr:240
+msgid ""
+"Usage is relative to the full drive capacity. Unmounted or multi-device "
+"filesystems are excluded from the total. Unpartitioned space is not "
+"available filesystem space."
+msgstr ""
+"使用率はドライブの全容量を基準としています。マウントされていないファイルシス"
+"テムや複数のデバイスにまたがるファイルシステムは合計に含まれません。未割り当"
+"て領域はファイルシステムの利用可能領域ではありません。"
+
+#: src/window.cr:263
+msgid "%{size} filesystem size"
+msgstr "ファイルシステムのサイズ %{size}"
+
+#: src/window.cr:267
+msgid "Usage unavailable"
+msgstr "使用量を取得できません"
+
+#: src/window.cr:277
+msgid "Not mounted"
+msgstr "未マウント"
+
+#: src/window.cr:279
+msgid "Used by %{devices}"
+msgstr "%{devices} が使用中"
+
+#: src/window.cr:281
+msgid "Swap (active)"
+msgstr "スワップ（有効）"
+
+#: src/window.cr:294
+msgid "The filesystem does not report disk usage."
+msgstr "このファイルシステムはディスク使用量を報告しません。"
+
+#: src/window.cr:307
+msgid "Could not read filesystem."
+msgstr "ファイルシステムを読み取れませんでした。"

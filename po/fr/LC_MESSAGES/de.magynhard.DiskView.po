@@ -1,0 +1,139 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Disk View 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/magynhard/disk-view.cr/issues\n"
+"POT-Creation-Date: 2026-10-25 20:49+0100\n"
+"PO-Revision-Date: 2026-10-25 00:00+0000\n"
+"Last-Translator: Matthäus J. N. Beyrle\n"
+"Language-Team: French\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: src/window.cr:17 src/window.cr:24
+msgid "Refresh"
+msgstr "Actualiser"
+
+#: src/window.cr:22
+msgid "Main menu"
+msgstr "Menu principal"
+
+#: src/window.cr:25
+msgid "About Disk View"
+msgstr "À propos de Disk View"
+
+#: src/window.cr:26
+msgid "Close"
+msgstr "Fermer"
+
+#: src/window.cr:36
+msgid "Drives & Partitions"
+msgstr "Disques et partitions"
+
+#: src/window.cr:37
+msgid "Used space · refreshes automatically every 15 seconds"
+msgstr "Espace utilisé · actualisation automatique toutes les 15 secondes"
+
+#: src/window.cr:97
+msgid ""
+"Drives, partitions and disk usage at a glance.\n"
+"Built with Crystal, GTK4 and libadwaita."
+msgstr ""
+"Disques, partitions et utilisation de l’espace disque en un coup d’œil.\n"
+"Développé avec Crystal, GTK4 et libadwaita."
+
+#: src/window.cr:123
+msgid "Other filesystems / Network"
+msgstr "Autres systèmes de fichiers / Réseau"
+
+#: src/window.cr:131
+msgid "%{count} drive"
+msgid_plural "%{count} drives"
+msgstr[0] "%{count} disque"
+msgstr[1] "%{count} disques"
+
+#: src/window.cr:131
+msgid "%{drives} · Updated %{time}"
+msgstr "%{drives} · Actualisé à %{time}"
+
+#: src/window.cr:133
+msgid "Could not read drives: %{error}"
+msgstr "Impossible de lire les disques : %{error}"
+
+#: src/window.cr:163
+msgid "Reading …"
+msgstr "Lecture…"
+
+#: src/window.cr:204 src/window.cr:238 src/window.cr:261
+msgid "%{size} total"
+msgstr "%{size} au total"
+
+#: src/window.cr:205 src/window.cr:252
+msgid "%{state} · Usage unknown"
+msgstr "%{state} · Utilisation inconnue"
+
+#: src/window.cr:227
+msgid "Usage unknown · no measurable filesystems"
+msgstr "Utilisation inconnue · aucun système de fichiers mesurable"
+
+#: src/window.cr:230 src/window.cr:259
+msgid "%{size} used (%{percent} %%)"
+msgstr "%{size} utilisés (%{percent} %%)"
+
+#: src/window.cr:232
+msgid "At least %{size} used (%{percent} %%)"
+msgstr "Au moins %{size} utilisés (%{percent} %%)"
+
+#: src/window.cr:234 src/window.cr:260
+msgid "%{size} available"
+msgstr "%{size} disponibles"
+
+#: src/window.cr:235 src/window.cr:262
+msgid "%{size} reserved"
+msgstr "%{size} réservés"
+
+#: src/window.cr:236
+msgid "%{known}/%{total} measured"
+msgstr "%{known}/%{total} mesurés"
+
+#: src/window.cr:240
+msgid ""
+"Usage is relative to the full drive capacity. Unmounted or multi-device "
+"filesystems are excluded from the total. Unpartitioned space is not "
+"available filesystem space."
+msgstr ""
+"L’utilisation est relative à la capacité totale du disque. Les systèmes de "
+"fichiers non montés ou répartis sur plusieurs périphériques sont exclus du "
+"total. L’espace non partitionné n’est pas de l’espace disponible dans un "
+"système de fichiers."
+
+#: src/window.cr:263
+msgid "%{size} filesystem size"
+msgstr "%{size} pour le système de fichiers"
+
+#: src/window.cr:267
+msgid "Usage unavailable"
+msgstr "Utilisation indisponible"
+
+#: src/window.cr:277
+msgid "Not mounted"
+msgstr "Non monté"
+
+#: src/window.cr:279
+msgid "Used by %{devices}"
+msgstr "Utilisé par %{devices}"
+
+#: src/window.cr:281
+msgid "Swap (active)"
+msgstr "Swap (actif)"
+
+#: src/window.cr:294
+msgid "The filesystem does not report disk usage."
+msgstr ""
+"Le système de fichiers ne fournit pas son utilisation de l’espace disque."
+
+#: src/window.cr:307
+msgid "Could not read filesystem."
+msgstr "Impossible de lire le système de fichiers."

@@ -1,5 +1,9 @@
 version: 2.0
 shards:
+  gettext:
+    git: https://codeberg.org/geopjr/gettext.cr.git
+    version: 1.0.0
+
   gi-crystal:
     git: https://github.com/hugopl/gi-crystal.git
     version: 0.26.0

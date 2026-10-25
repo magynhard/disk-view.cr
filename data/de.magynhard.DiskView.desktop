@@ -2,6 +2,14 @@
 Name=Disk View
 Comment=View drives, partitions and disk usage
 Comment[de]=Laufwerke, Partitionen und Speicherbelegung anzeigen
+Comment[fr]=Afficher les disques, les partitions et l’utilisation de l’espace disque
+Comment[es]=Ver unidades, particiones y uso del disco
+Comment[zh_CN]=查看驱动器、分区和磁盘使用情况
+Comment[ru]=Просмотр накопителей, разделов и использования дискового пространства
+Comment[it]=Visualizza unità, partizioni e utilizzo del disco
+Comment[pl]=Wyświetl dyski, partycje i zajętość miejsca
+Comment[ko]=드라이브, 파티션 및 디스크 사용량 보기
+Comment[ja]=ドライブ、パーティション、ディスク使用量を表示
 Exec=disk-view
 Icon=de.magynhard.DiskView
 Terminal=false

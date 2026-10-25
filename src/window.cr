@@ -1,5 +1,6 @@
 module DiskView
   class Window < Adw::ApplicationWindow
+    include I18n
     @rows = Gtk::Box.new(:vertical, 10)
     @status = Gtk::Label.new("")
     @cancellable = Gio::Cancellable.new
@@ -13,16 +14,16 @@ module DiskView
 
       header = Adw::HeaderBar.new
       refresh = Gtk::Button.new_from_icon_name("view-refresh-symbolic")
-      refresh.tooltip_text = "Aktualisieren"
+      refresh.tooltip_text = translate("Refresh")
       refresh.action_name = "win.refresh"
       menu = Gtk::MenuButton.new
       menu.icon_name = "open-menu-symbolic"
       menu.primary = true
-      menu.tooltip_text = "Hauptmenü"
+      menu.tooltip_text = translate("Main menu")
       model = Gio::Menu.new
-      model.append("Aktualisieren", "win.refresh")
-      model.append("Über Disk View", "win.about")
-      model.append("Schließen", "win.close")
+      model.append(translate("Refresh"), "win.refresh")
+      model.append(translate("About Disk View"), "win.about")
+      model.append(translate("Close"), "win.close")
       menu.menu_model = model
       header.pack_end(menu)
       header.pack_end(refresh)
@@ -32,8 +33,8 @@ module DiskView
       content.margin_bottom = 12
       content.margin_start = 16
       content.margin_end = 16
-      content.append(label("Laufwerke & Partitionen", "title-2"))
-      explanation = label("Belegter Speicher · automatische Aktualisierung alle 15 Sekunden", "dim-label")
+      content.append(label(translate("Drives & Partitions"), "title-2"))
+      explanation = label(translate("Used space · refreshes automatically every 15 seconds"), "dim-label")
       explanation.wrap = true
       content.append(explanation)
       content.append(@rows)
@@ -91,9 +92,10 @@ module DiskView
         application_icon: APP_ID,
         version: VERSION,
         developer_name: AUTHOR,
-        developers: [AUTHOR],
-        website: "https://github.com/magynhard",
-        comments: "Laufwerke, Partitionen und Speicherbelegung auf einen Blick.\nEntwickelt mit Crystal, GTK4 und libadwaita.",
+        developers: ["#{AUTHOR} <#{AUTHOR_EMAIL}>"],
+        website: "https://github.com/magynhard/disk-view.cr",
+        issue_url: "https://github.com/magynhard/disk-view.cr/issues",
+        comments: translate("Drives, partitions and disk usage at a glance.\nBuilt with Crystal, GTK4 and libadwaita."),
         license_type: Gtk::License::MitX11,
         copyright: "© 2026 #{AUTHOR}"
       )
@@ -119,7 +121,7 @@ module DiskView
         end
         inventory.drives.each { |drive| add_drive(drive, @cancellable, expanded[drive.name]? || false) }
         unless inventory.other_filesystems.empty?
-          @rows.append(label("Weitere Dateisysteme / Netzwerk", "heading"))
+          @rows.append(label(translate("Other filesystems / Network"), "heading"))
           inventory.other_filesystems.each do |disk|
             group = Gtk::Box.new(:vertical, 0)
             add_filesystem(group, disk, @cancellable) { |_usage| }
@@ -127,9 +129,9 @@ module DiskView
           end
         end
         count = inventory.drives.size
-        @status.text = "#{count} Laufwerke · Stand #{Time.local.to_s("%H:%M:%S")}"
+        @status.text = translate("%{drives} · Updated %{time}", drives: translate_count("%{count} drive", "%{count} drives", count), time: Time.local.to_s("%H:%M:%S"))
       rescue ex : File::Error
-        @status.text = "Laufwerke konnten nicht gelesen werden: #{ex.message}"
+        @status.text = translate("Could not read drives: %{error}", error: ex.message || "")
       end
     end
 
@@ -159,7 +161,7 @@ module DiskView
 
       bar = Gtk::ProgressBar.new
       box.append(bar)
-      info = label("Wird gelesen …", "caption")
+      info = label(translate("Reading …"), "caption")
       info.wrap = true
       box.append(info)
       {box, bar, info}
@@ -200,7 +202,9 @@ module DiskView
           end
           row.add_row(partition)
         elsif disk.paths.empty?
-          row.subtitle = "#{DiskView.format_bytes(drive.capacity)} gesamt\n#{disk.state} · Belegung unbekannt"
+          capacity = translate("%{size} total", size: DiskView.format_bytes(drive.capacity))
+          status = translate("%{state} · Usage unknown", state: disk_status(disk))
+          row.subtitle = "#{capacity}\n#{status}"
         else
           # A filesystem directly on a disk does not need a duplicate child row.
           query_usage(disk, cancellable) do |usage, error|
@@ -221,15 +225,20 @@ module DiskView
       summary = Summary.for_drive(drive, usages)
       set_bar(bar, summary.fraction)
       if summary.known_count == 0
-        text = "Belegung unbekannt · keine auswertbaren Dateisysteme"
+        text = translate("Usage unknown · no measurable filesystems")
       else
-        prefix = summary.complete? ? "" : "Mindestens "
-        text = "#{prefix}#{DiskView.format_bytes(summary.used)} belegt (#{(summary.fraction * 100).round(1)} %)\n#{DiskView.format_bytes(summary.available)} verfügbar"
-        text += " · #{DiskView.format_bytes(summary.reserved)} reserviert" if summary.reserved > 0
-        text += " · #{summary.known_count}/#{summary.filesystem_count} erfasst" unless summary.complete?
+        text = if summary.complete?
+                 translate("%{size} used (%{percent} %%)", size: DiskView.format_bytes(summary.used), percent: (summary.fraction * 100).round(1))
+               else
+                 translate("At least %{size} used (%{percent} %%)", size: DiskView.format_bytes(summary.used), percent: (summary.fraction * 100).round(1))
+               end
+        text += "\n" + translate("%{size} available", size: DiskView.format_bytes(summary.available))
+        text += " · " + translate("%{size} reserved", size: DiskView.format_bytes(summary.reserved)) if summary.reserved > 0
+        text += " · " + translate("%{known}/%{total} measured", known: summary.known_count, total: summary.filesystem_count) unless summary.complete?
       end
-      row.subtitle = "#{DiskView.format_bytes(drive.capacity)} gesamt · #{text}"
-      row.tooltip_text = "#{row.subtitle}\nBelegung bezogen auf die gesamte Laufwerkskapazität. Nicht eingehängte oder geräteübergreifende Dateisysteme sind nicht in der Summe enthalten. Unpartitionierter Speicher ist kein verfügbarer Dateisystemspeicher."
+      capacity = translate("%{size} total", size: DiskView.format_bytes(drive.capacity))
+      row.subtitle = "#{capacity} · #{text}"
+      row.tooltip_text = row.subtitle + "\n" + translate("Usage is relative to the full drive capacity. Unmounted or multi-device filesystems are excluded from the total. Unpartitioned space is not available filesystem space.")
       bar.tooltip_text = row.tooltip_text
     end
 
@@ -241,23 +250,36 @@ module DiskView
       group.append(box)
       if disk.paths.empty?
         bar.visible = false
-        info.text = "#{disk.state} · Belegung unbekannt"
+        info.text = translate("%{state} · Usage unknown", state: disk_status(disk))
         return
       end
 
       query_usage(disk, cancellable) do |usage, error|
         if usage
           set_bar(bar, usage.fraction)
-          info.text = "#{DiskView.format_bytes(usage.used)} belegt (#{(usage.fraction * 100).round(1)} %) · #{DiskView.format_bytes(usage.available)} verfügbar"
-          info.text += " · #{DiskView.format_bytes(usage.total)} gesamt" unless disk.capacity
-          info.text += " · #{DiskView.format_bytes(usage.reserved)} reserviert" if usage.reserved > 0
-          info.tooltip_text = "#{disk.source} · #{DiskView.format_bytes(usage.total)} Dateisystemgröße\n#{info.text}"
+          info.text = translate("%{size} used (%{percent} %%)", size: DiskView.format_bytes(usage.used), percent: (usage.fraction * 100).round(1))
+          info.text += " · " + translate("%{size} available", size: DiskView.format_bytes(usage.available))
+          info.text += " · " + translate("%{size} total", size: DiskView.format_bytes(usage.total)) unless disk.capacity
+          info.text += " · " + translate("%{size} reserved", size: DiskView.format_bytes(usage.reserved)) if usage.reserved > 0
+          size = translate("%{size} filesystem size", size: DiskView.format_bytes(usage.total))
+          info.tooltip_text = "#{disk.source} · #{size}\n#{info.text}"
         else
           bar.visible = false
-          info.text = "Belegung nicht verfügbar"
+          info.text = translate("Usage unavailable")
           info.tooltip_text = error
         end
         on_usage.call(usage)
+      end
+    end
+
+    private def disk_status(disk : Disk) : String
+      case disk.state
+      in .not_mounted?
+        translate("Not mounted")
+      in .mapped?
+        translate("Used by %{devices}", devices: disk.holders.join(", "))
+      in .swap?
+        translate("Swap (active)")
       end
     end
 
@@ -270,11 +292,11 @@ module DiskView
           attributes = file.query_filesystem_info_finish(result)
           next if cancellable.is_cancelled
           unless attributes.has_attribute("filesystem::size") && attributes.has_attribute("filesystem::free")
-            raise "Das Dateisystem meldet keine Speicherbelegung."
+            raise translate("The filesystem does not report disk usage.")
           end
           total = attributes.attribute_uint64("filesystem::size")
           available = attributes.attribute_uint64("filesystem::free").clamp(0_u64, total)
-          # GIO's free is available space, while used excludes reserved blocks.
+          # GIO reports available space as free; used excludes reserved blocks.
           free = if attributes.has_attribute("filesystem::used")
                    total - attributes.attribute_uint64("filesystem::used").clamp(0_u64, total)
                  else
@@ -283,7 +305,7 @@ module DiskView
           usage = Usage.new(total, free, available)
         rescue ex
           next if cancellable.is_cancelled
-          error = ex.message || "Dateisystem konnte nicht gelesen werden."
+          error = ex.message || translate("Could not read filesystem.")
         end
         on_result.call(usage, error)
       end

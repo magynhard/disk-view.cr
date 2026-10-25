@@ -1,0 +1,136 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Disk View 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/magynhard/disk-view.cr/issues\n"
+"POT-Creation-Date: 2026-10-25 20:49+0100\n"
+"PO-Revision-Date: 2026-10-25 00:00+0000\n"
+"Last-Translator: Matthäus J. N. Beyrle\n"
+"Language-Team: Korean\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/window.cr:17 src/window.cr:24
+msgid "Refresh"
+msgstr "새로 고침"
+
+#: src/window.cr:22
+msgid "Main menu"
+msgstr "주 메뉴"
+
+#: src/window.cr:25
+msgid "About Disk View"
+msgstr "Disk View 정보"
+
+#: src/window.cr:26
+msgid "Close"
+msgstr "닫기"
+
+#: src/window.cr:36
+msgid "Drives & Partitions"
+msgstr "드라이브 및 파티션"
+
+#: src/window.cr:37
+msgid "Used space · refreshes automatically every 15 seconds"
+msgstr "사용 중인 공간 · 15초마다 자동으로 새로 고침"
+
+#: src/window.cr:97
+msgid ""
+"Drives, partitions and disk usage at a glance.\n"
+"Built with Crystal, GTK4 and libadwaita."
+msgstr ""
+"드라이브, 파티션 및 디스크 사용량을 한눈에 확인하세요.\n"
+"Crystal, GTK4 및 libadwaita로 개발되었습니다."
+
+#: src/window.cr:123
+msgid "Other filesystems / Network"
+msgstr "기타 파일 시스템 / 네트워크"
+
+#: src/window.cr:131
+msgid "%{count} drive"
+msgid_plural "%{count} drives"
+msgstr[0] "드라이브 %{count}개"
+
+#: src/window.cr:131
+msgid "%{drives} · Updated %{time}"
+msgstr "%{drives} · %{time}에 업데이트됨"
+
+#: src/window.cr:133
+msgid "Could not read drives: %{error}"
+msgstr "드라이브를 읽을 수 없습니다: %{error}"
+
+#: src/window.cr:163
+msgid "Reading …"
+msgstr "읽는 중…"
+
+#: src/window.cr:204 src/window.cr:238 src/window.cr:261
+msgid "%{size} total"
+msgstr "전체 %{size}"
+
+#: src/window.cr:205 src/window.cr:252
+msgid "%{state} · Usage unknown"
+msgstr "%{state} · 사용량 알 수 없음"
+
+#: src/window.cr:227
+msgid "Usage unknown · no measurable filesystems"
+msgstr "사용량 알 수 없음 · 측정 가능한 파일 시스템 없음"
+
+#: src/window.cr:230 src/window.cr:259
+msgid "%{size} used (%{percent} %%)"
+msgstr "%{size} 사용 중 (%{percent} %%)"
+
+#: src/window.cr:232
+msgid "At least %{size} used (%{percent} %%)"
+msgstr "최소 %{size} 사용 중 (%{percent} %%)"
+
+#: src/window.cr:234 src/window.cr:260
+msgid "%{size} available"
+msgstr "%{size} 사용 가능"
+
+#: src/window.cr:235 src/window.cr:262
+msgid "%{size} reserved"
+msgstr "%{size} 예약됨"
+
+#: src/window.cr:236
+msgid "%{known}/%{total} measured"
+msgstr "%{known}/%{total} 측정됨"
+
+#: src/window.cr:240
+msgid ""
+"Usage is relative to the full drive capacity. Unmounted or multi-device "
+"filesystems are excluded from the total. Unpartitioned space is not "
+"available filesystem space."
+msgstr ""
+"사용률은 드라이브의 전체 용량을 기준으로 합니다. 마운트되지 않았거나 여러 장"
+"치에 걸친 파일 시스템은 합계에서 제외됩니다. 파티션이 없는 공간은 파일 시스템"
+"의 사용 가능한 공간이 아닙니다."
+
+#: src/window.cr:263
+msgid "%{size} filesystem size"
+msgstr "파일 시스템 크기 %{size}"
+
+#: src/window.cr:267
+msgid "Usage unavailable"
+msgstr "사용량을 확인할 수 없음"
+
+#: src/window.cr:277
+msgid "Not mounted"
+msgstr "마운트되지 않음"
+
+#: src/window.cr:279
+msgid "Used by %{devices}"
+msgstr "%{devices}에서 사용 중"
+
+#: src/window.cr:281
+msgid "Swap (active)"
+msgstr "스왑 (활성)"
+
+#: src/window.cr:294
+msgid "The filesystem does not report disk usage."
+msgstr "파일 시스템이 디스크 사용량을 제공하지 않습니다."
+
+#: src/window.cr:307
+msgid "Could not read filesystem."
+msgstr "파일 시스템을 읽을 수 없습니다."

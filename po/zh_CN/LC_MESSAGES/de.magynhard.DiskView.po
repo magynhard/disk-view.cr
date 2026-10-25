@@ -1,0 +1,135 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Disk View 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/magynhard/disk-view.cr/issues\n"
+"POT-Creation-Date: 2026-10-25 20:49+0100\n"
+"PO-Revision-Date: 2026-10-25 00:00+0000\n"
+"Last-Translator: Matthäus J. N. Beyrle\n"
+"Language-Team: Simplified Chinese\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/window.cr:17 src/window.cr:24
+msgid "Refresh"
+msgstr "刷新"
+
+#: src/window.cr:22
+msgid "Main menu"
+msgstr "主菜单"
+
+#: src/window.cr:25
+msgid "About Disk View"
+msgstr "关于 Disk View"
+
+#: src/window.cr:26
+msgid "Close"
+msgstr "关闭"
+
+#: src/window.cr:36
+msgid "Drives & Partitions"
+msgstr "驱动器与分区"
+
+#: src/window.cr:37
+msgid "Used space · refreshes automatically every 15 seconds"
+msgstr "已用空间 · 每 15 秒自动刷新"
+
+#: src/window.cr:97
+msgid ""
+"Drives, partitions and disk usage at a glance.\n"
+"Built with Crystal, GTK4 and libadwaita."
+msgstr ""
+"一目了然地查看驱动器、分区和磁盘使用情况。\n"
+"使用 Crystal、GTK4 和 libadwaita 开发。"
+
+#: src/window.cr:123
+msgid "Other filesystems / Network"
+msgstr "其他文件系统 / 网络"
+
+#: src/window.cr:131
+msgid "%{count} drive"
+msgid_plural "%{count} drives"
+msgstr[0] "%{count} 个驱动器"
+
+#: src/window.cr:131
+msgid "%{drives} · Updated %{time}"
+msgstr "%{drives} · 更新于 %{time}"
+
+#: src/window.cr:133
+msgid "Could not read drives: %{error}"
+msgstr "无法读取驱动器：%{error}"
+
+#: src/window.cr:163
+msgid "Reading …"
+msgstr "正在读取…"
+
+#: src/window.cr:204 src/window.cr:238 src/window.cr:261
+msgid "%{size} total"
+msgstr "总计 %{size}"
+
+#: src/window.cr:205 src/window.cr:252
+msgid "%{state} · Usage unknown"
+msgstr "%{state} · 使用情况未知"
+
+#: src/window.cr:227
+msgid "Usage unknown · no measurable filesystems"
+msgstr "使用情况未知 · 没有可统计的文件系统"
+
+#: src/window.cr:230 src/window.cr:259
+msgid "%{size} used (%{percent} %%)"
+msgstr "已用 %{size}（%{percent} %%）"
+
+#: src/window.cr:232
+msgid "At least %{size} used (%{percent} %%)"
+msgstr "至少已用 %{size}（%{percent} %%）"
+
+#: src/window.cr:234 src/window.cr:260
+msgid "%{size} available"
+msgstr "可用 %{size}"
+
+#: src/window.cr:235 src/window.cr:262
+msgid "%{size} reserved"
+msgstr "已保留 %{size}"
+
+#: src/window.cr:236
+msgid "%{known}/%{total} measured"
+msgstr "已统计 %{known}/%{total}"
+
+#: src/window.cr:240
+msgid ""
+"Usage is relative to the full drive capacity. Unmounted or multi-device "
+"filesystems are excluded from the total. Unpartitioned space is not "
+"available filesystem space."
+msgstr ""
+"使用率以驱动器的总容量为基准。未挂载或跨设备的文件系统不计入总使用量。未分区"
+"的空间不等于文件系统的可用空间。"
+
+#: src/window.cr:263
+msgid "%{size} filesystem size"
+msgstr "文件系统大小 %{size}"
+
+#: src/window.cr:267
+msgid "Usage unavailable"
+msgstr "无法获取使用情况"
+
+#: src/window.cr:277
+msgid "Not mounted"
+msgstr "未挂载"
+
+#: src/window.cr:279
+msgid "Used by %{devices}"
+msgstr "由 %{devices} 使用"
+
+#: src/window.cr:281
+msgid "Swap (active)"
+msgstr "交换空间（已启用）"
+
+#: src/window.cr:294
+msgid "The filesystem does not report disk usage."
+msgstr "此文件系统未提供磁盘使用情况。"
+
+#: src/window.cr:307
+msgid "Could not read filesystem."
+msgstr "无法读取文件系统。"
