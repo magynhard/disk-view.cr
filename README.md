@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="data/icons/de.magynhard.DiskView.svg" width="96" height="96" alt="Disk View icon">
+</div>
+
 # Disk View
 
 [![GitHub Release](https://img.shields.io/github/v/release/magynhard/disk-view.cr?style=plastic&color=blue&label=GitHub&logo=github)](https://github.com/magynhard/disk-view.cr/releases)
@@ -6,8 +10,6 @@
 [![libadwaita](https://img.shields.io/badge/_-libadwaita-Sub?style=plastic&color=gray&logo=gnome&logoColor=white)](https://gnome.pages.gitlab.gnome.org/libadwaita/)
 [![Linux](https://img.shields.io/badge/_-Linux-Sub?style=plastic&color=gray&logo=linux&logoColor=white)](#requirements)
 [![License: MIT](https://img.shields.io/badge/License-MIT-gold.svg?style=plastic&logo=mit)](LICENSE)
-
-<img src="data/icons/de.magynhard.DiskView.svg" width="96" height="96" alt="Disk View icon">
 
 A small, read-only GTK4/libadwaita application written in Crystal for Linux.
 The interface follows your system language. Disk usage is displayed using
