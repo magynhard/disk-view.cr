@@ -1,7 +1,19 @@
 # Disk View
 
-A small, read-only GTK4/libadwaita application written in Crystal for Linux. The interface
-is in German. Disk usage is displayed using native horizontal GTK progress bars.
+[![GitHub Release](https://img.shields.io/github/v/release/magynhard/disk-view.cr?style=plastic&color=blue&label=GitHub&logo=github)](https://github.com/magynhard/disk-view.cr/releases)
+[![Crystal](https://img.shields.io/badge/_-Crystal-Sub?style=plastic&color=gray&logo=crystal&logoColor=white)](https://crystal-lang.org/)
+[![GTK](https://img.shields.io/badge/_-GTK4-Sub?style=plastic&color=gray&logo=gtk&logoColor=green)](https://www.gtk.org/)
+[![libadwaita](https://img.shields.io/badge/_-libadwaita-Sub?style=plastic&color=gray&logo=gnome&logoColor=white)](https://gnome.pages.gitlab.gnome.org/libadwaita/)
+[![Linux](https://img.shields.io/badge/_-Linux-Sub?style=plastic&color=gray&logo=linux&logoColor=white)](#requirements)
+[![License: MIT](https://img.shields.io/badge/License-MIT-gold.svg?style=plastic&logo=mit)](LICENSE)
+
+<img src="data/icons/de.magynhard.DiskView.svg" width="96" height="96" alt="Disk View icon">
+
+A small, read-only GTK4/libadwaita application written in Crystal for Linux.
+The interface follows your system language. Disk usage is displayed using
+native horizontal GTK progress bars.
+
+![Disk View showing drive groups and disk usage in dark mode](doc/screenshot.png)
 
 ## Features
 
@@ -23,23 +35,25 @@ is in German. Disk usage is displayed using native horizontal GTK progress bars.
 - No root privileges, shell commands or charting libraries required at runtime.
 - Original scalable application icon, desktop launcher and an Adwaita About
   dialog with author, version and license information.
+- English, German, French, Spanish, Simplified Chinese, Russian, Italian,
+  Polish, Korean and Japanese translations, selected using your system locale.
 
 ## Requirements
 
 Linux, Crystal 1.20+, Shards, GTK4, libadwaita 1.5+ and GObject Introspection.
-Building also requires `glib-compile-resources` (provided by the GLib development
-packages); the icon is embedded in the executable.
+Building also requires GNU gettext tools and `glib-compile-resources` (provided
+by the GLib development packages); the icon is embedded in the executable.
 
 On Arch / Manjaro:
 
 ```sh
-sudo pacman -S --needed base-devel crystal shards gtk4 libadwaita gobject-introspection
+sudo pacman -S --needed base-devel crystal shards gtk4 libadwaita gobject-introspection gettext
 ```
 
 On Debian / Ubuntu:
 
 ```sh
-sudo apt install build-essential crystal shards libgtk-4-dev libadwaita-1-dev libgirepository1.0-dev gobject-introspection gir1.2-gtk-4.0 gir1.2-adw-1
+sudo apt install build-essential crystal shards libgtk-4-dev libadwaita-1-dev libgirepository1.0-dev gobject-introspection gir1.2-gtk-4.0 gir1.2-adw-1 gettext
 ```
 
 Your distribution may require installing a current Crystal compiler and Shards
@@ -54,6 +68,13 @@ make run
 
 `make setup` downloads the Crystal bindings and generates them for your installed
 GTK version. Run it again after updating the dependencies or system libraries.
+
+For the correct icon in the desktop dock/taskbar, install the application once
+using the user installation below. This registers the desktop entry and icon
+with the desktop shell, including for subsequent `make run` launches. The
+embedded icon alone is sufficient for the About dialog, but desktop shells
+such as GNOME on Wayland look up the application's installed desktop entry.
+Restart Disk View after installing it.
 
 ```sh
 make build                         # Creates bin/disk-view
@@ -76,7 +97,58 @@ make install PREFIX="$HOME/.local"
 Ensure `~/.local/bin` is on your `PATH`. For a system-wide installation use
 `sudo make install` (default prefix: `/usr/local`). Uninstall with
 `make uninstall PREFIX="$HOME/.local"`, or `sudo make uninstall` respectively.
-The executable can also be copied and run on its own without the source files.
+Translations are installed under `share/locale` relative to the installation
+prefix. The executable needs no source files; when distributing it, include
+the translation catalogs to retain localized interfaces.
+
+## Releases
+
+Download the Linux x86_64 archive from [GitHub Releases](https://github.com/magynhard/disk-view.cr/releases).
+It contains the executable, all ten translation catalogs, the desktop launcher,
+icon and license. Extract it and run `./bin/disk-view`; GTK4 and libadwaita must
+be installed. Keep `bin/` and `share/` together so translations can be found.
+The separate executable download uses English unless translation catalogs are
+also installed under the corresponding `share/locale` directory.
+
+Build an optimized executable from source with:
+
+```sh
+make build CRYSTAL_FLAGS="--release --no-debug"
+```
+
+## Translations
+
+GNU gettext selects the interface language at startup using `LANGUAGE`,
+`LC_ALL`, `LC_MESSAGES` and `LANG`. Unsupported languages fall back to English;
+the `C` and `POSIX` locales use English. The requested system locale must be
+installed on the machine. GTK/Adwaita also use their own system translations.
+
+To test another language with an available UTF-8 locale:
+
+```sh
+LC_ALL=en_US.UTF-8 LANGUAGE=fr ./bin/disk-view
+LC_ALL=en_US.UTF-8 LANGUAGE=ja ./bin/disk-view
+```
+
+Close an existing Disk View instance first, since subsequent launches activate
+the existing application. Korean and Japanese use standard `ko` and `ja`
+catalog names (the same languages listed as `kr` and `jp` in Goblin Converter).
+
+Catalog sources are in `po/<language>/LC_MESSAGES/`. `make build` and `make test`
+compile them automatically. During development, catalogs are read from `po/`;
+installed binaries find them relative to their own installation prefix.
+
+```sh
+make locales                       # Compile and validate PO → MO catalogs
+make generate_locales              # Extract messages and update existing PO files
+```
+
+After changing translatable strings, run `make generate_locales`, complete the
+translations and run `make test`. Add source files containing translation calls
+to `po/POTFILES`, and add new language codes to `po/LINGUAS`. Translations use
+named placeholders such as `%{size}`; keep their names and escape literal
+percent signs as `%%` in formatted messages. Locale-dependent specs require
+an installed non-C UTF-8 locale and are marked pending if none is available.
 
 ## Scope
 
