@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/de/magynhard/DiskView/icons/scalable/apps">
+    <file alias="de.magynhard.DiskView.svg">icons/de.magynhard.DiskView.svg</file>
+  </gresource>
+</gresources>

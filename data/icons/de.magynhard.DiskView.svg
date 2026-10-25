@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <title>Disk View</title>
+  <desc>A silver drive with a blue storage-usage chart and a green status light.</desc>
+  <defs>
+    <linearGradient id="body" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#9a9996"/>
+      <stop offset=".12" stop-color="#deddda"/>
+      <stop offset=".88" stop-color="#deddda"/>
+      <stop offset="1" stop-color="#9a9996"/>
+    </linearGradient>
+    <linearGradient id="lid" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#f6f5f4"/>
+      <stop offset="1" stop-color="#c0bfbc"/>
+    </linearGradient>
+    <linearGradient id="chart" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#62a0ea"/>
+      <stop offset="1" stop-color="#1c71d8"/>
+    </linearGradient>
+  </defs>
+  <rect x="12" y="27" width="104" height="89" rx="13" fill="#000" opacity=".12"/>
+  <rect x="12" y="24" width="104" height="88" rx="12" fill="#5e5c64"/>
+  <rect x="12" y="18" width="104" height="88" rx="12" fill="url(#body)"/>
+  <rect x="16" y="18" width="96" height="79" rx="9" fill="url(#lid)"/>
+  <rect x="22" y="24" width="84" height="67" rx="6" fill="none" stroke="#fff" stroke-opacity=".65"/>
+  <g fill="#77767b">
+    <circle cx="25" cy="27" r="2"/><circle cx="103" cy="27" r="2"/>
+    <circle cx="25" cy="88" r="2"/><circle cx="103" cy="88" r="2"/>
+  </g>
+  <circle cx="64" cy="58" r="28" fill="#000" opacity=".10"/>
+  <circle cx="64" cy="56" r="27" fill="#fff"/>
+  <circle cx="64" cy="56" r="22" fill="#deddda"/>
+  <path d="M64 34a22 22 0 1 1-19.05 33L64 56Z" fill="url(#chart)"/>
+  <circle cx="64" cy="56" r="10" fill="#fff"/>
+  <circle cx="64" cy="56" r="4" fill="#9a9996"/>
+  <rect x="24" y="100" width="54" height="3" rx="1.5" fill="#77767b"/>
+  <circle cx="101" cy="101" r="3.5" fill="#26a269"/>
+  <circle cx="100" cy="100" r="1.2" fill="#8ff0a4"/>
+</svg>

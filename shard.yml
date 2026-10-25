@@ -1,0 +1,15 @@
+name: disk-view
+version: 0.1.0
+authors:
+  - Matthäus J. N. Beyrle
+license: MIT
+description: A small GTK4 disk usage overview for Linux
+crystal: ">= 1.20.0"
+
+targets:
+  disk-view:
+    main: src/disk-view.cr
+
+dependencies:
+  libadwaita:
+    github: hugopl/libadwaita.cr
