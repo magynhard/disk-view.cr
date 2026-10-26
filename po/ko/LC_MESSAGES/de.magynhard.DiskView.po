@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Disk View 0.1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/magynhard/disk-view.cr/issues\n"
-"POT-Creation-Date: 2026-10-25 20:49+0100\n"
+"POT-Creation-Date: 2026-10-25 21:35+0100\n"
 "PO-Revision-Date: 2026-10-25 00:00+0000\n"
 "Last-Translator: Matthäus J. N. Beyrle\n"
 "Language-Team: Korean\n"
@@ -36,7 +36,7 @@ msgstr "드라이브 및 파티션"
 msgid "Used space · refreshes automatically every 15 seconds"
 msgstr "사용 중인 공간 · 15초마다 자동으로 새로 고침"
 
-#: src/window.cr:97
+#: src/window.cr:98
 msgid ""
 "Drives, partitions and disk usage at a glance.\n"
 "Built with Crystal, GTK4 and libadwaita."
@@ -44,60 +44,64 @@ msgstr ""
 "드라이브, 파티션 및 디스크 사용량을 한눈에 확인하세요.\n"
 "Crystal, GTK4 및 libadwaita로 개발되었습니다."
 
-#: src/window.cr:123
+#: src/window.cr:124
 msgid "Other filesystems / Network"
 msgstr "기타 파일 시스템 / 네트워크"
 
-#: src/window.cr:131
+#: src/window.cr:132
 msgid "%{count} drive"
 msgid_plural "%{count} drives"
 msgstr[0] "드라이브 %{count}개"
 
-#: src/window.cr:131
+#: src/window.cr:132
 msgid "%{drives} · Updated %{time}"
 msgstr "%{drives} · %{time}에 업데이트됨"
 
-#: src/window.cr:133
+#: src/window.cr:134
 msgid "Could not read drives: %{error}"
 msgstr "드라이브를 읽을 수 없습니다: %{error}"
 
-#: src/window.cr:163
+#: src/window.cr:164
 msgid "Reading …"
 msgstr "읽는 중…"
 
-#: src/window.cr:204 src/window.cr:238 src/window.cr:261
+#: src/window.cr:209 src/window.cr:247 src/window.cr:281
 msgid "%{size} total"
 msgstr "전체 %{size}"
 
-#: src/window.cr:205 src/window.cr:252
+#: src/window.cr:210 src/window.cr:270
 msgid "%{state} · Usage unknown"
 msgstr "%{state} · 사용량 알 수 없음"
 
-#: src/window.cr:227
+#: src/window.cr:233
+msgid "Not mounted · usage unavailable"
+msgstr "마운트되지 않음 · 사용량을 확인할 수 없음"
+
+#: src/window.cr:235
 msgid "Usage unknown · no measurable filesystems"
 msgstr "사용량 알 수 없음 · 측정 가능한 파일 시스템 없음"
 
-#: src/window.cr:230 src/window.cr:259
+#: src/window.cr:239 src/window.cr:279
 msgid "%{size} used (%{percent} %%)"
 msgstr "%{size} 사용 중 (%{percent} %%)"
 
-#: src/window.cr:232
+#: src/window.cr:241
 msgid "At least %{size} used (%{percent} %%)"
 msgstr "최소 %{size} 사용 중 (%{percent} %%)"
 
-#: src/window.cr:234 src/window.cr:260
+#: src/window.cr:243 src/window.cr:280
 msgid "%{size} available"
 msgstr "%{size} 사용 가능"
 
-#: src/window.cr:235 src/window.cr:262
+#: src/window.cr:244 src/window.cr:282
 msgid "%{size} reserved"
 msgstr "%{size} 예약됨"
 
-#: src/window.cr:236
+#: src/window.cr:245
 msgid "%{known}/%{total} measured"
 msgstr "%{known}/%{total} 측정됨"
 
-#: src/window.cr:240
+#: src/window.cr:249
 msgid ""
 "Usage is relative to the full drive capacity. Unmounted or multi-device "
 "filesystems are excluded from the total. Unpartitioned space is not "
@@ -107,30 +111,65 @@ msgstr ""
 "치에 걸친 파일 시스템은 합계에서 제외됩니다. 파티션이 없는 공간은 파일 시스템"
 "의 사용 가능한 공간이 아닙니다."
 
-#: src/window.cr:263
+#: src/window.cr:250
+msgid ""
+"Microsoft reserved partitions have no filesystem and are excluded from usage "
+"totals."
+msgstr ""
+"Microsoft 예약 파티션에는 파일 시스템이 없으므로 전체 사용량에서 제외됩니다."
+
+#: src/window.cr:268
+msgid "Reserved partition · no filesystem"
+msgstr "예약 파티션 · 파일 시스템 없음"
+
+#: src/window.cr:272
+msgid "Mount this filesystem to read its disk usage."
+msgstr "디스크 사용량을 확인하려면 이 파일 시스템을 마운트하세요."
+
+#: src/window.cr:283
 msgid "%{size} filesystem size"
 msgstr "파일 시스템 크기 %{size}"
 
-#: src/window.cr:267
+#: src/window.cr:287
 msgid "Usage unavailable"
 msgstr "사용량을 확인할 수 없음"
 
-#: src/window.cr:277
+#: src/window.cr:297
 msgid "Not mounted"
 msgstr "마운트되지 않음"
 
-#: src/window.cr:279
+#: src/window.cr:299
 msgid "Used by %{devices}"
 msgstr "%{devices}에서 사용 중"
 
-#: src/window.cr:281
+#: src/window.cr:301
 msgid "Swap (active)"
 msgstr "스왑 (활성)"
 
-#: src/window.cr:294
+#: src/window.cr:303
+msgid "Encrypted (locked)"
+msgstr "암호화됨 (잠김)"
+
+#: src/window.cr:310
+msgid "Microsoft reserved (MSR)"
+msgstr "Microsoft 예약 (MSR)"
+
+#: src/window.cr:311
+msgid "Microsoft basic data"
+msgstr "Microsoft 기본 데이터"
+
+#: src/window.cr:312
+msgid "Windows recovery"
+msgstr "Windows 복구"
+
+#: src/window.cr:313
+msgid "EFI system partition"
+msgstr "EFI 시스템 파티션"
+
+#: src/window.cr:326
 msgid "The filesystem does not report disk usage."
 msgstr "파일 시스템이 디스크 사용량을 제공하지 않습니다."
 
-#: src/window.cr:307
+#: src/window.cr:339
 msgid "Could not read filesystem."
 msgstr "파일 시스템을 읽을 수 없습니다."

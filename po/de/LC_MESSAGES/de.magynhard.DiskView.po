@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Disk View 0.1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/magynhard/disk-view.cr/issues\n"
-"POT-Creation-Date: 2026-10-25 20:49+0100\n"
+"POT-Creation-Date: 2026-10-25 21:35+0100\n"
 "PO-Revision-Date: 2026-10-25 00:00+0000\n"
 "Last-Translator: Matthäus J. N. Beyrle\n"
 "Language-Team: German\n"
@@ -36,7 +36,7 @@ msgstr "Laufwerke & Partitionen"
 msgid "Used space · refreshes automatically every 15 seconds"
 msgstr "Belegter Speicher · automatische Aktualisierung alle 15 Sekunden"
 
-#: src/window.cr:97
+#: src/window.cr:98
 msgid ""
 "Drives, partitions and disk usage at a glance.\n"
 "Built with Crystal, GTK4 and libadwaita."
@@ -44,61 +44,65 @@ msgstr ""
 "Laufwerke, Partitionen und Speicherbelegung auf einen Blick.\n"
 "Entwickelt mit Crystal, GTK4 und libadwaita."
 
-#: src/window.cr:123
+#: src/window.cr:124
 msgid "Other filesystems / Network"
 msgstr "Weitere Dateisysteme / Netzwerk"
 
-#: src/window.cr:131
+#: src/window.cr:132
 msgid "%{count} drive"
 msgid_plural "%{count} drives"
 msgstr[0] "%{count} Laufwerk"
 msgstr[1] "%{count} Laufwerke"
 
-#: src/window.cr:131
+#: src/window.cr:132
 msgid "%{drives} · Updated %{time}"
 msgstr "%{drives} · Stand %{time}"
 
-#: src/window.cr:133
+#: src/window.cr:134
 msgid "Could not read drives: %{error}"
 msgstr "Laufwerke konnten nicht gelesen werden: %{error}"
 
-#: src/window.cr:163
+#: src/window.cr:164
 msgid "Reading …"
 msgstr "Wird gelesen …"
 
-#: src/window.cr:204 src/window.cr:238 src/window.cr:261
+#: src/window.cr:209 src/window.cr:247 src/window.cr:281
 msgid "%{size} total"
 msgstr "%{size} gesamt"
 
-#: src/window.cr:205 src/window.cr:252
+#: src/window.cr:210 src/window.cr:270
 msgid "%{state} · Usage unknown"
 msgstr "%{state} · Belegung unbekannt"
 
-#: src/window.cr:227
+#: src/window.cr:233
+msgid "Not mounted · usage unavailable"
+msgstr "Nicht eingehängt · Belegung nicht verfügbar"
+
+#: src/window.cr:235
 msgid "Usage unknown · no measurable filesystems"
 msgstr "Belegung unbekannt · keine auswertbaren Dateisysteme"
 
-#: src/window.cr:230 src/window.cr:259
+#: src/window.cr:239 src/window.cr:279
 msgid "%{size} used (%{percent} %%)"
 msgstr "%{size} belegt (%{percent} %%)"
 
-#: src/window.cr:232
+#: src/window.cr:241
 msgid "At least %{size} used (%{percent} %%)"
 msgstr "Mindestens %{size} belegt (%{percent} %%)"
 
-#: src/window.cr:234 src/window.cr:260
+#: src/window.cr:243 src/window.cr:280
 msgid "%{size} available"
 msgstr "%{size} verfügbar"
 
-#: src/window.cr:235 src/window.cr:262
+#: src/window.cr:244 src/window.cr:282
 msgid "%{size} reserved"
 msgstr "%{size} reserviert"
 
-#: src/window.cr:236
+#: src/window.cr:245
 msgid "%{known}/%{total} measured"
 msgstr "%{known}/%{total} erfasst"
 
-#: src/window.cr:240
+#: src/window.cr:249
 msgid ""
 "Usage is relative to the full drive capacity. Unmounted or multi-device "
 "filesystems are excluded from the total. Unpartitioned space is not "
@@ -108,30 +112,66 @@ msgstr ""
 "geräteübergreifende Dateisysteme sind nicht in der Summe enthalten. "
 "Unpartitionierter Speicher ist kein verfügbarer Dateisystemspeicher."
 
-#: src/window.cr:263
+#: src/window.cr:250
+msgid ""
+"Microsoft reserved partitions have no filesystem and are excluded from usage "
+"totals."
+msgstr ""
+"Microsoft-reservierte Partitionen haben kein Dateisystem und werden nicht in "
+"die Gesamtbelegung eingerechnet."
+
+#: src/window.cr:268
+msgid "Reserved partition · no filesystem"
+msgstr "Reservierte Partition · kein Dateisystem"
+
+#: src/window.cr:272
+msgid "Mount this filesystem to read its disk usage."
+msgstr "Hänge dieses Dateisystem ein, um seine Speicherbelegung auszulesen."
+
+#: src/window.cr:283
 msgid "%{size} filesystem size"
 msgstr "%{size} Dateisystemgröße"
 
-#: src/window.cr:267
+#: src/window.cr:287
 msgid "Usage unavailable"
 msgstr "Belegung nicht verfügbar"
 
-#: src/window.cr:277
+#: src/window.cr:297
 msgid "Not mounted"
 msgstr "Nicht eingehängt"
 
-#: src/window.cr:279
+#: src/window.cr:299
 msgid "Used by %{devices}"
 msgstr "Verwendet von %{devices}"
 
-#: src/window.cr:281
+#: src/window.cr:301
 msgid "Swap (active)"
 msgstr "Swap (aktiv)"
 
-#: src/window.cr:294
+#: src/window.cr:303
+msgid "Encrypted (locked)"
+msgstr "Verschlüsselt (gesperrt)"
+
+#: src/window.cr:310
+msgid "Microsoft reserved (MSR)"
+msgstr "Microsoft-reserviert (MSR)"
+
+#: src/window.cr:311
+msgid "Microsoft basic data"
+msgstr "Microsoft-Datenpartition"
+
+#: src/window.cr:312
+msgid "Windows recovery"
+msgstr "Windows-Wiederherstellung"
+
+#: src/window.cr:313
+msgid "EFI system partition"
+msgstr "EFI-Systempartition"
+
+#: src/window.cr:326
 msgid "The filesystem does not report disk usage."
 msgstr "Das Dateisystem meldet keine Speicherbelegung."
 
-#: src/window.cr:307
+#: src/window.cr:339
 msgid "Could not read filesystem."
 msgstr "Dateisystem konnte nicht gelesen werden."

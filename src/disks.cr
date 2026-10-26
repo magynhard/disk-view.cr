@@ -1,16 +1,23 @@
 require "set"
+require "./device_metadata"
 
 module DiskView
   enum DiskState
     NotMounted
     Mapped
     Swap
+    Locked
   end
 
   record Mount, device_id : String, source : String, path : String, filesystem : String
-  record Disk, source : String, paths : Array(String), filesystem : String, capacity : UInt64? = nil, state : DiskState = DiskState::NotMounted, device_id : String? = nil, holders : Array(String) = [] of String
-  record BlockDevice, name : String, device_id : String, capacity : UInt64, parent : String? = nil, partition_number : Int32 = 0, model : String = "", holders : Array(String) = [] of String
-  record Drive, name : String, model : String, capacity : UInt64, filesystems : Array(Disk), partitioned : Bool
+  record Disk, source : String, paths : Array(String), filesystem : String, capacity : UInt64? = nil, state : DiskState = DiskState::NotMounted, device_id : String? = nil, holders : Array(String) = [] of String, metadata : BlockMetadata = BlockMetadata.new do
+    def measurable? : Bool
+      metadata.role != PartitionRole::MicrosoftReserved || !filesystem.empty?
+    end
+  end
+
+  record BlockDevice, name : String, device_id : String, capacity : UInt64, parent : String? = nil, partition_number : Int32 = 0, model : String = "", holders : Array(String) = [] of String, metadata : BlockMetadata = BlockMetadata.new, rotational : Bool? = nil
+  record Drive, name : String, model : String, capacity : UInt64, filesystems : Array(Disk), partitioned : Bool, rotational : Bool? = nil
   record Inventory, drives : Array(Drive), other_filesystems : Array(Disk)
 
   module Disks
@@ -57,8 +64,9 @@ module DiskView
     end
 
     def block_devices : Array(BlockDevice)
-      Dir.children("/sys/class/block").sort.compact_map do |name|
-        next if name.matches?(/\A(?:loop|ram|zram)\d+\z/)
+      names = Dir.children("/sys/class/block").sort.reject { |name| name.matches?(/\A(?:loop|ram|zram)\d+\z/) }
+      metadata = UdevMetadata.read(names)
+      names.compact_map do |name|
         base = "/sys/class/block/#{name}"
         begin
           capacity = File.read("#{base}/size").strip.to_u64 * 512_u64
@@ -70,7 +78,18 @@ module DiskView
           rescue File::Error
             ""
           end
-          BlockDevice.new(name, File.read("#{base}/dev").strip, capacity, parent, partition_number, model, Dir.children("#{base}/holders"))
+          details = metadata[name]? || BlockMetadata.new
+          rotational = if parent.nil? && details.device_type != "cd" && (details.device_type == "disk" || File.exists?("#{base}/device"))
+                         begin
+                           case File.read("#{base}/queue/rotational").strip
+                           when "0" then false
+                           when "1" then true
+                           end
+                         rescue File::Error
+                           nil
+                         end
+                       end
+          BlockDevice.new(name, File.read("#{base}/dev").strip, capacity, parent, partition_number, model, Dir.children("#{base}/holders"), details, rotational)
         rescue File::Error
           # Removable devices may disappear between directory listing and reading.
           nil
@@ -91,22 +110,36 @@ module DiskView
           if index
             claimed << index
             disk = mounted[index]
-            Disk.new(source, disk.paths, disk.filesystem, block.capacity, device_id: block.device_id)
+            filesystem = block.metadata.filesystem.empty? ? disk.filesystem : block.metadata.filesystem
+            Disk.new(source, disk.paths, filesystem, block.capacity, device_id: block.device_id, metadata: block.metadata)
           else
             state = if !block.holders.empty?
                       DiskState::Mapped
                     elsif swaps.includes?(source)
                       DiskState::Swap
+                    elsif block.metadata.encrypted?
+                      DiskState::Locked
                     else
                       DiskState::NotMounted
                     end
-            Disk.new(source, [] of String, "", block.capacity, state, block.device_id, block.holders)
+            Disk.new(source, [] of String, block.metadata.filesystem, block.capacity, state, block.device_id, block.holders, block.metadata)
           end
         end
-        Drive.new(drive.name, drive.model, drive.capacity, filesystems, !partitions.empty?)
+        Drive.new(drive.name, drive.model, drive.capacity, filesystems, !partitions.empty?, drive.rotational)
       end
       others = mounted.each_with_index.reject { |(_, index)| claimed.includes?(index) }.map(&.[0]).to_a
       Inventory.new(drives, others)
+    end
+
+    def filesystem_name(filesystem : String) : String
+      case filesystem.downcase
+      when "ntfs", "ntfs3"             then "NTFS"
+      when "exfat"                     then "exFAT"
+      when "vfat", "fat", "msdos"      then "FAT"
+      when "bitlocker", "crypto_bitlk" then "BitLocker"
+      when "crypto_luks"               then "LUKS"
+      else                                  filesystem
+      end
     end
 
     private def canonical_path(path : String) : String
@@ -147,11 +180,12 @@ module DiskView
       # attribute its entire usage to one smaller physical partition.
       known = usages.each_with_index.compact_map do |usage, index|
         next unless usage
+        next unless drive.filesystems[index].measurable?
         limit = drive.filesystems[index].capacity || drive.capacity
         usage if usage.total <= limit
       end.to_a
       new(drive.capacity, known.sum(0_u64, &.used), known.sum(0_u64) { |usage| usage.available.clamp(0_u64, usage.total) },
-        known.sum(0_u64, &.reserved), known.size, drive.filesystems.size)
+        known.sum(0_u64, &.reserved), known.size, drive.filesystems.count(&.measurable?))
     end
 
     def complete? : Bool

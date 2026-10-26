@@ -23,6 +23,10 @@ native horizontal GTK progress bars.
   available and reserved space when reported by the filesystem.
 - Unmounted disks and partitions, including their capacity. Usage cannot be
   determined without mounting a filesystem; Disk View does not mount devices.
+- Filesystem types and volume labels from the udev cache, including unmounted
+  NTFS/exFAT/FAT volumes. Windows data, Microsoft reserved (MSR), recovery and EFI
+  partitions are identified by their partition types; SSD/HDD media is shown
+  when the kernel reports it. BitLocker containers are marked locked or mapped.
 - Compact drive groups (`sda`, `sdb`, NVMe, etc.) with indented partitions,
   physical drive capacity and aggregated filesystem usage. Partial totals are
   explicitly marked when some partitions cannot be measured.
@@ -42,20 +46,20 @@ native horizontal GTK progress bars.
 
 ## Requirements
 
-Linux, Crystal 1.20+, Shards, GTK4, libadwaita 1.5+ and GObject Introspection.
+Linux, Crystal 1.20+, Shards, GTK4, libadwaita 1.5+, libudev and GObject Introspection.
 Building also requires GNU gettext tools and `glib-compile-resources` (provided
 by the GLib development packages); the icon is embedded in the executable.
 
 On Arch / Manjaro:
 
 ```sh
-sudo pacman -S --needed base-devel crystal shards gtk4 libadwaita gobject-introspection gettext
+sudo pacman -S --needed base-devel crystal shards gtk4 libadwaita gobject-introspection gettext systemd-libs
 ```
 
 On Debian / Ubuntu:
 
 ```sh
-sudo apt install build-essential crystal shards libgtk-4-dev libadwaita-1-dev libgirepository1.0-dev gobject-introspection gir1.2-gtk-4.0 gir1.2-adw-1 gettext
+sudo apt install build-essential crystal shards libgtk-4-dev libadwaita-1-dev libgirepository1.0-dev gobject-introspection gir1.2-gtk-4.0 gir1.2-adw-1 gettext libudev-dev
 ```
 
 Your distribution may require installing a current Crystal compiler and Shards
@@ -107,7 +111,7 @@ the translation catalogs to retain localized interfaces.
 
 Download the Linux x86_64 archive from [GitHub Releases](https://github.com/magynhard/disk-view.cr/releases).
 It contains the executable, all ten translation catalogs, the desktop launcher,
-icon and license. Extract it and run `./bin/disk-view`; GTK4 and libadwaita must
+icon and license. Extract it and run `./bin/disk-view`; GTK4, libadwaita and libudev must
 be installed. Keep `bin/` and `share/` together so translations can be found.
 The separate executable download uses English unless translation catalogs are
 also installed under the corresponding `share/locale` directory.
@@ -154,7 +158,15 @@ an installed non-C UTF-8 locale and are marked pending if none is available.
 
 ## Scope
 
-Discovery uses `/proc/self/mountinfo`, `/proc/swaps` and `/sys/class/block`.
+Discovery uses `/proc/self/mountinfo`, `/proc/swaps`, `/sys/class/block` and
+libudev cached device properties. Metadata is read without mounting, unlocking
+or directly probing drives. If udev has no cached identification data, the
+application still lists devices using sysfs and mounted-filesystem information.
+NTFS drivers such as `ntfs3` and `ntfs-3g`/`fuseblk` are displayed as NTFS when
+identified; disk usage is read through the existing mount, just like for Linux
+filesystems. Drive letters such as `C:` are Windows configuration, not inferred
+from NTFS or partition labels. Filesystem-less MSR partitions are excluded from
+usage totals; unmounted data and recovery partitions remain explicitly unknown.
 Pseudo-filesystems, RAM disks and loop/Snap images are hidden. Partitions are
 grouped using sysfs parent relationships, with numeric partition ordering.
 Mapped devices (LVM, RAID, encryption) form separate groups; their underlying

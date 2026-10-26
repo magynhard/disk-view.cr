@@ -178,13 +178,17 @@ module DiskView
 
     private def add_drive(drive : Drive, cancellable : Gio::Cancellable, expanded : Bool)
       title = drive.model.empty? ? drive.name : "#{drive.name} · #{drive.model}"
+      title += drive.rotational ? " · HDD" : " · SSD" unless drive.rotational.nil?
+      filesystems = drive.filesystems.map { |disk| Disks.filesystem_name(disk.filesystem) }.reject(&.empty?).uniq
+      title += " · " + filesystems.join(", ") unless filesystems.empty?
       title += " · #{drive.filesystems.first.paths.join(", ")}" unless drive.partitioned || drive.filesystems.first.paths.empty?
       row = Adw::ExpanderRow.new
       row.title = title
       row.use_markup = false
       row.subtitle_lines = 3
       row.title_lines = 1
-      row.add_prefix(Gtk::Image.new_from_icon_name("drive-harddisk-symbolic"))
+      icon = drive.rotational == false ? "drive-harddisk-solidstate-symbolic" : "drive-harddisk-symbolic"
+      row.add_prefix(Gtk::Image.new_from_icon_name(icon))
       bar = Gtk::ProgressBar.new
       bar.width_request = 90
       bar.valign = :center
@@ -225,7 +229,11 @@ module DiskView
       summary = Summary.for_drive(drive, usages)
       set_bar(bar, summary.fraction)
       if summary.known_count == 0
-        text = translate("Usage unknown · no measurable filesystems")
+        text = if drive.filesystems.all?(&.paths.empty?) && drive.filesystems.any? { |disk| disk.state.not_mounted? && !disk.filesystem.empty? }
+                 translate("Not mounted · usage unavailable")
+               else
+                 translate("Usage unknown · no measurable filesystems")
+               end
       else
         text = if summary.complete?
                  translate("%{size} used (%{percent} %%)", size: DiskView.format_bytes(summary.used), percent: (summary.fraction * 100).round(1))
@@ -238,19 +246,30 @@ module DiskView
       end
       capacity = translate("%{size} total", size: DiskView.format_bytes(drive.capacity))
       row.subtitle = "#{capacity} · #{text}"
-      row.tooltip_text = row.subtitle + "\n" + translate("Usage is relative to the full drive capacity. Unmounted or multi-device filesystems are excluded from the total. Unpartitioned space is not available filesystem space.")
-      bar.tooltip_text = row.tooltip_text
+      tooltip = row.subtitle + "\n" + translate("Usage is relative to the full drive capacity. Unmounted or multi-device filesystems are excluded from the total. Unpartitioned space is not available filesystem space.")
+      tooltip += "\n" + translate("Microsoft reserved partitions have no filesystem and are excluded from usage totals.") if drive.filesystems.any? { |disk| !disk.measurable? }
+      row.tooltip_text = tooltip
+      bar.tooltip_text = tooltip
     end
 
     private def add_filesystem(group : Gtk::Box, disk : Disk, cancellable : Gio::Cancellable, indented = false, &on_usage : Usage? ->)
       name = disk.source.starts_with?("/dev/") ? File.basename(disk.source) : disk.source
-      title = disk.paths.empty? ? name : "#{name} · #{disk.paths.join(", ")}"
-      metadata = [disk.filesystem, disk.capacity.try { |bytes| DiskView.format_bytes(bytes) } || ""].reject(&.empty?).join(" · ")
+      role = partition_role(disk.metadata.role)
+      description = [disk.metadata.label, role].reject(&.empty?).uniq.join(" · ")
+      description = disk.metadata.partition_name if description.empty?
+      title = [name, description, disk.paths.join(", ")].reject(&.empty?).join(" · ")
+      metadata = [Disks.filesystem_name(disk.filesystem), disk.capacity.try { |bytes| DiskView.format_bytes(bytes) } || ""].reject(&.empty?).join(" · ")
       box, bar, info = usage_row(title, metadata, indented)
+      box.tooltip_text = [title, disk.source, role, disk.metadata.partition_name, disk.metadata.partition_type].reject(&.empty?).uniq.join("\n")
       group.append(box)
       if disk.paths.empty?
         bar.visible = false
-        info.text = translate("%{state} · Usage unknown", state: disk_status(disk))
+        info.text = if !disk.measurable?
+                      translate("Reserved partition · no filesystem")
+                    else
+                      translate("%{state} · Usage unknown", state: disk_status(disk))
+                    end
+        info.tooltip_text = translate("Mount this filesystem to read its disk usage.") if disk.measurable? && disk.state.not_mounted?
         return
       end
 
@@ -280,6 +299,18 @@ module DiskView
         translate("Used by %{devices}", devices: disk.holders.join(", "))
       in .swap?
         translate("Swap (active)")
+      in .locked?
+        translate("Encrypted (locked)")
+      end
+    end
+
+    private def partition_role(role : PartitionRole) : String
+      case role
+      in .unknown?            then ""
+      in .microsoft_reserved? then translate("Microsoft reserved (MSR)")
+      in .microsoft_data?     then translate("Microsoft basic data")
+      in .windows_recovery?   then translate("Windows recovery")
+      in .efi_system?         then translate("EFI system partition")
       end
     end
 

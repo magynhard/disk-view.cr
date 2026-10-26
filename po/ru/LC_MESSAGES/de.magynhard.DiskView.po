@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Disk View 0.1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/magynhard/disk-view.cr/issues\n"
-"POT-Creation-Date: 2026-10-25 20:49+0100\n"
+"POT-Creation-Date: 2026-10-25 21:35+0100\n"
 "PO-Revision-Date: 2026-10-25 00:00+0000\n"
 "Last-Translator: Matthäus J. N. Beyrle\n"
 "Language-Team: Russian\n"
@@ -37,7 +37,7 @@ msgstr "Накопители и разделы"
 msgid "Used space · refreshes automatically every 15 seconds"
 msgstr "Занятое место · автоматическое обновление каждые 15 секунд"
 
-#: src/window.cr:97
+#: src/window.cr:98
 msgid ""
 "Drives, partitions and disk usage at a glance.\n"
 "Built with Crystal, GTK4 and libadwaita."
@@ -45,62 +45,66 @@ msgstr ""
 "Накопители, разделы и использование дискового пространства на одном экране.\n"
 "Разработано с помощью Crystal, GTK4 и libadwaita."
 
-#: src/window.cr:123
+#: src/window.cr:124
 msgid "Other filesystems / Network"
 msgstr "Другие файловые системы / Сеть"
 
-#: src/window.cr:131
+#: src/window.cr:132
 msgid "%{count} drive"
 msgid_plural "%{count} drives"
 msgstr[0] "%{count} накопитель"
 msgstr[1] "%{count} накопителя"
 msgstr[2] "%{count} накопителей"
 
-#: src/window.cr:131
+#: src/window.cr:132
 msgid "%{drives} · Updated %{time}"
 msgstr "%{drives} · Обновлено в %{time}"
 
-#: src/window.cr:133
+#: src/window.cr:134
 msgid "Could not read drives: %{error}"
 msgstr "Не удалось прочитать накопители: %{error}"
 
-#: src/window.cr:163
+#: src/window.cr:164
 msgid "Reading …"
 msgstr "Чтение…"
 
-#: src/window.cr:204 src/window.cr:238 src/window.cr:261
+#: src/window.cr:209 src/window.cr:247 src/window.cr:281
 msgid "%{size} total"
 msgstr "%{size} всего"
 
-#: src/window.cr:205 src/window.cr:252
+#: src/window.cr:210 src/window.cr:270
 msgid "%{state} · Usage unknown"
 msgstr "%{state} · Занятое место неизвестно"
 
-#: src/window.cr:227
+#: src/window.cr:233
+msgid "Not mounted · usage unavailable"
+msgstr "Не смонтирован · данные об использовании недоступны"
+
+#: src/window.cr:235
 msgid "Usage unknown · no measurable filesystems"
 msgstr "Занятое место неизвестно · нет файловых систем, доступных для оценки"
 
-#: src/window.cr:230 src/window.cr:259
+#: src/window.cr:239 src/window.cr:279
 msgid "%{size} used (%{percent} %%)"
 msgstr "%{size} занято (%{percent} %%)"
 
-#: src/window.cr:232
+#: src/window.cr:241
 msgid "At least %{size} used (%{percent} %%)"
 msgstr "Занято не менее %{size} (%{percent} %%)"
 
-#: src/window.cr:234 src/window.cr:260
+#: src/window.cr:243 src/window.cr:280
 msgid "%{size} available"
 msgstr "%{size} доступно"
 
-#: src/window.cr:235 src/window.cr:262
+#: src/window.cr:244 src/window.cr:282
 msgid "%{size} reserved"
 msgstr "%{size} зарезервировано"
 
-#: src/window.cr:236
+#: src/window.cr:245
 msgid "%{known}/%{total} measured"
 msgstr "%{known}/%{total} учтено"
 
-#: src/window.cr:240
+#: src/window.cr:249
 msgid ""
 "Usage is relative to the full drive capacity. Unmounted or multi-device "
 "filesystems are excluded from the total. Unpartitioned space is not "
@@ -111,30 +115,68 @@ msgstr ""
 "устройствах не включены в итог. Неразмеченное пространство не является "
 "доступным местом файловой системы."
 
-#: src/window.cr:263
+#: src/window.cr:250
+msgid ""
+"Microsoft reserved partitions have no filesystem and are excluded from usage "
+"totals."
+msgstr ""
+"Зарезервированные разделы Microsoft не имеют файловой системы и не "
+"включаются в общее использование."
+
+#: src/window.cr:268
+msgid "Reserved partition · no filesystem"
+msgstr "Зарезервированный раздел · нет файловой системы"
+
+#: src/window.cr:272
+msgid "Mount this filesystem to read its disk usage."
+msgstr ""
+"Смонтируйте эту файловую систему, чтобы узнать использование дискового "
+"пространства."
+
+#: src/window.cr:283
 msgid "%{size} filesystem size"
 msgstr "%{size} — размер файловой системы"
 
-#: src/window.cr:267
+#: src/window.cr:287
 msgid "Usage unavailable"
 msgstr "Данные об использовании недоступны"
 
-#: src/window.cr:277
+#: src/window.cr:297
 msgid "Not mounted"
 msgstr "Не смонтирован"
 
-#: src/window.cr:279
+#: src/window.cr:299
 msgid "Used by %{devices}"
 msgstr "Используется %{devices}"
 
-#: src/window.cr:281
+#: src/window.cr:301
 msgid "Swap (active)"
 msgstr "Подкачка (активна)"
 
-#: src/window.cr:294
+#: src/window.cr:303
+msgid "Encrypted (locked)"
+msgstr "Зашифрован (заблокирован)"
+
+#: src/window.cr:310
+msgid "Microsoft reserved (MSR)"
+msgstr "Зарезервированный Microsoft (MSR)"
+
+#: src/window.cr:311
+msgid "Microsoft basic data"
+msgstr "Основные данные Microsoft"
+
+#: src/window.cr:312
+msgid "Windows recovery"
+msgstr "Восстановление Windows"
+
+#: src/window.cr:313
+msgid "EFI system partition"
+msgstr "Системный раздел EFI"
+
+#: src/window.cr:326
 msgid "The filesystem does not report disk usage."
 msgstr "Файловая система не сообщает об использовании дискового пространства."
 
-#: src/window.cr:307
+#: src/window.cr:339
 msgid "Could not read filesystem."
 msgstr "Не удалось прочитать файловую систему."
