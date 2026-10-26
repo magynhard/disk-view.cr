@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Disk View 0.1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/magynhard/disk-view.cr/issues\n"
-"POT-Creation-Date: 2026-10-25 21:35+0100\n"
+"POT-Creation-Date: 2026-10-26 08:02+0100\n"
 "PO-Revision-Date: 2026-10-25 00:00+0000\n"
 "Last-Translator: Matthäus J. N. Beyrle\n"
 "Language-Team: Korean\n"
@@ -12,31 +12,31 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: src/window.cr:17 src/window.cr:24
+#: src/window.cr:21 src/window.cr:28
 msgid "Refresh"
 msgstr "새로 고침"
 
-#: src/window.cr:22
+#: src/window.cr:26
 msgid "Main menu"
 msgstr "주 메뉴"
 
-#: src/window.cr:25
+#: src/window.cr:29
 msgid "About Disk View"
 msgstr "Disk View 정보"
 
-#: src/window.cr:26
+#: src/window.cr:30 src/window.cr:218
 msgid "Close"
 msgstr "닫기"
 
-#: src/window.cr:36
+#: src/window.cr:40
 msgid "Drives & Partitions"
 msgstr "드라이브 및 파티션"
 
-#: src/window.cr:37
+#: src/window.cr:41
 msgid "Used space · refreshes automatically every 15 seconds"
 msgstr "사용 중인 공간 · 15초마다 자동으로 새로 고침"
 
-#: src/window.cr:98
+#: src/window.cr:104
 msgid ""
 "Drives, partitions and disk usage at a glance.\n"
 "Built with Crystal, GTK4 and libadwaita."
@@ -44,64 +44,112 @@ msgstr ""
 "드라이브, 파티션 및 디스크 사용량을 한눈에 확인하세요.\n"
 "Crystal, GTK4 및 libadwaita로 개발되었습니다."
 
-#: src/window.cr:124
+#: src/window.cr:132
 msgid "Other filesystems / Network"
 msgstr "기타 파일 시스템 / 네트워크"
 
-#: src/window.cr:132
+#: src/window.cr:140
 msgid "%{count} drive"
 msgid_plural "%{count} drives"
 msgstr[0] "드라이브 %{count}개"
 
-#: src/window.cr:132
+#: src/window.cr:140
 msgid "%{drives} · Updated %{time}"
 msgstr "%{drives} · %{time}에 업데이트됨"
 
-#: src/window.cr:134
+#: src/window.cr:142
 msgid "Could not read drives: %{error}"
 msgstr "드라이브를 읽을 수 없습니다: %{error}"
 
-#: src/window.cr:164
+#: src/window.cr:172
 msgid "Reading …"
 msgstr "읽는 중…"
 
-#: src/window.cr:209 src/window.cr:247 src/window.cr:281
+#: src/window.cr:189
+msgid "System filesystems cannot be unmounted here."
+msgstr "시스템 파일 시스템은 여기서 마운트 해제할 수 없습니다."
+
+#: src/window.cr:191
+msgid "No mountable filesystem"
+msgstr "마운트할 수 있는 파일 시스템 없음"
+
+#: src/window.cr:193
+msgid "Unmount all filesystems"
+msgstr "모든 파일 시스템 마운트 해제"
+
+#: src/window.cr:193
+msgid "Mount all filesystems"
+msgstr "모든 파일 시스템 마운트"
+
+#: src/window.cr:195
+msgid "Unmount filesystem"
+msgstr "파일 시스템 마운트 해제"
+
+#: src/window.cr:195
+msgid "Mount filesystem"
+msgstr "파일 시스템 마운트"
+
+#: src/window.cr:209
+msgid "Mounting filesystems …"
+msgstr "파일 시스템 마운트 중…"
+
+#: src/window.cr:209
+msgid "Unmounting filesystems …"
+msgstr "파일 시스템 마운트 해제 중…"
+
+#: src/window.cr:215
+msgid "Filesystem operation completed"
+msgstr "파일 시스템 작업 완료"
+
+#: src/window.cr:217
+msgid "Filesystem operation failed"
+msgstr "파일 시스템 작업 실패"
+
+#: src/window.cr:217
+msgid ""
+"The following operations failed:\n"
+"%{errors}"
+msgstr ""
+"다음 작업이 실패했습니다:\n"
+"%{errors}"
+
+#: src/window.cr:268 src/window.cr:306 src/window.cr:341
 msgid "%{size} total"
 msgstr "전체 %{size}"
 
-#: src/window.cr:210 src/window.cr:270
+#: src/window.cr:269 src/window.cr:330
 msgid "%{state} · Usage unknown"
 msgstr "%{state} · 사용량 알 수 없음"
 
-#: src/window.cr:233
+#: src/window.cr:292
 msgid "Not mounted · usage unavailable"
 msgstr "마운트되지 않음 · 사용량을 확인할 수 없음"
 
-#: src/window.cr:235
+#: src/window.cr:294
 msgid "Usage unknown · no measurable filesystems"
 msgstr "사용량 알 수 없음 · 측정 가능한 파일 시스템 없음"
 
-#: src/window.cr:239 src/window.cr:279
+#: src/window.cr:298 src/window.cr:339
 msgid "%{size} used (%{percent} %%)"
 msgstr "%{size} 사용 중 (%{percent} %%)"
 
-#: src/window.cr:241
+#: src/window.cr:300
 msgid "At least %{size} used (%{percent} %%)"
 msgstr "최소 %{size} 사용 중 (%{percent} %%)"
 
-#: src/window.cr:243 src/window.cr:280
+#: src/window.cr:302 src/window.cr:340
 msgid "%{size} available"
 msgstr "%{size} 사용 가능"
 
-#: src/window.cr:244 src/window.cr:282
+#: src/window.cr:303 src/window.cr:342
 msgid "%{size} reserved"
 msgstr "%{size} 예약됨"
 
-#: src/window.cr:245
+#: src/window.cr:304
 msgid "%{known}/%{total} measured"
 msgstr "%{known}/%{total} 측정됨"
 
-#: src/window.cr:249
+#: src/window.cr:308
 msgid ""
 "Usage is relative to the full drive capacity. Unmounted or multi-device "
 "filesystems are excluded from the total. Unpartitioned space is not "
@@ -111,65 +159,77 @@ msgstr ""
 "치에 걸친 파일 시스템은 합계에서 제외됩니다. 파티션이 없는 공간은 파일 시스템"
 "의 사용 가능한 공간이 아닙니다."
 
-#: src/window.cr:250
+#: src/window.cr:309
 msgid ""
 "Microsoft reserved partitions have no filesystem and are excluded from usage "
 "totals."
 msgstr ""
 "Microsoft 예약 파티션에는 파일 시스템이 없으므로 전체 사용량에서 제외됩니다."
 
-#: src/window.cr:268
+#: src/window.cr:328
 msgid "Reserved partition · no filesystem"
 msgstr "예약 파티션 · 파일 시스템 없음"
 
-#: src/window.cr:272
+#: src/window.cr:332
 msgid "Mount this filesystem to read its disk usage."
 msgstr "디스크 사용량을 확인하려면 이 파일 시스템을 마운트하세요."
 
-#: src/window.cr:283
+#: src/window.cr:343
 msgid "%{size} filesystem size"
 msgstr "파일 시스템 크기 %{size}"
 
-#: src/window.cr:287
+#: src/window.cr:347
 msgid "Usage unavailable"
 msgstr "사용량을 확인할 수 없음"
 
-#: src/window.cr:297
+#: src/window.cr:357
 msgid "Not mounted"
 msgstr "마운트되지 않음"
 
-#: src/window.cr:299
+#: src/window.cr:359
 msgid "Used by %{devices}"
 msgstr "%{devices}에서 사용 중"
 
-#: src/window.cr:301
+#: src/window.cr:361
 msgid "Swap (active)"
 msgstr "스왑 (활성)"
 
-#: src/window.cr:303
+#: src/window.cr:363
 msgid "Encrypted (locked)"
 msgstr "암호화됨 (잠김)"
 
-#: src/window.cr:310
+#: src/window.cr:370
 msgid "Microsoft reserved (MSR)"
 msgstr "Microsoft 예약 (MSR)"
 
-#: src/window.cr:311
+#: src/window.cr:371
 msgid "Microsoft basic data"
 msgstr "Microsoft 기본 데이터"
 
-#: src/window.cr:312
+#: src/window.cr:372
 msgid "Windows recovery"
 msgstr "Windows 복구"
 
-#: src/window.cr:313
+#: src/window.cr:373
 msgid "EFI system partition"
 msgstr "EFI 시스템 파티션"
 
-#: src/window.cr:326
+#: src/window.cr:386
 msgid "The filesystem does not report disk usage."
 msgstr "파일 시스템이 디스크 사용량을 제공하지 않습니다."
 
-#: src/window.cr:339
+#: src/window.cr:399
 msgid "Could not read filesystem."
 msgstr "파일 시스템을 읽을 수 없습니다."
+
+#: src/mount_service.cr:32
+msgid "UDisks2 is unavailable."
+msgstr "UDisks2를 사용할 수 없습니다."
+
+#: src/mount_service.cr:46
+msgid "The filesystem is no longer available."
+msgstr "파일 시스템을 더 이상 사용할 수 없습니다."
+
+#: src/mount_service.cr:84
+msgid "This filesystem cannot be mounted or unmounted here."
+msgstr "이 파일 시스템은 여기서 마운트하거나 마운트 해제할 수 없습니다."

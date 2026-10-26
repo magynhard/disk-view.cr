@@ -56,7 +56,8 @@ describe DiskView::I18n do
           DiskView::I18n.translate("Drives & Partitions").should eq(heading)
           # Check every singular source message, including multiline messages,
           # so new UI text cannot silently remain untranslated in a catalog.
-          source = File.read(File.expand_path("../src/window.cr", __DIR__))
+          files = File.read(File.expand_path("../po/POTFILES", __DIR__)).lines.reject(&.empty?)
+          source = files.map { |file| File.read(File.expand_path("../#{file}", __DIR__)) }.join("\n")
           source.scan(/\btranslate\(("(?:[^"\\]|\\.)*")/).each do |match|
             message = String.from_json(match[1])
             translated = DiskView::I18n.translate(message)

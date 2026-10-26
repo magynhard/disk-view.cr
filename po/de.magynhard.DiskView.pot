@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Disk View\n"
 "Report-Msgid-Bugs-To: https://github.com/magynhard/disk-view.cr/issues\n"
-"POT-Creation-Date: 2026-10-25 21:35+0100\n"
+"POT-Creation-Date: 2026-10-26 08:02+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,159 +18,217 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: src/window.cr:17 src/window.cr:24
+#: src/window.cr:21 src/window.cr:28
 msgid "Refresh"
 msgstr ""
 
-#: src/window.cr:22
+#: src/window.cr:26
 msgid "Main menu"
 msgstr ""
 
-#: src/window.cr:25
+#: src/window.cr:29
 msgid "About Disk View"
 msgstr ""
 
-#: src/window.cr:26
+#: src/window.cr:30 src/window.cr:218
 msgid "Close"
 msgstr ""
 
-#: src/window.cr:36
+#: src/window.cr:40
 msgid "Drives & Partitions"
 msgstr ""
 
-#: src/window.cr:37
+#: src/window.cr:41
 msgid "Used space · refreshes automatically every 15 seconds"
 msgstr ""
 
-#: src/window.cr:98
+#: src/window.cr:104
 msgid ""
 "Drives, partitions and disk usage at a glance.\n"
 "Built with Crystal, GTK4 and libadwaita."
 msgstr ""
 
-#: src/window.cr:124
+#: src/window.cr:132
 msgid "Other filesystems / Network"
 msgstr ""
 
-#: src/window.cr:132
+#: src/window.cr:140
 msgid "%{count} drive"
 msgid_plural "%{count} drives"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/window.cr:132
+#: src/window.cr:140
 msgid "%{drives} · Updated %{time}"
 msgstr ""
 
-#: src/window.cr:134
+#: src/window.cr:142
 msgid "Could not read drives: %{error}"
 msgstr ""
 
-#: src/window.cr:164
+#: src/window.cr:172
 msgid "Reading …"
 msgstr ""
 
-#: src/window.cr:209 src/window.cr:247 src/window.cr:281
+#: src/window.cr:189
+msgid "System filesystems cannot be unmounted here."
+msgstr ""
+
+#: src/window.cr:191
+msgid "No mountable filesystem"
+msgstr ""
+
+#: src/window.cr:193
+msgid "Unmount all filesystems"
+msgstr ""
+
+#: src/window.cr:193
+msgid "Mount all filesystems"
+msgstr ""
+
+#: src/window.cr:195
+msgid "Unmount filesystem"
+msgstr ""
+
+#: src/window.cr:195
+msgid "Mount filesystem"
+msgstr ""
+
+#: src/window.cr:209
+msgid "Mounting filesystems …"
+msgstr ""
+
+#: src/window.cr:209
+msgid "Unmounting filesystems …"
+msgstr ""
+
+#: src/window.cr:215
+msgid "Filesystem operation completed"
+msgstr ""
+
+#: src/window.cr:217
+msgid "Filesystem operation failed"
+msgstr ""
+
+#: src/window.cr:217
+msgid ""
+"The following operations failed:\n"
+"%{errors}"
+msgstr ""
+
+#: src/window.cr:268 src/window.cr:306 src/window.cr:341
 msgid "%{size} total"
 msgstr ""
 
-#: src/window.cr:210 src/window.cr:270
+#: src/window.cr:269 src/window.cr:330
 msgid "%{state} · Usage unknown"
 msgstr ""
 
-#: src/window.cr:233
+#: src/window.cr:292
 msgid "Not mounted · usage unavailable"
 msgstr ""
 
-#: src/window.cr:235
+#: src/window.cr:294
 msgid "Usage unknown · no measurable filesystems"
 msgstr ""
 
-#: src/window.cr:239 src/window.cr:279
+#: src/window.cr:298 src/window.cr:339
 msgid "%{size} used (%{percent} %%)"
 msgstr ""
 
-#: src/window.cr:241
+#: src/window.cr:300
 msgid "At least %{size} used (%{percent} %%)"
 msgstr ""
 
-#: src/window.cr:243 src/window.cr:280
+#: src/window.cr:302 src/window.cr:340
 msgid "%{size} available"
 msgstr ""
 
-#: src/window.cr:244 src/window.cr:282
+#: src/window.cr:303 src/window.cr:342
 msgid "%{size} reserved"
 msgstr ""
 
-#: src/window.cr:245
+#: src/window.cr:304
 msgid "%{known}/%{total} measured"
 msgstr ""
 
-#: src/window.cr:249
+#: src/window.cr:308
 msgid ""
 "Usage is relative to the full drive capacity. Unmounted or multi-device "
 "filesystems are excluded from the total. Unpartitioned space is not "
 "available filesystem space."
 msgstr ""
 
-#: src/window.cr:250
+#: src/window.cr:309
 msgid ""
 "Microsoft reserved partitions have no filesystem and are excluded from usage "
 "totals."
 msgstr ""
 
-#: src/window.cr:268
+#: src/window.cr:328
 msgid "Reserved partition · no filesystem"
 msgstr ""
 
-#: src/window.cr:272
+#: src/window.cr:332
 msgid "Mount this filesystem to read its disk usage."
 msgstr ""
 
-#: src/window.cr:283
+#: src/window.cr:343
 msgid "%{size} filesystem size"
 msgstr ""
 
-#: src/window.cr:287
+#: src/window.cr:347
 msgid "Usage unavailable"
 msgstr ""
 
-#: src/window.cr:297
+#: src/window.cr:357
 msgid "Not mounted"
 msgstr ""
 
-#: src/window.cr:299
+#: src/window.cr:359
 msgid "Used by %{devices}"
 msgstr ""
 
-#: src/window.cr:301
+#: src/window.cr:361
 msgid "Swap (active)"
 msgstr ""
 
-#: src/window.cr:303
+#: src/window.cr:363
 msgid "Encrypted (locked)"
 msgstr ""
 
-#: src/window.cr:310
+#: src/window.cr:370
 msgid "Microsoft reserved (MSR)"
 msgstr ""
 
-#: src/window.cr:311
+#: src/window.cr:371
 msgid "Microsoft basic data"
 msgstr ""
 
-#: src/window.cr:312
+#: src/window.cr:372
 msgid "Windows recovery"
 msgstr ""
 
-#: src/window.cr:313
+#: src/window.cr:373
 msgid "EFI system partition"
 msgstr ""
 
-#: src/window.cr:326
+#: src/window.cr:386
 msgid "The filesystem does not report disk usage."
 msgstr ""
 
-#: src/window.cr:339
+#: src/window.cr:399
 msgid "Could not read filesystem."
+msgstr ""
+
+#: src/mount_service.cr:32
+msgid "UDisks2 is unavailable."
+msgstr ""
+
+#: src/mount_service.cr:46
+msgid "The filesystem is no longer available."
+msgstr ""
+
+#: src/mount_service.cr:84
+msgid "This filesystem cannot be mounted or unmounted here."
 msgstr ""

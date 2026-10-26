@@ -2,6 +2,7 @@ require "libadwaita"
 require "./i18n"
 require "./metadata"
 require "./disks"
+require "./mount_service"
 require "./window"
 
 module DiskView

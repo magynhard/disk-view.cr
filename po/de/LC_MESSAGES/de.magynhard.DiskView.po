@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Disk View 0.1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/magynhard/disk-view.cr/issues\n"
-"POT-Creation-Date: 2026-10-25 21:35+0100\n"
+"POT-Creation-Date: 2026-10-26 08:02+0100\n"
 "PO-Revision-Date: 2026-10-25 00:00+0000\n"
 "Last-Translator: Matthäus J. N. Beyrle\n"
 "Language-Team: German\n"
@@ -12,31 +12,31 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/window.cr:17 src/window.cr:24
+#: src/window.cr:21 src/window.cr:28
 msgid "Refresh"
 msgstr "Aktualisieren"
 
-#: src/window.cr:22
+#: src/window.cr:26
 msgid "Main menu"
 msgstr "Hauptmenü"
 
-#: src/window.cr:25
+#: src/window.cr:29
 msgid "About Disk View"
 msgstr "Über Disk View"
 
-#: src/window.cr:26
+#: src/window.cr:30 src/window.cr:218
 msgid "Close"
 msgstr "Schließen"
 
-#: src/window.cr:36
+#: src/window.cr:40
 msgid "Drives & Partitions"
 msgstr "Laufwerke & Partitionen"
 
-#: src/window.cr:37
+#: src/window.cr:41
 msgid "Used space · refreshes automatically every 15 seconds"
 msgstr "Belegter Speicher · automatische Aktualisierung alle 15 Sekunden"
 
-#: src/window.cr:98
+#: src/window.cr:104
 msgid ""
 "Drives, partitions and disk usage at a glance.\n"
 "Built with Crystal, GTK4 and libadwaita."
@@ -44,65 +44,113 @@ msgstr ""
 "Laufwerke, Partitionen und Speicherbelegung auf einen Blick.\n"
 "Entwickelt mit Crystal, GTK4 und libadwaita."
 
-#: src/window.cr:124
+#: src/window.cr:132
 msgid "Other filesystems / Network"
 msgstr "Weitere Dateisysteme / Netzwerk"
 
-#: src/window.cr:132
+#: src/window.cr:140
 msgid "%{count} drive"
 msgid_plural "%{count} drives"
 msgstr[0] "%{count} Laufwerk"
 msgstr[1] "%{count} Laufwerke"
 
-#: src/window.cr:132
+#: src/window.cr:140
 msgid "%{drives} · Updated %{time}"
 msgstr "%{drives} · Stand %{time}"
 
-#: src/window.cr:134
+#: src/window.cr:142
 msgid "Could not read drives: %{error}"
 msgstr "Laufwerke konnten nicht gelesen werden: %{error}"
 
-#: src/window.cr:164
+#: src/window.cr:172
 msgid "Reading …"
 msgstr "Wird gelesen …"
 
-#: src/window.cr:209 src/window.cr:247 src/window.cr:281
+#: src/window.cr:189
+msgid "System filesystems cannot be unmounted here."
+msgstr "Systemdateisysteme können hier nicht ausgehängt werden."
+
+#: src/window.cr:191
+msgid "No mountable filesystem"
+msgstr "Kein einhängbares Dateisystem"
+
+#: src/window.cr:193
+msgid "Unmount all filesystems"
+msgstr "Alle Dateisysteme aushängen"
+
+#: src/window.cr:193
+msgid "Mount all filesystems"
+msgstr "Alle Dateisysteme einhängen"
+
+#: src/window.cr:195
+msgid "Unmount filesystem"
+msgstr "Dateisystem aushängen"
+
+#: src/window.cr:195
+msgid "Mount filesystem"
+msgstr "Dateisystem einhängen"
+
+#: src/window.cr:209
+msgid "Mounting filesystems …"
+msgstr "Dateisysteme werden eingehängt …"
+
+#: src/window.cr:209
+msgid "Unmounting filesystems …"
+msgstr "Dateisysteme werden ausgehängt …"
+
+#: src/window.cr:215
+msgid "Filesystem operation completed"
+msgstr "Dateisystemaktion abgeschlossen"
+
+#: src/window.cr:217
+msgid "Filesystem operation failed"
+msgstr "Dateisystemaktion fehlgeschlagen"
+
+#: src/window.cr:217
+msgid ""
+"The following operations failed:\n"
+"%{errors}"
+msgstr ""
+"Folgende Aktionen sind fehlgeschlagen:\n"
+"%{errors}"
+
+#: src/window.cr:268 src/window.cr:306 src/window.cr:341
 msgid "%{size} total"
 msgstr "%{size} gesamt"
 
-#: src/window.cr:210 src/window.cr:270
+#: src/window.cr:269 src/window.cr:330
 msgid "%{state} · Usage unknown"
 msgstr "%{state} · Belegung unbekannt"
 
-#: src/window.cr:233
+#: src/window.cr:292
 msgid "Not mounted · usage unavailable"
 msgstr "Nicht eingehängt · Belegung nicht verfügbar"
 
-#: src/window.cr:235
+#: src/window.cr:294
 msgid "Usage unknown · no measurable filesystems"
 msgstr "Belegung unbekannt · keine auswertbaren Dateisysteme"
 
-#: src/window.cr:239 src/window.cr:279
+#: src/window.cr:298 src/window.cr:339
 msgid "%{size} used (%{percent} %%)"
 msgstr "%{size} belegt (%{percent} %%)"
 
-#: src/window.cr:241
+#: src/window.cr:300
 msgid "At least %{size} used (%{percent} %%)"
 msgstr "Mindestens %{size} belegt (%{percent} %%)"
 
-#: src/window.cr:243 src/window.cr:280
+#: src/window.cr:302 src/window.cr:340
 msgid "%{size} available"
 msgstr "%{size} verfügbar"
 
-#: src/window.cr:244 src/window.cr:282
+#: src/window.cr:303 src/window.cr:342
 msgid "%{size} reserved"
 msgstr "%{size} reserviert"
 
-#: src/window.cr:245
+#: src/window.cr:304
 msgid "%{known}/%{total} measured"
 msgstr "%{known}/%{total} erfasst"
 
-#: src/window.cr:249
+#: src/window.cr:308
 msgid ""
 "Usage is relative to the full drive capacity. Unmounted or multi-device "
 "filesystems are excluded from the total. Unpartitioned space is not "
@@ -112,7 +160,7 @@ msgstr ""
 "geräteübergreifende Dateisysteme sind nicht in der Summe enthalten. "
 "Unpartitionierter Speicher ist kein verfügbarer Dateisystemspeicher."
 
-#: src/window.cr:250
+#: src/window.cr:309
 msgid ""
 "Microsoft reserved partitions have no filesystem and are excluded from usage "
 "totals."
@@ -120,58 +168,70 @@ msgstr ""
 "Microsoft-reservierte Partitionen haben kein Dateisystem und werden nicht in "
 "die Gesamtbelegung eingerechnet."
 
-#: src/window.cr:268
+#: src/window.cr:328
 msgid "Reserved partition · no filesystem"
 msgstr "Reservierte Partition · kein Dateisystem"
 
-#: src/window.cr:272
+#: src/window.cr:332
 msgid "Mount this filesystem to read its disk usage."
 msgstr "Hänge dieses Dateisystem ein, um seine Speicherbelegung auszulesen."
 
-#: src/window.cr:283
+#: src/window.cr:343
 msgid "%{size} filesystem size"
 msgstr "%{size} Dateisystemgröße"
 
-#: src/window.cr:287
+#: src/window.cr:347
 msgid "Usage unavailable"
 msgstr "Belegung nicht verfügbar"
 
-#: src/window.cr:297
+#: src/window.cr:357
 msgid "Not mounted"
 msgstr "Nicht eingehängt"
 
-#: src/window.cr:299
+#: src/window.cr:359
 msgid "Used by %{devices}"
 msgstr "Verwendet von %{devices}"
 
-#: src/window.cr:301
+#: src/window.cr:361
 msgid "Swap (active)"
 msgstr "Swap (aktiv)"
 
-#: src/window.cr:303
+#: src/window.cr:363
 msgid "Encrypted (locked)"
 msgstr "Verschlüsselt (gesperrt)"
 
-#: src/window.cr:310
+#: src/window.cr:370
 msgid "Microsoft reserved (MSR)"
 msgstr "Microsoft-reserviert (MSR)"
 
-#: src/window.cr:311
+#: src/window.cr:371
 msgid "Microsoft basic data"
 msgstr "Microsoft-Datenpartition"
 
-#: src/window.cr:312
+#: src/window.cr:372
 msgid "Windows recovery"
 msgstr "Windows-Wiederherstellung"
 
-#: src/window.cr:313
+#: src/window.cr:373
 msgid "EFI system partition"
 msgstr "EFI-Systempartition"
 
-#: src/window.cr:326
+#: src/window.cr:386
 msgid "The filesystem does not report disk usage."
 msgstr "Das Dateisystem meldet keine Speicherbelegung."
 
-#: src/window.cr:339
+#: src/window.cr:399
 msgid "Could not read filesystem."
 msgstr "Dateisystem konnte nicht gelesen werden."
+
+#: src/mount_service.cr:32
+msgid "UDisks2 is unavailable."
+msgstr "UDisks2 ist nicht verfügbar."
+
+#: src/mount_service.cr:46
+msgid "The filesystem is no longer available."
+msgstr "Das Dateisystem ist nicht mehr verfügbar."
+
+#: src/mount_service.cr:84
+msgid "This filesystem cannot be mounted or unmounted here."
+msgstr "Dieses Dateisystem kann hier nicht ein- oder ausgehängt werden."

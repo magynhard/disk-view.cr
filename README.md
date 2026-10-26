@@ -11,7 +11,7 @@
 [![Linux](https://img.shields.io/badge/_-Linux-Sub?style=plastic&color=gray&logo=linux&logoColor=white)](#requirements)
 [![License: MIT](https://img.shields.io/badge/License-MIT-gold.svg?style=plastic&logo=mit)](LICENSE)
 
-A small, read-only GTK4/libadwaita application written in Crystal for Linux.
+A small GTK4/libadwaita application written in Crystal for Linux.
 The interface follows your system language. Disk usage is displayed using
 native horizontal GTK progress bars.
 
@@ -21,8 +21,11 @@ native horizontal GTK progress bars.
 
 - Mounted local filesystems and common network mounts, including total, used,
   available and reserved space when reported by the filesystem.
-- Unmounted disks and partitions, including their capacity. Usage cannot be
-  determined without mounting a filesystem; Disk View does not mount devices.
+- Unmounted disks and partitions, including their capacity. Usage becomes
+  available after mounting a filesystem using its mount button or another app.
+- Mount/unmount buttons on each partition and a collective button per drive.
+  A mixed drive mounts its remaining eligible filesystems; when all are mounted,
+  the collective action unmounts them. Operations run asynchronously in sequence.
 - Filesystem types and volume labels from the udev cache, including unmounted
   NTFS/exFAT/FAT volumes. Windows data, Microsoft reserved (MSR), recovery and EFI
   partitions are identified by their partition types; SSD/HDD media is shown
@@ -38,7 +41,8 @@ native horizontal GTK progress bars.
 - Light and dark appearance follow the system preference, including live changes,
   using libadwaita's default color scheme.
 - Asynchronous filesystem queries so slow network mounts do not block the UI.
-- No root privileges, shell commands or charting libraries required at runtime.
+- Runs as a normal desktop application. Mount/unmount requests use UDisks2 and
+  the system's polkit authorization dialog.
 - Original scalable application icon, desktop launcher and an Adwaita About
   dialog with author, version and license information.
 - English, German, French, Spanish, Simplified Chinese, Russian, Italian,
@@ -47,19 +51,21 @@ native horizontal GTK progress bars.
 ## Requirements
 
 Linux, Crystal 1.20+, Shards, GTK4, libadwaita 1.5+, libudev and GObject Introspection.
+Mount/unmount actions additionally require UDisks2, a system D-Bus and a desktop
+polkit authentication agent. Discovery and usage display work without UDisks2.
 Building also requires GNU gettext tools and `glib-compile-resources` (provided
 by the GLib development packages); the icon is embedded in the executable.
 
 On Arch / Manjaro:
 
 ```sh
-sudo pacman -S --needed base-devel crystal shards gtk4 libadwaita gobject-introspection gettext systemd-libs
+sudo pacman -S --needed base-devel crystal shards gtk4 libadwaita gobject-introspection gettext systemd-libs udisks2 polkit
 ```
 
 On Debian / Ubuntu:
 
 ```sh
-sudo apt install build-essential crystal shards libgtk-4-dev libadwaita-1-dev libgirepository1.0-dev gobject-introspection gir1.2-gtk-4.0 gir1.2-adw-1 gettext libudev-dev
+sudo apt install build-essential crystal shards libgtk-4-dev libadwaita-1-dev libgirepository1.0-dev gobject-introspection gir1.2-gtk-4.0 gir1.2-adw-1 gettext libudev-dev udisks2 polkitd
 ```
 
 Your distribution may require installing a current Crystal compiler and Shards
@@ -91,6 +97,16 @@ crystal tool format --check src/ spec/
 
 Use the header-bar menu for **About Disk View**, refresh and close. Keyboard
 shortcuts: `Ctrl+R` to refresh, `F1` for About, and `Ctrl+W` to close.
+
+The play/stop buttons mount and unmount filesystems. Reserved partitions, locked
+encrypted containers, swap, mapped backing devices and running system mounts
+such as `/` and `/boot/efi` are excluded. Current mount points are rechecked via UDisks
+before each operation. Busy filesystems fail normally; no forced unmount is used.
+Other mount buttons are disabled while a batch is running. The view refreshes
+after completion, preserving expanded groups. If one operation fails, remaining
+operations are attempted and the individual failures are shown; completed
+operations are not rolled back. Closing the window or dismissing a polkit
+authorization dialog stops subsequent requests.
 
 ## Install
 
@@ -178,7 +194,9 @@ unpartitioned capacity is not counted as available filesystem space. Unknown
 partition usage is never counted as free space.
 Only filesystems visible in the application's mount namespace can be listed.
 Capacity and occupancy are filesystem values, not directory-size estimates.
-The application does not scan directory trees, modify partitions or mount drives.
+The application does not scan directory trees, modify partitions, unlock encrypted
+containers or power off drives. Mount/unmount operations happen only after clicking
+the corresponding action button and use the system's standard authorization.
 
 ## Author and license
 

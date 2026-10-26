@@ -6,6 +6,10 @@ module DiskView
     @cancellable = Gio::Cancellable.new
     @closed = false
     @drive_rows = {} of String => Adw::ExpanderRow
+    @mount_buttons = [] of Gtk::Button
+    @mount_busy = false
+    @mount_cancellable = Gio::Cancellable.new
+    @toasts = Adw::ToastOverlay.new
 
     def initialize(app : Gtk::Application)
       super(application: app, title: "Disk View", default_width: 800, default_height: 540)
@@ -53,11 +57,13 @@ module DiskView
       toolbar = Adw::ToolbarView.new
       toolbar.add_top_bar(header)
       toolbar.content = clamp
-      self.content = toolbar
+      @toasts.child = toolbar
+      self.content = @toasts
 
       close_request_signal.connect do
         @closed = true
         @cancellable.cancel
+        @mount_cancellable.cancel
         false
       end
       GLib.timeout(15.seconds) do
@@ -110,12 +116,14 @@ module DiskView
     end
 
     private def reload
+      return if @mount_busy || @closed
       @cancellable.cancel
       @cancellable = Gio::Cancellable.new
       begin
         inventory = Disks.scan
         expanded = @drive_rows.transform_values(&.expanded?)
         @drive_rows.clear
+        @mount_buttons.clear
         while child = @rows.first_child
           @rows.remove(child)
         end
@@ -164,7 +172,55 @@ module DiskView
       info = label(translate("Reading …"), "caption")
       info.wrap = true
       box.append(info)
-      {box, bar, info}
+      {box, bar, info, line}
+    end
+
+    private def mount_button(requests : Array(MountRequest), collective = false, system_filesystem = false, mounted = false) : Gtk::Button
+      unmount = if request = requests.first?
+                  request.action.unmount?
+                else
+                  mounted
+                end
+      button = Gtk::Button.new_from_icon_name(unmount ? "media-playback-stop-symbolic" : "media-playback-start-symbolic")
+      button.add_css_class("flat")
+      button.valign = :center
+      button.sensitive = !requests.empty? && !@mount_busy
+      button.tooltip_text = if system_filesystem
+                              translate("System filesystems cannot be unmounted here.")
+                            elsif requests.empty?
+                              translate("No mountable filesystem")
+                            elsif collective
+                              unmount ? translate("Unmount all filesystems") : translate("Mount all filesystems")
+                            else
+                              unmount ? translate("Unmount filesystem") : translate("Mount filesystem")
+                            end
+      button.clicked_signal.connect { start_mount(requests, button) }
+      @mount_buttons << button
+      button
+    end
+
+    private def start_mount(requests : Array(MountRequest), button : Gtk::Button)
+      return if @mount_busy || @closed || requests.empty?
+      @mount_busy = true
+      @mount_buttons.each { |widget| widget.sensitive = false }
+      spinner = Gtk::Spinner.new
+      spinner.start
+      button.child = spinner
+      @status.text = requests.first.action.mount? ? translate("Mounting filesystems …") : translate("Unmounting filesystems …")
+      MountService.new.run(requests, @mount_cancellable) do |errors|
+        @mount_busy = false
+        next if @closed
+        reload
+        if errors.empty?
+          @toasts.add_toast(Adw::Toast.new(translate("Filesystem operation completed")))
+        else
+          dialog = Adw::AlertDialog.new(translate("Filesystem operation failed"), translate("The following operations failed:\n%{errors}", errors: errors.join("\n")))
+          dialog.add_response("close", translate("Close"))
+          dialog.default_response = "close"
+          dialog.close_response = "close"
+          dialog.present(self)
+        end
+      end
     end
 
     private def set_bar(bar : Gtk::ProgressBar, fraction : Float64)
@@ -193,6 +249,9 @@ module DiskView
       bar.width_request = 90
       bar.valign = :center
       row.add_suffix(bar)
+      requests = MountLogic.for_drive(drive)
+      system_filesystem = requests.empty? && drive.filesystems.any? { |disk| MountLogic.protected?(disk.paths) }
+      row.add_suffix(mount_button(requests, collective: true, system_filesystem: system_filesystem, mounted: drive.filesystems.any? { |disk| !disk.paths.empty? }))
       @drive_rows[drive.name] = row
       usages = Array(Usage?).new(drive.filesystems.size, nil)
       update_summary(drive, usages, bar, row)
@@ -259,7 +318,8 @@ module DiskView
       description = disk.metadata.partition_name if description.empty?
       title = [name, description, disk.paths.join(", ")].reject(&.empty?).join(" · ")
       metadata = [Disks.filesystem_name(disk.filesystem), disk.capacity.try { |bytes| DiskView.format_bytes(bytes) } || ""].reject(&.empty?).join(" · ")
-      box, bar, info = usage_row(title, metadata, indented)
+      box, bar, info, line = usage_row(title, metadata, indented)
+      line.append(mount_button(MountLogic.for_disk(disk), system_filesystem: MountLogic.protected?(disk.paths), mounted: !disk.paths.empty?))
       box.tooltip_text = [title, disk.source, role, disk.metadata.partition_name, disk.metadata.partition_type].reject(&.empty?).uniq.join("\n")
       group.append(box)
       if disk.paths.empty?
@@ -316,7 +376,7 @@ module DiskView
 
     private def query_usage(disk : Disk, cancellable : Gio::Cancellable, &on_result : Usage?, String ->)
       file = Gio::File.new_for_path(disk.paths.first)
-      file.query_filesystem_info_async("filesystem::size,filesystem::free,filesystem::used", 0, cancellable) do |_source, result|
+      AsyncCallbacks.query_filesystem_info(file, "filesystem::size,filesystem::free,filesystem::used", cancellable) do |result|
         usage = nil
         error = ""
         begin
