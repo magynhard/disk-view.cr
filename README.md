@@ -98,7 +98,7 @@ crystal tool format --check src/ spec/
 Use the header-bar menu for **About Disk View**, refresh and close. Keyboard
 shortcuts: `Ctrl+R` to refresh, `F1` for About, and `Ctrl+W` to close.
 
-The play/stop buttons mount and unmount filesystems. Reserved partitions, locked
+The play/eject buttons mount and unmount filesystems. Reserved partitions, locked
 encrypted containers, swap, mapped backing devices and running system mounts
 such as `/` and `/boot/efi` are excluded. Current mount points are rechecked via UDisks
 before each operation. Busy filesystems fail normally; no forced unmount is used.

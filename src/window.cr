@@ -181,7 +181,7 @@ module DiskView
                 else
                   mounted
                 end
-      button = Gtk::Button.new_from_icon_name(unmount ? "media-playback-stop-symbolic" : "media-playback-start-symbolic")
+      button = Gtk::Button.new_from_icon_name(unmount ? "media-eject-symbolic" : "media-playback-start-symbolic")
       button.add_css_class("flat")
       button.valign = :center
       button.sensitive = !requests.empty? && !@mount_busy
