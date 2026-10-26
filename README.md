@@ -50,7 +50,7 @@ native horizontal GTK progress bars.
 
 ## Requirements
 
-Linux, Crystal 1.20+, Shards, GTK4, libadwaita 1.5+, libudev and GObject Introspection.
+Linux, Crystal 1.21+, Shards, GTK4, libadwaita 1.5+, libudev and GObject Introspection.
 Mount/unmount actions additionally require UDisks2, a system D-Bus and a desktop
 polkit authentication agent. Discovery and usage display work without UDisks2.
 Building also requires GNU gettext tools and `glib-compile-resources` (provided
@@ -124,6 +124,23 @@ prefix. The executable needs no source files; when distributing it, include
 the translation catalogs to retain localized interfaces.
 
 ## Releases
+
+AppImage and local Flatpak package builds are available:
+
+```sh
+make appimage
+make flatpak
+```
+
+Both commands create versioned packages and SHA-256 files in `dist/`. The GitHub
+Actions workflow attaches them to newly published releases. AppImage builds use
+an Ubuntu 24.04 container and include GTK/Adwaita and translations. Flatpak builds
+use GNOME SDK 51, offline sources and explicit host-disk access.
+
+See [Linux packaging](doc/packaging.md) for prerequisites, testing and release
+steps. It also explains the current Flathub inclusion/AI-manifest restrictions
+and the remaining manual submission work. The generated Flatpak manifest is for
+local builds, not a Flathub submission.
 
 Download the Linux x86_64 archive from [GitHub Releases](https://github.com/magynhard/disk-view.cr/releases).
 It contains the executable, all ten translation catalogs, the desktop launcher,

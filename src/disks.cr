@@ -1,5 +1,6 @@
 require "set"
 require "./device_metadata"
+require "./platform_paths"
 
 module DiskView
   enum DiskState
@@ -57,17 +58,18 @@ module DiskView
     end
 
     def scan : Inventory
-      mounts = parse_mounts(File.read("/proc/self/mountinfo"))
+      mounts = parse_mounts(File.read(PlatformPaths.mountinfo))
       mounted = mounted_disks(mounts)
-      swaps = File.read("/proc/swaps").lines.skip(1).compact_map { |line| line.split.first? }.map { |path| unescape(path) }.to_set
+      swaps = File.read(PlatformPaths.host_path("/proc/swaps")).lines.skip(1).compact_map { |line| line.split.first? }.map { |path| unescape(path) }.to_set
       hierarchy(block_devices, mounted, swaps)
     end
 
     def block_devices : Array(BlockDevice)
-      names = Dir.children("/sys/class/block").sort.reject { |name| name.matches?(/\A(?:loop|ram|zram)\d+\z/) }
+      block_path = PlatformPaths.host_path("/sys/class/block")
+      names = Dir.children(block_path).sort.reject { |name| name.matches?(/\A(?:loop|ram|zram)\d+\z/) }
       metadata = UdevMetadata.read(names)
       names.compact_map do |name|
-        base = "/sys/class/block/#{name}"
+        base = "#{block_path}/#{name}"
         begin
           capacity = File.read("#{base}/size").strip.to_u64 * 512_u64
           next if capacity == 0
@@ -143,7 +145,13 @@ module DiskView
     end
 
     private def canonical_path(path : String) : String
-      File.realpath(path)
+      return path unless path.starts_with?("/dev/")
+      resolved = File.realpath(PlatformPaths.host_path(path))
+      if PlatformPaths.sandboxed? && resolved.starts_with?(PlatformPaths::HOST_ROOT + "/")
+        resolved[PlatformPaths::HOST_ROOT.bytesize..]
+      else
+        resolved
+      end
     rescue File::Error
       path
     end

@@ -1,0 +1,61 @@
+{
+  "crystal": {
+    "version": "1.21.0",
+    "x86_64": {
+      "url": "https://github.com/crystal-lang/crystal/releases/download/1.21.0/crystal-1.21.0-1-linux-x86_64-bundled.tar.gz",
+      "sha256": "cc407bd071915cc7b5d9348281e669a911d20a1f4b9fac52a62088660eb22208"
+    },
+    "aarch64": {
+      "url": "https://github.com/crystal-lang/crystal/releases/download/1.21.0/crystal-1.21.0-1-linux-aarch64-bundled.tar.gz",
+      "sha256": "87e042842baad7a03014dba819fe74bd81ba221d2a84200984433bcfb691d133"
+    }
+  },
+  "gc": {
+    "url": "https://github.com/bdwgc/bdwgc/releases/download/v8.2.12/gc-8.2.12.tar.gz",
+    "sha256": "42e5194ad06ab6ffb806c83eb99c03462b495d979cda782f3c72c08af833cd4e"
+  },
+  "linuxdeploy": {
+    "url": "https://github.com/linuxdeploy/linuxdeploy/releases/download/1-alpha-20251107-1/linuxdeploy-x86_64.AppImage",
+    "sha256": "c20cd71e3a4e3b80c3483cef793cda3f4e990aca14014d23c544ca3ce1270b4d"
+  },
+  "gtk_plugin": {
+    "url": "https://raw.githubusercontent.com/linuxdeploy/linuxdeploy-plugin-gtk/7a3fbc31a9e5075073ff8790f26effbac5f84453/linuxdeploy-plugin-gtk.sh",
+    "sha256": "b0f4cbc684a0103a9651f0955b635eaea0096b3a66c0f5a2c2aa337960375171"
+  },
+  "appimage_runtime": {
+    "url": "https://github.com/AppImage/type2-runtime/releases/download/20251108/runtime-x86_64",
+    "sha256": "2fca8b443c92510f1483a883f60061ad09b46b978b2631c807cd873a47ec260d"
+  },
+  "shards": {
+    "gettext": {
+      "version": "1.0.0",
+      "url": "https://codeberg.org/geopjr/gettext.cr.git",
+      "commit": "9374e7f42622bc917c42d5ff40488ae86ef99068"
+    },
+    "gi-crystal": {
+      "version": "0.26.0",
+      "url": "https://github.com/hugopl/gi-crystal.git",
+      "commit": "fcded7a9e80d42425d004764fdc79892c86d7dc0"
+    },
+    "gtk4": {
+      "version": "0.18.0",
+      "url": "https://github.com/hugopl/gtk4.cr.git",
+      "commit": "b0be1f829b0ac3080fe607bde11ae37338736675"
+    },
+    "harfbuzz": {
+      "version": "0.2.1",
+      "url": "https://github.com/hugopl/harfbuzz.cr.git",
+      "commit": "8f070deee7840c7dabeaf228513ac9d93807cdd2"
+    },
+    "libadwaita": {
+      "version": "0.1.0",
+      "url": "https://github.com/hugopl/libadwaita.cr.git",
+      "commit": "32d7c7de0d0a2bd9f4c0a03011f5cebf2868c859"
+    },
+    "pango": {
+      "version": "0.3.1",
+      "url": "https://github.com/hugopl/pango.cr.git",
+      "commit": "378511bc8c5a8278025a30e1330f948dc1c99e7c"
+    }
+  }
+}

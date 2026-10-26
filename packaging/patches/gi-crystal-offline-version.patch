@@ -1,0 +1,5 @@
+--- a/src/generator/main.cr
++++ b/src/generator/main.cr
+@@ -9 +9 @@
+-VERSION = {{ `shards version "#{__DIR__}"`.strip.stringify }}
++VERSION = {{read_file("#{__DIR__}/../../shard.yml").split("version: ")[1].split("\n")[0]}}

@@ -1,0 +1,93 @@
+name: Linux packages
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: [master]
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  appimage:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Packaging dependencies
+        run: |
+          python3 -m venv "$RUNNER_TEMP/packaging-venv"
+          "$RUNNER_TEMP/packaging-venv/bin/pip" install PyYAML==6.0.2
+          echo "$RUNNER_TEMP/packaging-venv/bin" >> "$GITHUB_PATH"
+          sudo apt-get update -qq
+          sudo apt-get install -y appstream desktop-file-utils
+      - name: Validate version and metadata
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+        run: |
+          version=$(python3 scripts/packaging.py verify)
+          if [[ -n "$RELEASE_TAG" ]]; then test "${RELEASE_TAG#v}" = "$version"; fi
+          make validate-metadata
+          make test-packaging
+      - name: Build AppImage on Ubuntu 24.04
+        run: make appimage
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: appimage-x86_64
+          path: dist/*.AppImage*
+          if-no-files-found: error
+
+  flatpak:
+    runs-on: ubuntu-24.04
+    container:
+      image: ghcr.io/flathub-infra/flatpak-github-actions:gnome-51
+      options: --privileged
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Packaging dependencies and SDK
+        run: |
+          dnf install -y python3-pyyaml ostree
+          flatpak --version
+          for ref in org.gnome.Platform//51 org.gnome.Sdk//51; do
+            if ! flatpak info "$ref" > /dev/null 2>&1; then
+              flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+              flatpak install --user --noninteractive --assumeyes flathub "$ref"
+            fi
+          done
+      - name: Validate release version
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+        run: |
+          version=$(python3 scripts/packaging.py verify)
+          if [[ -n "$RELEASE_TAG" ]]; then test "${RELEASE_TAG#v}" = "$version"; fi
+      - name: Build local Flatpak bundle (no Flathub submission)
+        run: make flatpak
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: flatpak-x86_64
+          path: dist/*.flatpak*
+          if-no-files-found: error
+
+  release-assets:
+    if: github.event_name == 'release'
+    needs: [appimage, flatpak]
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          path: dist
+          merge-multiple: true
+      - name: Attach packages to the published GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+        run: gh release upload "$RELEASE_TAG" dist/* --clobber

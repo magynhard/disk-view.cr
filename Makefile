@@ -1,4 +1,4 @@
-.PHONY: setup build run test format clean install uninstall locales generate_locales
+.PHONY: setup build run test format clean install uninstall locales generate_locales validate-metadata appimage flatpak test-packaging
 
 PREFIX ?= /usr/local
 DESTDIR ?=
@@ -44,14 +44,30 @@ generate_locales:
 install: build
 	install -Dm755 bin/disk-view "$(DESTDIR)$(PREFIX)/bin/disk-view"
 	install -Dm644 data/$(APP_ID).desktop "$(DESTDIR)$(PREFIX)/share/applications/$(APP_ID).desktop"
+	install -Dm644 data/$(APP_ID).metainfo.xml "$(DESTDIR)$(PREFIX)/share/metainfo/$(APP_ID).metainfo.xml"
 	install -Dm644 data/icons/$(APP_ID).svg "$(DESTDIR)$(PREFIX)/share/icons/hicolor/scalable/apps/$(APP_ID).svg"
-	install -Dm644 LICENSE "$(DESTDIR)$(PREFIX)/share/licenses/disk-view/LICENSE"
+	install -Dm644 LICENSE "$(DESTDIR)$(PREFIX)/share/licenses/$(APP_ID)/LICENSE"
 	@for lang in $(LANGUAGES); do \
 		install -Dm644 "po/$$lang/LC_MESSAGES/$(APP_ID).mo" "$(DESTDIR)$(PREFIX)/share/locale/$$lang/LC_MESSAGES/$(APP_ID).mo" || exit $$?; \
 	done
 
 uninstall:
+	rm -f "$(DESTDIR)$(PREFIX)/share/metainfo/$(APP_ID).metainfo.xml"
+	rm -f "$(DESTDIR)$(PREFIX)/share/licenses/$(APP_ID)/LICENSE"
 	rm -f "$(DESTDIR)$(PREFIX)/bin/disk-view" "$(DESTDIR)$(PREFIX)/share/applications/$(APP_ID).desktop" "$(DESTDIR)$(PREFIX)/share/icons/hicolor/scalable/apps/$(APP_ID).svg" "$(DESTDIR)$(PREFIX)/share/licenses/disk-view/LICENSE"
 	@for lang in $(LANGUAGES); do \
 		rm -f "$(DESTDIR)$(PREFIX)/share/locale/$$lang/LC_MESSAGES/$(APP_ID).mo" || exit $$?; \
 	done
+
+validate-metadata:
+	desktop-file-validate data/$(APP_ID).desktop
+	appstreamcli validate --no-net --pedantic data/$(APP_ID).metainfo.xml
+
+appimage:
+	bash scripts/build-appimage.sh
+
+flatpak:
+	bash scripts/build-flatpak.sh
+
+test-packaging:
+	python3 -m unittest discover -s tests -v

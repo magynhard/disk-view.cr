@@ -5,7 +5,7 @@ authors:
 license: MIT
 description: A small GTK4 disk usage overview for Linux
 repository: https://github.com/magynhard/disk-view.cr
-crystal: ">= 1.20.0"
+crystal: ">= 1.21.0"
 
 targets:
   disk-view:

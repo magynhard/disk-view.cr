@@ -3,6 +3,7 @@ require "./i18n"
 require "./metadata"
 require "./disks"
 require "./mount_service"
+require "./styles"
 require "./window"
 
 module DiskView
@@ -16,6 +17,7 @@ module DiskView
 
     @[GObject::Virtual]
     def activate
+      I18n.bind_toolkit_domains
       Gtk::IconTheme.for_display(Gdk::Display.default.not_nil!).add_resource_path("/de/magynhard/DiskView/icons")
       Gtk::Window.default_icon_name = APP_ID
       window = active_window || Window.new(self)

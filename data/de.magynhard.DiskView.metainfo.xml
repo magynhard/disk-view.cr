@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SPDX-License-Identifier: CC0-1.0 -->
+<component type="desktop-application">
+  <id>de.magynhard.DiskView</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Disk View</name>
+  <summary>View drives, partitions and disk usage</summary>
+  <summary xml:lang="de">Laufwerke, Partitionen und Speicherbelegung anzeigen</summary>
+  <developer id="de.magynhard">
+    <name translate="no">Matthäus J. N. Beyrle</name>
+  </developer>
+  <description>
+    <p>Disk View shows your computer's drives and partitions in a compact, hierarchical overview. Usage bars distinguish occupied, available and reserved filesystem space.</p>
+    <p>Identify Linux and Windows filesystems, including unmounted NTFS volumes, volume labels, recovery partitions and solid-state drives. Expand a drive to inspect its partitions, or use the mount controls for individual filesystems and drive groups.</p>
+    <p>The interface follows the system language and light or dark appearance. Information refreshes automatically while preserving expanded groups.</p>
+    <p>Mount operations use the system UDisks2 service and its normal authorization flow. Filesystem-less partitions and running system mounts are excluded from these actions.</p>
+  </description>
+  <launchable type="desktop-id">de.magynhard.DiskView.desktop</launchable>
+  <translation type="gettext">de.magynhard.DiskView</translation>
+  <url type="homepage">https://github.com/magynhard/disk-view.cr</url>
+  <url type="bugtracker">https://github.com/magynhard/disk-view.cr/issues</url>
+  <url type="vcs-browser">https://github.com/magynhard/disk-view.cr</url>
+  <update_contact>disk-view.github.com@mail.magynhard.de</update_contact>
+  <categories>
+    <category>System</category>
+    <category>Utility</category>
+  </categories>
+  <content_rating type="oars-1.1"/>
+  <requires>
+    <display_length compare="ge">700</display_length>
+  </requires>
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+  </supports>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Drive groups, partitions and filesystem usage</caption>
+      <image>https://raw.githubusercontent.com/magynhard/disk-view.cr/master/doc/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="0.1.0" date="2026-10-25">
+      <description>
+        <p>Initial release with a hierarchical disk usage overview and translations in ten languages.</p>
+      </description>
+      <url>https://github.com/magynhard/disk-view.cr/releases/tag/0.1.0</url>
+    </release>
+  </releases>
+</component>

@@ -1,0 +1,10 @@
+/* libadwaita 1.5 and newer differ in how .error changes a progress bar's accent.
+ * Target the fill explicitly and use the shared semantic error color instead. */
+progressbar.disk-usage-critical > trough > progress {
+  background-color: @error_bg_color;
+  background-image: none;
+}
+
+progressbar.disk-usage-critical > trough {
+  background-color: alpha(@error_bg_color, 0.15);
+}

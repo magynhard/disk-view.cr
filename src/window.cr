@@ -13,6 +13,7 @@ module DiskView
 
     def initialize(app : Gtk::Application)
       super(application: app, title: "Disk View", default_width: 800, default_height: 540)
+      Styles.install(Gdk::Display.default.not_nil!)
       set_size_request(700, 400)
       setup_actions(app)
 
@@ -226,9 +227,9 @@ module DiskView
     private def set_bar(bar : Gtk::ProgressBar, fraction : Float64)
       bar.fraction = fraction
       if fraction >= 0.9
-        bar.add_css_class("error")
+        bar.add_css_class("disk-usage-critical")
       else
-        bar.remove_css_class("error")
+        bar.remove_css_class("disk-usage-critical")
       end
     end
 
@@ -375,7 +376,7 @@ module DiskView
     end
 
     private def query_usage(disk : Disk, cancellable : Gio::Cancellable, &on_result : Usage?, String ->)
-      file = Gio::File.new_for_path(disk.paths.first)
+      file = Gio::File.new_for_path(PlatformPaths.host_path(disk.paths.first))
       AsyncCallbacks.query_filesystem_info(file, "filesystem::size,filesystem::free,filesystem::used", cancellable) do |result|
         usage = nil
         error = ""

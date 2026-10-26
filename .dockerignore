@@ -1,0 +1,10 @@
+.git
+.idea
+lib
+bin
+build
+dist
+.flatpak-builder
+**/*.mo
+**/*.gresource
+**/__pycache__
