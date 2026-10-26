@@ -118,6 +118,7 @@ def flatpak_manifest(destination):
         "runtime-version": "51",
         "sdk": "org.gnome.Sdk",
         "separate-locales": False,
+        "appstream-compose": False,
         "command": "disk-view",
         "x-local-development-only": "AI-assisted local packaging; NOT a Flathub submission manifest. See doc/packaging.md.",
         "finish-args": ["--require-version=1.17.0", "--socket=wayland", "--socket=fallback-x11", "--share=ipc", "--device=dri", "--filesystem=host-root:ro", "--filesystem=/run/udev:ro", "--system-talk-name=org.freedesktop.UDisks2"],

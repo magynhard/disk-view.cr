@@ -15,8 +15,9 @@ fi
 ostree --repo="$repo" config set core.min-free-space-percent 0
 ostree --repo="$repo" config set core.min-free-space-size 512MB
 flatpak-builder --user --force-clean --disable-rofiles-fuse \
-    --repo="$repo" \
     "$root/build/flatpak/app" "$root/build/flatpak/de.magynhard.DiskView.json"
+bash scripts/flatpak-compose.sh "$root/build/flatpak/app/files"
+flatpak build-export "$repo" "$root/build/flatpak/app"
 flatpak build-bundle --runtime-repo=https://flathub.org/repo/flathub.flatpakrepo "$repo" \
     "$root/dist/Disk_View-${version}-$(uname -m).flatpak" de.magynhard.DiskView
 cd dist

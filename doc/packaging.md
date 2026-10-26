@@ -51,7 +51,8 @@ builds, not a promise of bit-identical output across repository updates.
 
 ## Local Flatpak
 
-Install Flatpak 1.17+, flatpak-builder, OSTree, Python 3.12+, PyYAML and Make.
+Install Flatpak 1.17+, flatpak-builder, AppStream (with `appstreamcli compose`),
+OSTree, Python 3.12+, PyYAML and Make.
 Install the matching SDK/runtime from Flathub before building:
 
 ```sh
@@ -69,6 +70,10 @@ Flatpak sources. The actual compiler/generator/application build is offline;
 source. Compiler binaries are build tools, not prebuilt application binaries.
 All ten small app catalogs are included in the local bundle, without requiring
 a separate app-specific Locale bundle.
+
+AppStream metadata is composed before export with PNG icons. The build checks
+that both 64- and 128-pixel icons exist so the single-file bundle can embed them
+for the software center's local installation preview.
 
 Build/export directories and caches are local and ignored by Git. The generated
 OSTree export repo uses a 512 MB free-space reserve instead of a percentage of
