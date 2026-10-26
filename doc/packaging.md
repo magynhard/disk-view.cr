@@ -59,7 +59,7 @@ Install the matching SDK/runtime from Flathub before building:
 flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install --user flathub org.gnome.Platform//51 org.gnome.Sdk//51
 make flatpak
-flatpak install --user dist/Disk_View-0.1.0-x86_64.flatpak
+flatpak install --user dist/Disk_View-0.1.1-x86_64.flatpak
 flatpak run de.magynhard.DiskView
 ```
 

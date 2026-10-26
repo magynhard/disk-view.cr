@@ -94,6 +94,21 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="0.1.1" date="2026-10-26">
+      <description>
+        <p>Add mount and unmount controls, improve Windows partition identification, and introduce AppImage and Flatpak packages with localized metadata and consistent usage warnings.</p>
+        <p xml:lang="de">Fügt Funktionen zum Ein- und Aushängen hinzu, verbessert die Erkennung von Windows-Partitionen und bietet AppImage- und Flatpak-Pakete mit übersetzten Paketinformationen und einheitlichen Belegungswarnungen.</p>
+        <p xml:lang="fr">Ajoute des commandes de montage et de démontage, améliore l’identification des partitions Windows et propose des paquets AppImage et Flatpak avec des métadonnées traduites et des avertissements d’utilisation cohérents.</p>
+        <p xml:lang="es">Añade controles para montar y desmontar, mejora la identificación de particiones de Windows e incorpora paquetes AppImage y Flatpak con metadatos traducidos y advertencias de uso coherentes.</p>
+        <p xml:lang="zh_CN">添加挂载和卸载控件，改进 Windows 分区识别，并提供带有本地化元数据和一致使用量警告的 AppImage 和 Flatpak 软件包。</p>
+        <p xml:lang="ru">Добавлены элементы управления монтированием и размонтированием, улучшено определение разделов Windows, а также представлены пакеты AppImage и Flatpak с переведёнными метаданными и единообразными предупреждениями о заполнении.</p>
+        <p xml:lang="it">Aggiunge controlli per montare e smontare, migliora l’identificazione delle partizioni Windows e introduce pacchetti AppImage e Flatpak con metadati tradotti e avvisi di utilizzo uniformi.</p>
+        <p xml:lang="pl">Dodaje przyciski montowania i odmontowywania, poprawia rozpoznawanie partycji Windows oraz wprowadza pakiety AppImage i Flatpak z przetłumaczonymi metadanymi i spójnymi ostrzeżeniami o zajętości.</p>
+        <p xml:lang="ko">마운트 및 마운트 해제 컨트롤을 추가하고 Windows 파티션 식별을 개선했으며, 번역된 메타데이터와 일관된 사용량 경고를 제공하는 AppImage 및 Flatpak 패키지를 도입했습니다.</p>
+        <p xml:lang="ja">マウントとマウント解除の操作を追加し、Windows パーティションの識別を改善しました。また、翻訳済みメタデータと統一された使用量警告を備えた AppImage および Flatpak パッケージを導入しました。</p>
+      </description>
+      <url>https://github.com/magynhard/disk-view.cr/releases/tag/0.1.1</url>
+    </release>
     <release version="0.1.0" date="2026-10-25">
       <description>
         <p>Initial release with a hierarchical disk usage overview and translations in ten languages.</p>
