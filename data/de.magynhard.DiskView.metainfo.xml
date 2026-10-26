@@ -7,6 +7,14 @@
   <name>Disk View</name>
   <summary>View drives, partitions and disk usage</summary>
   <summary xml:lang="de">Laufwerke, Partitionen und Speicherbelegung anzeigen</summary>
+  <summary xml:lang="fr">Afficher les disques, les partitions et l’utilisation de l’espace disque</summary>
+  <summary xml:lang="es">Ver unidades, particiones y uso del disco</summary>
+  <summary xml:lang="zh_CN">查看驱动器、分区和磁盘使用情况</summary>
+  <summary xml:lang="ru">Просмотр накопителей, разделов и использования дискового пространства</summary>
+  <summary xml:lang="it">Visualizza unità, partizioni e utilizzo del disco</summary>
+  <summary xml:lang="pl">Wyświetl dyski, partycje i zajętość miejsca</summary>
+  <summary xml:lang="ko">드라이브, 파티션 및 디스크 사용량 보기</summary>
+  <summary xml:lang="ja">ドライブ、パーティション、ディスク使用量を表示</summary>
   <developer id="de.magynhard">
     <name translate="no">Matthäus J. N. Beyrle</name>
   </developer>
@@ -15,6 +23,42 @@
     <p>Identify Linux and Windows filesystems, including unmounted NTFS volumes, volume labels, recovery partitions and solid-state drives. Expand a drive to inspect its partitions, or use the mount controls for individual filesystems and drive groups.</p>
     <p>The interface follows the system language and light or dark appearance. Information refreshes automatically while preserving expanded groups.</p>
     <p>Mount operations use the system UDisks2 service and its normal authorization flow. Filesystem-less partitions and running system mounts are excluded from these actions.</p>
+    <p xml:lang="de">Disk View zeigt die Laufwerke und Partitionen Deines Computers in einer kompakten, hierarchischen Übersicht. Belegungsbalken unterscheiden zwischen belegtem, verfügbarem und reserviertem Dateisystemspeicher.</p>
+    <p xml:lang="de">Erkenne Linux- und Windows-Dateisysteme, einschließlich nicht eingehängter NTFS-Volumes, Volume-Bezeichnungen, Wiederherstellungspartitionen und SSDs. Klappe ein Laufwerk auf, um seine Partitionen anzuzeigen, oder nutze die Einhängefunktionen für einzelne Dateisysteme und Laufwerksgruppen.</p>
+    <p xml:lang="de">Die Oberfläche übernimmt die Systemsprache sowie das helle oder dunkle Erscheinungsbild. Die Informationen werden automatisch aktualisiert; aufgeklappte Gruppen bleiben dabei geöffnet.</p>
+    <p xml:lang="de">Das Ein- und Aushängen erfolgt über den UDisks2-Systemdienst und dessen üblichen Berechtigungsdialog. Partitionen ohne Dateisystem und für das laufende System verwendete Einhängepunkte sind von diesen Aktionen ausgeschlossen.</p>
+    <p xml:lang="fr">Disk View présente les disques et les partitions de votre ordinateur dans une vue hiérarchique compacte. Les barres d’utilisation distinguent l’espace occupé, disponible et réservé du système de fichiers.</p>
+    <p xml:lang="fr">Identifiez les systèmes de fichiers Linux et Windows, y compris les volumes NTFS non montés, les étiquettes de volume, les partitions de récupération et les SSD. Développez un disque pour examiner ses partitions ou utilisez les commandes de montage pour les systèmes de fichiers individuels et les groupes de disques.</p>
+    <p xml:lang="fr">L’interface suit la langue du système et son apparence claire ou sombre. Les informations sont actualisées automatiquement tout en conservant les groupes développés.</p>
+    <p xml:lang="fr">Les opérations de montage utilisent le service système UDisks2 et sa procédure d’autorisation habituelle. Les partitions sans système de fichiers et les points de montage utilisés par le système en cours d’exécution sont exclus de ces actions.</p>
+    <p xml:lang="es">Disk View muestra las unidades y particiones de tu equipo en una vista jerárquica compacta. Las barras de uso distinguen el espacio ocupado, disponible y reservado del sistema de archivos.</p>
+    <p xml:lang="es">Identifica sistemas de archivos de Linux y Windows, incluidos volúmenes NTFS sin montar, etiquetas de volumen, particiones de recuperación y unidades SSD. Expande una unidad para examinar sus particiones o utiliza los controles de montaje para sistemas de archivos individuales y grupos de unidades.</p>
+    <p xml:lang="es">La interfaz sigue el idioma del sistema y su apariencia clara u oscura. La información se actualiza automáticamente y mantiene abiertos los grupos expandidos.</p>
+    <p xml:lang="es">Las operaciones de montaje utilizan el servicio del sistema UDisks2 y su procedimiento de autorización habitual. Las particiones sin sistema de archivos y los puntos de montaje utilizados por el sistema en ejecución quedan excluidos de estas acciones.</p>
+    <p xml:lang="zh_CN">Disk View 以紧凑的层级视图显示计算机的驱动器和分区。使用量条可区分文件系统中已用、可用和保留的空间。</p>
+    <p xml:lang="zh_CN">识别 Linux 和 Windows 文件系统，包括未挂载的 NTFS 卷、卷标、恢复分区和固态硬盘。展开驱动器可查看其分区，也可以使用挂载控件操作单个文件系统或驱动器组。</p>
+    <p xml:lang="zh_CN">界面遵循系统语言和浅色或深色外观。信息会自动刷新，同时保持已展开的分组。</p>
+    <p xml:lang="zh_CN">挂载操作使用系统 UDisks2 服务及其常规授权流程。没有文件系统的分区以及正在运行的系统所使用的挂载点不参与这些操作。</p>
+    <p xml:lang="ru">Disk View показывает накопители и разделы компьютера в компактном иерархическом представлении. Полосы заполнения различают занятое, доступное и зарезервированное пространство файловой системы.</p>
+    <p xml:lang="ru">Определяйте файловые системы Linux и Windows, включая несмонтированные тома NTFS, метки томов, разделы восстановления и SSD. Разверните накопитель, чтобы просмотреть его разделы, или используйте элементы управления монтированием для отдельных файловых систем и групп накопителей.</p>
+    <p xml:lang="ru">Интерфейс использует язык системы и светлую или тёмную тему. Информация обновляется автоматически, сохраняя раскрытые группы.</p>
+    <p xml:lang="ru">Операции монтирования выполняются через системную службу UDisks2 с её стандартной процедурой авторизации. Разделы без файловой системы и точки монтирования, используемые работающей системой, исключены из этих действий.</p>
+    <p xml:lang="it">Disk View mostra le unità e le partizioni del computer in una vista gerarchica compatta. Le barre di utilizzo distinguono lo spazio occupato, disponibile e riservato del file system.</p>
+    <p xml:lang="it">Identifica i file system Linux e Windows, inclusi i volumi NTFS non montati, le etichette dei volumi, le partizioni di ripristino e le unità SSD. Espandi un’unità per esaminarne le partizioni oppure usa i controlli di montaggio per singoli file system e gruppi di unità.</p>
+    <p xml:lang="it">L’interfaccia segue la lingua del sistema e il suo aspetto chiaro o scuro. Le informazioni si aggiornano automaticamente mantenendo aperti i gruppi espansi.</p>
+    <p xml:lang="it">Le operazioni di montaggio utilizzano il servizio di sistema UDisks2 e la sua normale procedura di autorizzazione. Le partizioni senza file system e i punti di montaggio utilizzati dal sistema in esecuzione sono esclusi da queste azioni.</p>
+    <p xml:lang="pl">Disk View przedstawia dyski i partycje komputera w zwartym, hierarchicznym widoku. Paski zajętości rozróżniają zajęte, dostępne i zarezerwowane miejsce w systemie plików.</p>
+    <p xml:lang="pl">Rozpoznawaj systemy plików Linux i Windows, w tym niezamontowane woluminy NTFS, etykiety woluminów, partycje odzyskiwania i dyski SSD. Rozwiń dysk, aby sprawdzić jego partycje, lub użyj przycisków montowania dla poszczególnych systemów plików i grup dysków.</p>
+    <p xml:lang="pl">Interfejs korzysta z języka systemu oraz jasnego lub ciemnego motywu. Informacje odświeżają się automatycznie, zachowując rozwinięte grupy.</p>
+    <p xml:lang="pl">Operacje montowania korzystają z usługi systemowej UDisks2 i jej standardowej procedury autoryzacji. Partycje bez systemu plików oraz punkty montowania używane przez działający system są wyłączone z tych działań.</p>
+    <p xml:lang="ko">Disk View는 컴퓨터의 드라이브와 파티션을 간결한 계층 구조로 보여 줍니다. 사용량 막대는 파일 시스템의 사용 중인 공간, 사용 가능한 공간, 예약된 공간을 구분합니다.</p>
+    <p xml:lang="ko">마운트되지 않은 NTFS 볼륨, 볼륨 레이블, 복구 파티션, SSD를 포함하여 Linux와 Windows 파일 시스템을 식별합니다. 드라이브를 펼쳐 파티션을 살펴보거나, 마운트 컨트롤로 개별 파일 시스템과 드라이브 그룹을 관리할 수 있습니다.</p>
+    <p xml:lang="ko">인터페이스는 시스템 언어와 밝은 모드 또는 어두운 모드를 따릅니다. 펼쳐진 그룹을 유지하면서 정보를 자동으로 새로 고칩니다.</p>
+    <p xml:lang="ko">마운트 작업에는 시스템 UDisks2 서비스와 일반적인 권한 인증 절차를 사용합니다. 파일 시스템이 없는 파티션과 실행 중인 시스템에서 사용하는 마운트 지점은 이러한 작업에서 제외됩니다.</p>
+    <p xml:lang="ja">Disk View は、コンピューターのドライブとパーティションをコンパクトな階層表示で一覧にします。使用量バーは、ファイルシステムの使用中、利用可能、予約済みの領域を区別します。</p>
+    <p xml:lang="ja">マウントされていない NTFS ボリューム、ボリュームラベル、回復パーティション、SSD を含む Linux と Windows のファイルシステムを識別します。ドライブを展開してパーティションを確認したり、マウント操作で個々のファイルシステムやドライブのグループを管理したりできます。</p>
+    <p xml:lang="ja">インターフェースはシステムの言語とライトモードまたはダークモードに従います。展開したグループを維持しながら、情報を自動更新します。</p>
+    <p xml:lang="ja">マウント操作には、システムの UDisks2 サービスと通常の認証手順を使用します。ファイルシステムのないパーティションと、実行中のシステムが使用しているマウントポイントは、これらの操作の対象外です。</p>
   </description>
   <launchable type="desktop-id">de.magynhard.DiskView.desktop</launchable>
   <translation type="gettext">de.magynhard.DiskView</translation>
@@ -37,6 +81,15 @@
   <screenshots>
     <screenshot type="default">
       <caption>Drive groups, partitions and filesystem usage</caption>
+      <caption xml:lang="de">Laufwerksgruppen, Partitionen und Dateisystembelegung</caption>
+      <caption xml:lang="fr">Groupes de disques, partitions et utilisation des systèmes de fichiers</caption>
+      <caption xml:lang="es">Grupos de unidades, particiones y uso de los sistemas de archivos</caption>
+      <caption xml:lang="zh_CN">驱动器组、分区和文件系统使用情况</caption>
+      <caption xml:lang="ru">Группы накопителей, разделы и использование файловых систем</caption>
+      <caption xml:lang="it">Gruppi di unità, partizioni e utilizzo dei file system</caption>
+      <caption xml:lang="pl">Grupy dysków, partycje i zajętość systemów plików</caption>
+      <caption xml:lang="ko">드라이브 그룹, 파티션 및 파일 시스템 사용량</caption>
+      <caption xml:lang="ja">ドライブのグループ、パーティション、ファイルシステムの使用量</caption>
       <image>https://raw.githubusercontent.com/magynhard/disk-view.cr/master/doc/screenshot.png</image>
     </screenshot>
   </screenshots>
@@ -44,6 +97,15 @@
     <release version="0.1.0" date="2026-10-25">
       <description>
         <p>Initial release with a hierarchical disk usage overview and translations in ten languages.</p>
+        <p xml:lang="de">Erste Veröffentlichung mit einer hierarchischen Übersicht der Speicherbelegung und Übersetzungen in zehn Sprachen.</p>
+        <p xml:lang="fr">Première version avec une vue hiérarchique de l’utilisation de l’espace disque et des traductions en dix langues.</p>
+        <p xml:lang="es">Primera versión con una vista jerárquica del uso del disco y traducciones a diez idiomas.</p>
+        <p xml:lang="zh_CN">首次发布，提供层级式磁盘使用情况概览和十种语言的翻译。</p>
+        <p xml:lang="ru">Первый выпуск с иерархическим обзором использования дискового пространства и переводами на десять языков.</p>
+        <p xml:lang="it">Prima versione con una vista gerarchica dell’utilizzo del disco e traduzioni in dieci lingue.</p>
+        <p xml:lang="pl">Pierwsze wydanie z hierarchicznym widokiem zajętości dysków i tłumaczeniami na dziesięć języków.</p>
+        <p xml:lang="ko">계층형 디스크 사용량 개요와 10개 언어 번역을 제공하는 첫 번째 릴리스입니다.</p>
+        <p xml:lang="ja">ディスク使用量の階層表示と 10 言語の翻訳に対応した初回リリースです。</p>
       </description>
       <url>https://github.com/magynhard/disk-view.cr/releases/tag/0.1.0</url>
     </release>
