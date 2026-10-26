@@ -52,7 +52,10 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - name: Packaging dependencies and SDK
         run: |
-          dnf install -y python3-pyyaml ostree
+          python3 -m venv "$RUNNER_TEMP/packaging-venv"
+          "$RUNNER_TEMP/packaging-venv/bin/pip" install PyYAML==6.0.2
+          echo "$RUNNER_TEMP/packaging-venv/bin" >> "$GITHUB_PATH"
+          ostree --version
           flatpak --version
           for ref in org.gnome.Platform//51 org.gnome.Sdk//51; do
             if ! flatpak info "$ref" > /dev/null 2>&1; then
