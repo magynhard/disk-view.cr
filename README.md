@@ -31,8 +31,11 @@ native horizontal GTK progress bars.
   the collective action unmounts them. Operations run asynchronously in sequence.
 - Filesystem types and volume labels from the udev cache, including unmounted
   NTFS/exFAT/FAT volumes. Windows data, Microsoft reserved (MSR), recovery and EFI
-  partitions are identified by their partition types; SSD/HDD media is shown
-  when the kernel reports it. BitLocker containers are marked locked or mapped.
+  partitions are identified by their partition types. BitLocker containers are
+  marked locked or mapped.
+- Drive connection labels (SATA, NVMe, USB and SD/MMC) when identified, with
+  SSD/HDD media where reported by the kernel. USB devices and SD/MMC media show
+  only their connection because their rotational flags can be unreliable.
 - Compact drive groups (`sda`, `sdb`, NVMe, etc.) with indented partitions,
   physical drive capacity and aggregated filesystem usage. Partial totals are
   explicitly marked when some partitions cannot be measured.

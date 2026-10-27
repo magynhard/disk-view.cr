@@ -94,6 +94,21 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="0.1.2" date="2026-10-27">
+      <description>
+        <p>Show SATA, NVMe, USB and SD/MMC connection labels, and avoid misleading HDD or SSD labels for USB devices and memory cards.</p>
+        <p xml:lang="de">Zeigt die Anbindung als SATA, NVMe, USB oder SD/MMC an und vermeidet irreführende HDD- oder SSD-Angaben bei USB-Geräten und Speicherkarten.</p>
+        <p xml:lang="fr">Affiche les connexions SATA, NVMe, USB et SD/MMC et évite les indications HDD ou SSD trompeuses pour les périphériques USB et les cartes mémoire.</p>
+        <p xml:lang="es">Muestra las conexiones SATA, NVMe, USB y SD/MMC y evita indicaciones HDD o SSD engañosas en dispositivos USB y tarjetas de memoria.</p>
+        <p xml:lang="zh_CN">显示 SATA、NVMe、USB 和 SD/MMC 连接类型，避免将 USB 设备和存储卡错误标记为 HDD 或 SSD。</p>
+        <p xml:lang="ru">Показывает тип подключения SATA, NVMe, USB или SD/MMC и исключает вводящие в заблуждение обозначения HDD или SSD для USB-устройств и карт памяти.</p>
+        <p xml:lang="it">Mostra le connessioni SATA, NVMe, USB e SD/MMC ed evita indicazioni HDD o SSD fuorvianti per dispositivi USB e schede di memoria.</p>
+        <p xml:lang="pl">Pokazuje typ połączenia SATA, NVMe, USB lub SD/MMC i eliminuje mylące oznaczenia HDD lub SSD dla urządzeń USB i kart pamięci.</p>
+        <p xml:lang="ko">SATA, NVMe, USB 및 SD/MMC 연결 유형을 표시하고 USB 장치와 메모리 카드에 잘못된 HDD 또는 SSD 표시가 나타나지 않도록 했습니다.</p>
+        <p xml:lang="ja">SATA、NVMe、USB、SD/MMC の接続方式を表示し、USB デバイスやメモリーカードに誤解を招く HDD または SSD の表示が出ないようにしました。</p>
+      </description>
+      <url>https://github.com/magynhard/disk-view.cr/releases/tag/0.1.2</url>
+    </release>
     <release version="0.1.1" date="2026-10-26">
       <description>
         <p>Add mount and unmount controls, improve Windows partition identification, and introduce AppImage and Flatpak packages with localized metadata and consistent usage warnings.</p>

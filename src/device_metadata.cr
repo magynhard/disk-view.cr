@@ -12,16 +12,28 @@ module DiskView
     label : String = "",
     partition_name : String = "",
     partition_type : String = "",
-    device_type : String = "" do
+    device_type : String = "",
+    connection : String = "" do
     def self.from_properties(properties : Hash(String, String)) : self
       encoded_label = properties["ID_FS_LABEL_ENC"]? || ""
       encoded_name = properties["ID_PART_ENTRY_NAME"]? || ""
+      connection = case properties["ID_BUS"]?
+                   when "usb"  then "USB"
+                   when "nvme" then "NVMe"
+                   when "mmc"  then "SD/MMC"
+                   when "sata" then "SATA"
+                   when "ata"
+                     properties["ID_ATA_SATA"]? == "1" ? "SATA" : ""
+                   else
+                     ""
+                   end
       new(
         properties["ID_FS_TYPE"]? || "",
         encoded_label.empty? ? (properties["ID_FS_LABEL"]? || "") : decode(encoded_label),
         encoded_name.empty? ? (properties["PARTNAME"]? || "") : decode(encoded_name),
         properties["ID_PART_ENTRY_TYPE"]? || "",
-        properties["ID_TYPE"]? || ""
+        properties["ID_TYPE"]? || "",
+        connection
       )
     end
 
@@ -79,7 +91,7 @@ module DiskView
   module UdevMetadata
     extend self
 
-    PROPERTIES = {"ID_FS_TYPE", "ID_FS_LABEL_ENC", "ID_FS_LABEL", "ID_PART_ENTRY_NAME", "PARTNAME", "ID_PART_ENTRY_TYPE", "ID_TYPE"}
+    PROPERTIES = {"ID_FS_TYPE", "ID_FS_LABEL_ENC", "ID_FS_LABEL", "ID_PART_ENTRY_NAME", "PARTNAME", "ID_PART_ENTRY_TYPE", "ID_TYPE", "ID_BUS", "ID_ATA_SATA"}
 
     # Read udev's cached identification data, without probing device contents,
     # mounting filesystems, spawning commands or requiring elevated privileges.

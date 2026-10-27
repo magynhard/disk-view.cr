@@ -18,7 +18,18 @@ module DiskView
   end
 
   record BlockDevice, name : String, device_id : String, capacity : UInt64, parent : String? = nil, partition_number : Int32 = 0, model : String = "", holders : Array(String) = [] of String, metadata : BlockMetadata = BlockMetadata.new, rotational : Bool? = nil
-  record Drive, name : String, model : String, capacity : UInt64, filesystems : Array(Disk), partitioned : Bool, rotational : Bool? = nil
+  record Drive, name : String, model : String, capacity : UInt64, filesystems : Array(Disk), partitioned : Bool, rotational : Bool? = nil, connection : String = "" do
+    def media_description : String
+      # USB bridges and card readers often report misleading rotational flags.
+      return connection if connection == "USB" || connection == "SD/MMC"
+      media = case rotational
+              when true  then "HDD"
+              when false then "SSD"
+              else            ""
+              end
+      {media, connection}.reject(&.empty?).join(" · ")
+    end
+  end
   record Inventory, drives : Array(Drive), other_filesystems : Array(Disk)
 
   module Disks
@@ -127,7 +138,16 @@ module DiskView
             Disk.new(source, [] of String, block.metadata.filesystem, block.capacity, state, block.device_id, block.holders, block.metadata)
           end
         end
-        Drive.new(drive.name, drive.model, drive.capacity, filesystems, !partitions.empty?, drive.rotational)
+        connection = drive.metadata.connection
+        if connection.empty?
+          # Kernel names identify these device classes even without cached udev data.
+          connection = case drive.name
+                       when /\Anvme\d+(?:c\d+)?n\d+\z/ then "NVMe"
+                       when /\Ammcblk\d+\z/            then "SD/MMC"
+                       else                                 ""
+                       end
+        end
+        Drive.new(drive.name, drive.model, drive.capacity, filesystems, !partitions.empty?, drive.rotational, connection)
       end
       others = mounted.each_with_index.reject { |(_, index)| claimed.includes?(index) }.map(&.[0]).to_a
       Inventory.new(drives, others)

@@ -235,7 +235,8 @@ module DiskView
 
     private def add_drive(drive : Drive, cancellable : Gio::Cancellable, expanded : Bool)
       title = drive.model.empty? ? drive.name : "#{drive.name} · #{drive.model}"
-      title += drive.rotational ? " · HDD" : " · SSD" unless drive.rotational.nil?
+      media = drive.media_description
+      title += " · #{media}" unless media.empty?
       filesystems = drive.filesystems.map { |disk| Disks.filesystem_name(disk.filesystem) }.reject(&.empty?).uniq
       title += " · " + filesystems.join(", ") unless filesystems.empty?
       title += " · #{drive.filesystems.first.paths.join(", ")}" unless drive.partitioned || drive.filesystems.first.paths.empty?
@@ -244,7 +245,12 @@ module DiskView
       row.use_markup = false
       row.subtitle_lines = 3
       row.title_lines = 1
-      icon = drive.rotational == false ? "drive-harddisk-solidstate-symbolic" : "drive-harddisk-symbolic"
+      icon = case drive.connection
+             when "USB", "SD/MMC"
+               "drive-removable-media-symbolic"
+             else
+               drive.rotational == false ? "drive-harddisk-solidstate-symbolic" : "drive-harddisk-symbolic"
+             end
       row.add_prefix(Gtk::Image.new_from_icon_name(icon))
       bar = Gtk::ProgressBar.new
       bar.width_request = 90
