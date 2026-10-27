@@ -15,6 +15,9 @@ A small GTK4/libadwaita application written in Crystal for Linux.
 The interface follows your system language. Disk usage is displayed using
 native horizontal GTK progress bars.
 
+> If all you want is a quick, simple overview of your drives and how much space
+> you're using, Disk View is for you.
+
 ![Disk View showing drive groups and disk usage in dark mode](doc/screenshot.png)
 
 ## Features
