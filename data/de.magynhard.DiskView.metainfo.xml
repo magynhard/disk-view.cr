@@ -94,6 +94,21 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="0.1.3" date="2026-11-14">
+      <description>
+        <p>Switch instantly between GiB and GB using buttons beside the heading. Default to GB, remember the selected unit across restarts, and use the full window width.</p>
+        <p xml:lang="de">Wechsle über die Schaltflächen neben der Überschrift sofort zwischen GiB und GB. GB ist die Standardauswahl, die gewählte Einheit bleibt nach einem Neustart erhalten und der Inhalt nutzt die gesamte Fensterbreite.</p>
+        <p xml:lang="fr">Passez instantanément de GiB à GB grâce aux boutons à côté du titre. GB est sélectionné par défaut, l’unité choisie est conservée après un redémarrage et le contenu utilise toute la largeur de la fenêtre.</p>
+        <p xml:lang="es">Cambia al instante entre GiB y GB con los botones junto al título. GB es la opción predeterminada, la unidad elegida se conserva al reiniciar y el contenido utiliza todo el ancho de la ventana.</p>
+        <p xml:lang="zh_CN">使用标题旁的按钮即时切换 GiB 和 GB。默认使用 GB，重启后保留所选单位，并让内容使用整个窗口宽度。</p>
+        <p xml:lang="ru">Мгновенно переключайтесь между GiB и GB кнопками рядом с заголовком. По умолчанию используется GB, выбранная единица сохраняется после перезапуска, а содержимое занимает всю ширину окна.</p>
+        <p xml:lang="it">Passa istantaneamente da GiB a GB con i pulsanti accanto al titolo. GB è l’unità predefinita, la scelta viene mantenuta al riavvio e il contenuto utilizza tutta la larghezza della finestra.</p>
+        <p xml:lang="pl">Przełączaj natychmiast między GiB i GB przyciskami obok nagłówka. Domyślną jednostką jest GB, wybór jest zachowywany po ponownym uruchomieniu, a zawartość zajmuje całą szerokość okna.</p>
+        <p xml:lang="ko">제목 옆의 버튼으로 GiB와 GB를 즉시 전환할 수 있습니다. 기본 단위는 GB이며, 선택한 단위는 다시 시작한 후에도 유지되고 콘텐츠는 창의 전체 너비를 사용합니다.</p>
+        <p xml:lang="ja">見出しの横にあるボタンで GiB と GB を即座に切り替えられます。既定の単位は GB で、選択した単位は再起動後も保持され、内容はウィンドウの幅全体に広がります。</p>
+      </description>
+      <url>https://github.com/magynhard/disk-view.cr/releases/tag/0.1.3</url>
+    </release>
     <release version="0.1.2" date="2026-10-27">
       <description>
         <p>Show SATA, NVMe, USB and SD/MMC connection labels, and avoid misleading HDD or SSD labels for USB devices and memory cards.</p>

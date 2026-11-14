@@ -115,17 +115,47 @@ to Flathub.
 
 Before publishing a new version:
 
-1. Update `shard.yml` and the first release entry in
-   `data/de.magynhard.DiskView.metainfo.xml`, including its date/notes.
+1. Update `shard.yml`, add a new dated entry at the top of `CHANGELOG.md` and add
+   the newest release before the historical entries in
+   `data/de.magynhard.DiskView.metainfo.xml`, including its date, URL and notes in
+   all supported languages. The About dialog reads its version from `shard.yml`.
 2. If dependencies changed, update the immutable revisions/checksums in
    `packaging/sources.json` to match `shard.lock`.
-3. Run `make validate-metadata`, `make test`, and both package builds.
-4. Commit and push the source and workflow. Tag that commit with the matching
-   version and publish its GitHub release. The workflow accepts an optional `v`
-   prefix, but the numeric version must match `shard.yml`.
+3. Run `python3 scripts/packaging.py verify`, `make validate-metadata`,
+   `make test`, `make test-packaging`, `crystal tool format --check src/ spec/`,
+   `make build` and `git diff --check`. Run both package builds locally when
+   changing packaging inputs; otherwise the push workflow validates both formats.
+4. Commit and push the changes to `master`. Check the `Linux packages` workflow
+   for that exact commit and wait for both package jobs to succeed.
+5. Tag the tested commit and push that tag. Existing releases use numeric tags
+   without `v`; the workflow also accepts a `v` prefix, but the numeric version
+   must match `shard.yml`.
+6. Publish a GitHub release for that tag. **A push, a tag or a draft release alone
+   does not trigger the release upload.** The `release: published` event builds
+   the packages again and runs the `release-assets` upload job after both succeed.
+7. Wait for this release-triggered workflow to succeed and verify all four assets:
+   `Disk_View-VERSION-x86_64.AppImage`, its `.sha256`,
+   `Disk_View-VERSION-x86_64.flatpak` and its `.sha256`.
 
-An existing `0.1.0` tag made before this packaging work does not contain these
-files. Use a new tagged version containing them for future automatic builds.
+For example, after the source commit is pushed and its package jobs are green:
+
+```sh
+version=$(python3 scripts/packaging.py version)
+git tag -a "$version" -m "Disk View $version"
+git push origin "$version"
+gh release create "$version" --verify-tag --title "Disk View $version" --notes-file /path/to/release-notes.md --latest
+gh run list --workflow linux-packages.yml --event release --commit "$(git rev-parse HEAD)"
+gh run watch RUN_ID --exit-status
+gh release view "$version" --json url,assets
+```
+
+Write release notes from the version's changelog and describe both download
+formats. Builds and uploads are automated; versioning, changelog updates, the
+source commit, tag and GitHub release publication are explicit maintainer steps.
+If a workflow fails, inspect it with `gh run view RUN_ID --log-failed`, fix the
+cause and rerun as appropriate. Never report a release as fully packaged until
+the release workflow and all expected assets have been checked.
+
 For a manual release attachment after a local build:
 
 ```sh
