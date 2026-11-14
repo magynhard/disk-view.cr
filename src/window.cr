@@ -1,3 +1,5 @@
+require "./preferences"
+
 module DiskView
   class Window < Adw::ApplicationWindow
     include I18n
@@ -10,6 +12,8 @@ module DiskView
     @mount_busy = false
     @mount_cancellable = Gio::Cancellable.new
     @toasts = Adw::ToastOverlay.new
+    @size_unit = Preferences.load_size_unit
+    @size_updates = [] of Proc(Nil)
 
     def initialize(app : Gtk::Application)
       super(application: app, title: "Disk View", default_width: 800, default_height: 540)
@@ -38,7 +42,34 @@ module DiskView
       content.margin_bottom = 12
       content.margin_start = 16
       content.margin_end = 16
-      content.append(label(translate("Drives & Partitions"), "title-2"))
+      heading = Gtk::Box.new(:horizontal, 10)
+      title = label(translate("Drives & Partitions"), "title-2")
+      title.hexpand = true
+      title.valign = :center
+      heading.append(title)
+      units = Gtk::Box.new(:horizontal, 0)
+      units.add_css_class("linked")
+      units.tooltip_text = translate("Size units")
+      units.valign = :center
+      binary = Gtk::ToggleButton.new_with_label("GiB")
+      binary.tooltip_text = translate("Gibibytes (GiB)")
+      decimal = Gtk::ToggleButton.new_with_label("GB")
+      decimal.tooltip_text = translate("Gigabytes (GB)")
+      decimal.group = binary
+      binary.active = @size_unit.binary?
+      decimal.active = @size_unit.decimal?
+      { {binary, SizeUnit::Binary}, {decimal, SizeUnit::Decimal} }.each do |button, size_unit|
+        button.toggled_signal.connect do
+          if button.active?
+            @size_unit = size_unit
+            @size_updates.each(&.call)
+            Preferences.save_size_unit(size_unit)
+          end
+        end
+        units.append(button)
+      end
+      heading.append(units)
+      content.append(heading)
       explanation = label(translate("Used space · refreshes automatically every 15 seconds"), "dim-label")
       explanation.wrap = true
       content.append(explanation)
@@ -52,12 +83,9 @@ module DiskView
       scroll = Gtk::ScrolledWindow.new
       scroll.hscrollbar_policy = :never
       scroll.child = content
-      clamp = Adw::Clamp.new
-      clamp.maximum_size = 1000
-      clamp.child = scroll
       toolbar = Adw::ToolbarView.new
       toolbar.add_top_bar(header)
-      toolbar.content = clamp
+      toolbar.content = scroll
       @toasts.child = toolbar
       self.content = @toasts
 
@@ -125,6 +153,7 @@ module DiskView
         expanded = @drive_rows.transform_values(&.expanded?)
         @drive_rows.clear
         @mount_buttons.clear
+        @size_updates.clear
         while child = @rows.first_child
           @rows.remove(child)
         end
@@ -173,7 +202,17 @@ module DiskView
       info = label(translate("Reading …"), "caption")
       info.wrap = true
       box.append(info)
-      {box, bar, info, line}
+      {box, bar, info, line, details}
+    end
+
+    private def format_bytes(bytes : UInt64) : String
+      DiskView.format_bytes(bytes, @size_unit)
+    end
+
+    # Keep the measured bytes and widgets intact when only the unit changes.
+    private def track_size_update(&update : -> Nil)
+      @size_updates << update
+      update.call
     end
 
     private def mount_button(requests : Array(MountRequest), collective = false, system_filesystem = false, mounted = false) : Gtk::Button
@@ -261,7 +300,9 @@ module DiskView
       row.add_suffix(mount_button(requests, collective: true, system_filesystem: system_filesystem, mounted: drive.filesystems.any? { |disk| !disk.paths.empty? }))
       @drive_rows[drive.name] = row
       usages = Array(Usage?).new(drive.filesystems.size, nil)
-      update_summary(drive, usages, bar, row)
+      track_size_update do
+        update_summary(drive, usages, bar, row)
+      end
 
       drive.filesystems.each_with_index do |disk, index|
         if drive.partitioned
@@ -272,15 +313,19 @@ module DiskView
           end
           row.add_row(partition)
         elsif disk.paths.empty?
-          capacity = translate("%{size} total", size: DiskView.format_bytes(drive.capacity))
-          status = translate("%{state} · Usage unknown", state: disk_status(disk))
-          row.subtitle = "#{capacity}\n#{status}"
+          track_size_update do
+            capacity = translate("%{size} total", size: format_bytes(drive.capacity))
+            status = translate("%{state} · Usage unknown", state: disk_status(disk))
+            row.subtitle = "#{capacity}\n#{status}"
+          end
         else
           # A filesystem directly on a disk does not need a duplicate child row.
           query_usage(disk, cancellable) do |usage, error|
             usages[index] = usage
             update_summary(drive, usages, bar, row)
-            row.tooltip_text = [disk.paths.join(", "), disk.filesystem, error, row.subtitle].reject(&.empty?).join(" · ")
+            track_size_update do
+              row.tooltip_text = [disk.paths.join(", "), disk.filesystem, error, row.subtitle].reject(&.empty?).join(" · ")
+            end
           end
         end
       end
@@ -302,15 +347,15 @@ module DiskView
                end
       else
         text = if summary.complete?
-                 translate("%{size} used (%{percent} %%)", size: DiskView.format_bytes(summary.used), percent: (summary.fraction * 100).round(1))
+                 translate("%{size} used (%{percent} %%)", size: format_bytes(summary.used), percent: (summary.fraction * 100).round(1))
                else
-                 translate("At least %{size} used (%{percent} %%)", size: DiskView.format_bytes(summary.used), percent: (summary.fraction * 100).round(1))
+                 translate("At least %{size} used (%{percent} %%)", size: format_bytes(summary.used), percent: (summary.fraction * 100).round(1))
                end
-        text += "\n" + translate("%{size} available", size: DiskView.format_bytes(summary.available))
-        text += " · " + translate("%{size} reserved", size: DiskView.format_bytes(summary.reserved)) if summary.reserved > 0
+        text += "\n" + translate("%{size} available", size: format_bytes(summary.available))
+        text += " · " + translate("%{size} reserved", size: format_bytes(summary.reserved)) if summary.reserved > 0
         text += " · " + translate("%{known}/%{total} measured", known: summary.known_count, total: summary.filesystem_count) unless summary.complete?
       end
-      capacity = translate("%{size} total", size: DiskView.format_bytes(drive.capacity))
+      capacity = translate("%{size} total", size: format_bytes(drive.capacity))
       row.subtitle = "#{capacity} · #{text}"
       tooltip = row.subtitle + "\n" + translate("Usage is relative to the full drive capacity. Unmounted or multi-device filesystems are excluded from the total. Unpartitioned space is not available filesystem space.")
       tooltip += "\n" + translate("Microsoft reserved partitions have no filesystem and are excluded from usage totals.") if drive.filesystems.any? { |disk| !disk.measurable? }
@@ -324,8 +369,10 @@ module DiskView
       description = [disk.metadata.label, role].reject(&.empty?).uniq.join(" · ")
       description = disk.metadata.partition_name if description.empty?
       title = [name, description, disk.paths.join(", ")].reject(&.empty?).join(" · ")
-      metadata = [Disks.filesystem_name(disk.filesystem), disk.capacity.try { |bytes| DiskView.format_bytes(bytes) } || ""].reject(&.empty?).join(" · ")
-      box, bar, info, line = usage_row(title, metadata, indented)
+      box, bar, info, line, details = usage_row(title, "", indented)
+      track_size_update do
+        details.text = [Disks.filesystem_name(disk.filesystem), disk.capacity.try { |bytes| format_bytes(bytes) } || ""].reject(&.empty?).join(" · ")
+      end
       line.append(mount_button(MountLogic.for_disk(disk), system_filesystem: MountLogic.protected?(disk.paths), mounted: !disk.paths.empty?))
       box.tooltip_text = [title, disk.source, role, disk.metadata.partition_name, disk.metadata.partition_type].reject(&.empty?).uniq.join("\n")
       group.append(box)
@@ -342,13 +389,16 @@ module DiskView
 
       query_usage(disk, cancellable) do |usage, error|
         if usage
-          set_bar(bar, usage.fraction)
-          info.text = translate("%{size} used (%{percent} %%)", size: DiskView.format_bytes(usage.used), percent: (usage.fraction * 100).round(1))
-          info.text += " · " + translate("%{size} available", size: DiskView.format_bytes(usage.available))
-          info.text += " · " + translate("%{size} total", size: DiskView.format_bytes(usage.total)) unless disk.capacity
-          info.text += " · " + translate("%{size} reserved", size: DiskView.format_bytes(usage.reserved)) if usage.reserved > 0
-          size = translate("%{size} filesystem size", size: DiskView.format_bytes(usage.total))
-          info.tooltip_text = "#{disk.source} · #{size}\n#{info.text}"
+          measured = usage
+          track_size_update do
+            set_bar(bar, measured.fraction)
+            info.text = translate("%{size} used (%{percent} %%)", size: format_bytes(measured.used), percent: (measured.fraction * 100).round(1))
+            info.text += " · " + translate("%{size} available", size: format_bytes(measured.available))
+            info.text += " · " + translate("%{size} total", size: format_bytes(measured.total)) unless disk.capacity
+            info.text += " · " + translate("%{size} reserved", size: format_bytes(measured.reserved)) if measured.reserved > 0
+            size = translate("%{size} filesystem size", size: format_bytes(measured.total))
+            info.tooltip_text = "#{disk.source} · #{size}\n#{info.text}"
+          end
         else
           bar.visible = false
           info.text = translate("Usage unavailable")

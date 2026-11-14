@@ -140,4 +140,20 @@ describe ".format_bytes" do
     DiskView.format_bytes(1536_u64).should eq("1.5 KiB")
     DiskView.format_bytes(1_099_511_627_776_u64).should eq("1.0 TiB")
   end
+
+  it "uses decimal units for advertised drive capacities" do
+    DiskView.format_bytes(1_000_000_000_u64, :decimal).should eq("1.0 GB")
+    DiskView.format_bytes(1_000_000_000_000_u64, :decimal).should eq("1.0 TB")
+    DiskView.format_bytes(1_000_000_000_000_u64, :binary).should eq("931.3 GiB")
+  end
+
+  it "switches unit boundaries at the selected base" do
+    DiskView.format_bytes(0_u64, :decimal).should eq("0 B")
+    DiskView.format_bytes(999_u64, :decimal).should eq("999 B")
+    DiskView.format_bytes(1000_u64, :decimal).should eq("1.0 kB")
+    DiskView.format_bytes(1000_u64, :binary).should eq("1000 B")
+    DiskView.format_bytes(1024_u64, :binary).should eq("1.0 KiB")
+    DiskView.format_bytes(UInt64::MAX, :decimal).should eq("18.4 EB")
+    DiskView.format_bytes(UInt64::MAX, :binary).should eq("16.0 EiB")
+  end
 end

@@ -177,12 +177,18 @@ module DiskView
     end
   end
 
-  def self.format_bytes(bytes : UInt64) : String
-    units = {"B", "KiB", "MiB", "GiB", "TiB", "PiB", "EiB"}
+  enum SizeUnit
+    Binary
+    Decimal
+  end
+
+  def self.format_bytes(bytes : UInt64, size_unit : SizeUnit = SizeUnit::Binary) : String
+    units = size_unit.binary? ? {"B", "KiB", "MiB", "GiB", "TiB", "PiB", "EiB"} : {"B", "kB", "MB", "GB", "TB", "PB", "EB"}
+    base = size_unit.binary? ? 1024 : 1000
     value = bytes.to_f64
     unit = 0
-    while value >= 1024 && unit < units.size - 1
-      value /= 1024
+    while value >= base && unit < units.size - 1
+      value /= base
       unit += 1
     end
     unit == 0 ? "#{bytes} B" : "#{value.format(decimal_places: 1)} #{units[unit]}"

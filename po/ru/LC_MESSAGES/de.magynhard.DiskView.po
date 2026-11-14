@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Disk View 0.1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/magynhard/disk-view.cr/issues\n"
-"POT-Creation-Date: 2026-10-26 08:02+0100\n"
+"POT-Creation-Date: 2026-11-14 20:29+0100\n"
 "PO-Revision-Date: 2026-10-25 00:00+0000\n"
 "Last-Translator: Matthäus J. N. Beyrle\n"
 "Language-Team: Russian\n"
@@ -13,31 +13,43 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 
-#: src/window.cr:21 src/window.cr:28
+#: src/window.cr:26 src/window.cr:33
 msgid "Refresh"
 msgstr "Обновить"
 
-#: src/window.cr:26
+#: src/window.cr:31
 msgid "Main menu"
 msgstr "Главное меню"
 
-#: src/window.cr:29
+#: src/window.cr:34
 msgid "About Disk View"
 msgstr "О приложении Disk View"
 
-#: src/window.cr:30 src/window.cr:218
+#: src/window.cr:35 src/window.cr:258
 msgid "Close"
 msgstr "Закрыть"
 
-#: src/window.cr:40
+#: src/window.cr:46
 msgid "Drives & Partitions"
 msgstr "Накопители и разделы"
 
-#: src/window.cr:41
+#: src/window.cr:52
+msgid "Size units"
+msgstr "Единицы размера"
+
+#: src/window.cr:55
+msgid "Gibibytes (GiB)"
+msgstr "Гибибайты (GiB)"
+
+#: src/window.cr:57
+msgid "Gigabytes (GB)"
+msgstr "Гигабайты (GB)"
+
+#: src/window.cr:73
 msgid "Used space · refreshes automatically every 15 seconds"
 msgstr "Занятое место · автоматическое обновление каждые 15 секунд"
 
-#: src/window.cr:104
+#: src/window.cr:133
 msgid ""
 "Drives, partitions and disk usage at a glance.\n"
 "Built with Crystal, GTK4 and libadwaita."
@@ -45,70 +57,70 @@ msgstr ""
 "Накопители, разделы и использование дискового пространства на одном экране.\n"
 "Разработано с помощью Crystal, GTK4 и libadwaita."
 
-#: src/window.cr:132
+#: src/window.cr:162
 msgid "Other filesystems / Network"
 msgstr "Другие файловые системы / Сеть"
 
-#: src/window.cr:140
+#: src/window.cr:170
 msgid "%{count} drive"
 msgid_plural "%{count} drives"
 msgstr[0] "%{count} накопитель"
 msgstr[1] "%{count} накопителя"
 msgstr[2] "%{count} накопителей"
 
-#: src/window.cr:140
+#: src/window.cr:170
 msgid "%{drives} · Updated %{time}"
 msgstr "%{drives} · Обновлено в %{time}"
 
-#: src/window.cr:142
+#: src/window.cr:172
 msgid "Could not read drives: %{error}"
 msgstr "Не удалось прочитать накопители: %{error}"
 
-#: src/window.cr:172
+#: src/window.cr:202
 msgid "Reading …"
 msgstr "Чтение…"
 
-#: src/window.cr:189
+#: src/window.cr:229
 msgid "System filesystems cannot be unmounted here."
 msgstr "Системные файловые системы нельзя размонтировать здесь."
 
-#: src/window.cr:191
+#: src/window.cr:231
 msgid "No mountable filesystem"
 msgstr "Нет файловой системы для монтирования"
 
-#: src/window.cr:193
+#: src/window.cr:233
 msgid "Unmount all filesystems"
 msgstr "Размонтировать все файловые системы"
 
-#: src/window.cr:193
+#: src/window.cr:233
 msgid "Mount all filesystems"
 msgstr "Смонтировать все файловые системы"
 
-#: src/window.cr:195
+#: src/window.cr:235
 msgid "Unmount filesystem"
 msgstr "Размонтировать файловую систему"
 
-#: src/window.cr:195
+#: src/window.cr:235
 msgid "Mount filesystem"
 msgstr "Смонтировать файловую систему"
 
-#: src/window.cr:209
+#: src/window.cr:249
 msgid "Mounting filesystems …"
 msgstr "Монтирование файловых систем…"
 
-#: src/window.cr:209
+#: src/window.cr:249
 msgid "Unmounting filesystems …"
 msgstr "Размонтирование файловых систем…"
 
-#: src/window.cr:215
+#: src/window.cr:255
 msgid "Filesystem operation completed"
 msgstr "Операция с файловыми системами завершена"
 
-#: src/window.cr:217
+#: src/window.cr:257
 msgid "Filesystem operation failed"
 msgstr "Не удалось выполнить операцию с файловыми системами"
 
-#: src/window.cr:217
+#: src/window.cr:257
 msgid ""
 "The following operations failed:\n"
 "%{errors}"
@@ -116,43 +128,43 @@ msgstr ""
 "Не удалось выполнить следующие операции:\n"
 "%{errors}"
 
-#: src/window.cr:268 src/window.cr:306 src/window.cr:341
+#: src/window.cr:317 src/window.cr:358 src/window.cr:397
 msgid "%{size} total"
 msgstr "%{size} всего"
 
-#: src/window.cr:269 src/window.cr:330
+#: src/window.cr:318 src/window.cr:384
 msgid "%{state} · Usage unknown"
 msgstr "%{state} · Занятое место неизвестно"
 
-#: src/window.cr:292
+#: src/window.cr:344
 msgid "Not mounted · usage unavailable"
 msgstr "Не смонтирован · данные об использовании недоступны"
 
-#: src/window.cr:294
+#: src/window.cr:346
 msgid "Usage unknown · no measurable filesystems"
 msgstr "Занятое место неизвестно · нет файловых систем, доступных для оценки"
 
-#: src/window.cr:298 src/window.cr:339
+#: src/window.cr:350 src/window.cr:395
 msgid "%{size} used (%{percent} %%)"
 msgstr "%{size} занято (%{percent} %%)"
 
-#: src/window.cr:300
+#: src/window.cr:352
 msgid "At least %{size} used (%{percent} %%)"
 msgstr "Занято не менее %{size} (%{percent} %%)"
 
-#: src/window.cr:302 src/window.cr:340
+#: src/window.cr:354 src/window.cr:396
 msgid "%{size} available"
 msgstr "%{size} доступно"
 
-#: src/window.cr:303 src/window.cr:342
+#: src/window.cr:355 src/window.cr:398
 msgid "%{size} reserved"
 msgstr "%{size} зарезервировано"
 
-#: src/window.cr:304
+#: src/window.cr:356
 msgid "%{known}/%{total} measured"
 msgstr "%{known}/%{total} учтено"
 
-#: src/window.cr:308
+#: src/window.cr:360
 msgid ""
 "Usage is relative to the full drive capacity. Unmounted or multi-device "
 "filesystems are excluded from the total. Unpartitioned space is not "
@@ -163,7 +175,7 @@ msgstr ""
 "устройствах не включены в итог. Неразмеченное пространство не является "
 "доступным местом файловой системы."
 
-#: src/window.cr:309
+#: src/window.cr:361
 msgid ""
 "Microsoft reserved partitions have no filesystem and are excluded from usage "
 "totals."
@@ -171,61 +183,61 @@ msgstr ""
 "Зарезервированные разделы Microsoft не имеют файловой системы и не "
 "включаются в общее использование."
 
-#: src/window.cr:328
+#: src/window.cr:382
 msgid "Reserved partition · no filesystem"
 msgstr "Зарезервированный раздел · нет файловой системы"
 
-#: src/window.cr:332
+#: src/window.cr:386
 msgid "Mount this filesystem to read its disk usage."
 msgstr ""
 "Смонтируйте эту файловую систему, чтобы узнать использование дискового "
 "пространства."
 
-#: src/window.cr:343
+#: src/window.cr:399
 msgid "%{size} filesystem size"
 msgstr "%{size} — размер файловой системы"
 
-#: src/window.cr:347
+#: src/window.cr:404
 msgid "Usage unavailable"
 msgstr "Данные об использовании недоступны"
 
-#: src/window.cr:357
+#: src/window.cr:414
 msgid "Not mounted"
 msgstr "Не смонтирован"
 
-#: src/window.cr:359
+#: src/window.cr:416
 msgid "Used by %{devices}"
 msgstr "Используется %{devices}"
 
-#: src/window.cr:361
+#: src/window.cr:418
 msgid "Swap (active)"
 msgstr "Подкачка (активна)"
 
-#: src/window.cr:363
+#: src/window.cr:420
 msgid "Encrypted (locked)"
 msgstr "Зашифрован (заблокирован)"
 
-#: src/window.cr:370
+#: src/window.cr:427
 msgid "Microsoft reserved (MSR)"
 msgstr "Зарезервированный Microsoft (MSR)"
 
-#: src/window.cr:371
+#: src/window.cr:428
 msgid "Microsoft basic data"
 msgstr "Основные данные Microsoft"
 
-#: src/window.cr:372
+#: src/window.cr:429
 msgid "Windows recovery"
 msgstr "Восстановление Windows"
 
-#: src/window.cr:373
+#: src/window.cr:430
 msgid "EFI system partition"
 msgstr "Системный раздел EFI"
 
-#: src/window.cr:386
+#: src/window.cr:443
 msgid "The filesystem does not report disk usage."
 msgstr "Файловая система не сообщает об использовании дискового пространства."
 
-#: src/window.cr:399
+#: src/window.cr:456
 msgid "Could not read filesystem."
 msgstr "Не удалось прочитать файловую систему."
 

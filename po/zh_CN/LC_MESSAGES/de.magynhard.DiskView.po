@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Disk View 0.1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/magynhard/disk-view.cr/issues\n"
-"POT-Creation-Date: 2026-10-26 08:02+0100\n"
+"POT-Creation-Date: 2026-11-14 20:29+0100\n"
 "PO-Revision-Date: 2026-10-25 00:00+0000\n"
 "Last-Translator: Matthäus J. N. Beyrle\n"
 "Language-Team: Simplified Chinese\n"
@@ -12,31 +12,43 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: src/window.cr:21 src/window.cr:28
+#: src/window.cr:26 src/window.cr:33
 msgid "Refresh"
 msgstr "刷新"
 
-#: src/window.cr:26
+#: src/window.cr:31
 msgid "Main menu"
 msgstr "主菜单"
 
-#: src/window.cr:29
+#: src/window.cr:34
 msgid "About Disk View"
 msgstr "关于 Disk View"
 
-#: src/window.cr:30 src/window.cr:218
+#: src/window.cr:35 src/window.cr:258
 msgid "Close"
 msgstr "关闭"
 
-#: src/window.cr:40
+#: src/window.cr:46
 msgid "Drives & Partitions"
 msgstr "驱动器与分区"
 
-#: src/window.cr:41
+#: src/window.cr:52
+msgid "Size units"
+msgstr "容量单位"
+
+#: src/window.cr:55
+msgid "Gibibytes (GiB)"
+msgstr "吉比字节 (GiB)"
+
+#: src/window.cr:57
+msgid "Gigabytes (GB)"
+msgstr "吉字节 (GB)"
+
+#: src/window.cr:73
 msgid "Used space · refreshes automatically every 15 seconds"
 msgstr "已用空间 · 每 15 秒自动刷新"
 
-#: src/window.cr:104
+#: src/window.cr:133
 msgid ""
 "Drives, partitions and disk usage at a glance.\n"
 "Built with Crystal, GTK4 and libadwaita."
@@ -44,68 +56,68 @@ msgstr ""
 "一目了然地查看驱动器、分区和磁盘使用情况。\n"
 "使用 Crystal、GTK4 和 libadwaita 开发。"
 
-#: src/window.cr:132
+#: src/window.cr:162
 msgid "Other filesystems / Network"
 msgstr "其他文件系统 / 网络"
 
-#: src/window.cr:140
+#: src/window.cr:170
 msgid "%{count} drive"
 msgid_plural "%{count} drives"
 msgstr[0] "%{count} 个驱动器"
 
-#: src/window.cr:140
+#: src/window.cr:170
 msgid "%{drives} · Updated %{time}"
 msgstr "%{drives} · 更新于 %{time}"
 
-#: src/window.cr:142
+#: src/window.cr:172
 msgid "Could not read drives: %{error}"
 msgstr "无法读取驱动器：%{error}"
 
-#: src/window.cr:172
+#: src/window.cr:202
 msgid "Reading …"
 msgstr "正在读取…"
 
-#: src/window.cr:189
+#: src/window.cr:229
 msgid "System filesystems cannot be unmounted here."
 msgstr "无法在此卸载系统文件系统。"
 
-#: src/window.cr:191
+#: src/window.cr:231
 msgid "No mountable filesystem"
 msgstr "没有可挂载的文件系统"
 
-#: src/window.cr:193
+#: src/window.cr:233
 msgid "Unmount all filesystems"
 msgstr "卸载所有文件系统"
 
-#: src/window.cr:193
+#: src/window.cr:233
 msgid "Mount all filesystems"
 msgstr "挂载所有文件系统"
 
-#: src/window.cr:195
+#: src/window.cr:235
 msgid "Unmount filesystem"
 msgstr "卸载文件系统"
 
-#: src/window.cr:195
+#: src/window.cr:235
 msgid "Mount filesystem"
 msgstr "挂载文件系统"
 
-#: src/window.cr:209
+#: src/window.cr:249
 msgid "Mounting filesystems …"
 msgstr "正在挂载文件系统…"
 
-#: src/window.cr:209
+#: src/window.cr:249
 msgid "Unmounting filesystems …"
 msgstr "正在卸载文件系统…"
 
-#: src/window.cr:215
+#: src/window.cr:255
 msgid "Filesystem operation completed"
 msgstr "文件系统操作已完成"
 
-#: src/window.cr:217
+#: src/window.cr:257
 msgid "Filesystem operation failed"
 msgstr "文件系统操作失败"
 
-#: src/window.cr:217
+#: src/window.cr:257
 msgid ""
 "The following operations failed:\n"
 "%{errors}"
@@ -113,43 +125,43 @@ msgstr ""
 "以下操作失败：\n"
 "%{errors}"
 
-#: src/window.cr:268 src/window.cr:306 src/window.cr:341
+#: src/window.cr:317 src/window.cr:358 src/window.cr:397
 msgid "%{size} total"
 msgstr "总计 %{size}"
 
-#: src/window.cr:269 src/window.cr:330
+#: src/window.cr:318 src/window.cr:384
 msgid "%{state} · Usage unknown"
 msgstr "%{state} · 使用情况未知"
 
-#: src/window.cr:292
+#: src/window.cr:344
 msgid "Not mounted · usage unavailable"
 msgstr "未挂载 · 无法获取使用情况"
 
-#: src/window.cr:294
+#: src/window.cr:346
 msgid "Usage unknown · no measurable filesystems"
 msgstr "使用情况未知 · 没有可统计的文件系统"
 
-#: src/window.cr:298 src/window.cr:339
+#: src/window.cr:350 src/window.cr:395
 msgid "%{size} used (%{percent} %%)"
 msgstr "已用 %{size}（%{percent} %%）"
 
-#: src/window.cr:300
+#: src/window.cr:352
 msgid "At least %{size} used (%{percent} %%)"
 msgstr "至少已用 %{size}（%{percent} %%）"
 
-#: src/window.cr:302 src/window.cr:340
+#: src/window.cr:354 src/window.cr:396
 msgid "%{size} available"
 msgstr "可用 %{size}"
 
-#: src/window.cr:303 src/window.cr:342
+#: src/window.cr:355 src/window.cr:398
 msgid "%{size} reserved"
 msgstr "已保留 %{size}"
 
-#: src/window.cr:304
+#: src/window.cr:356
 msgid "%{known}/%{total} measured"
 msgstr "已统计 %{known}/%{total}"
 
-#: src/window.cr:308
+#: src/window.cr:360
 msgid ""
 "Usage is relative to the full drive capacity. Unmounted or multi-device "
 "filesystems are excluded from the total. Unpartitioned space is not "
@@ -158,65 +170,65 @@ msgstr ""
 "使用率以驱动器的总容量为基准。未挂载或跨设备的文件系统不计入总使用量。未分区"
 "的空间不等于文件系统的可用空间。"
 
-#: src/window.cr:309
+#: src/window.cr:361
 msgid ""
 "Microsoft reserved partitions have no filesystem and are excluded from usage "
 "totals."
 msgstr "Microsoft 保留分区没有文件系统，因此不计入总使用量。"
 
-#: src/window.cr:328
+#: src/window.cr:382
 msgid "Reserved partition · no filesystem"
 msgstr "保留分区 · 无文件系统"
 
-#: src/window.cr:332
+#: src/window.cr:386
 msgid "Mount this filesystem to read its disk usage."
 msgstr "挂载此文件系统以查看其磁盘使用情况。"
 
-#: src/window.cr:343
+#: src/window.cr:399
 msgid "%{size} filesystem size"
 msgstr "文件系统大小 %{size}"
 
-#: src/window.cr:347
+#: src/window.cr:404
 msgid "Usage unavailable"
 msgstr "无法获取使用情况"
 
-#: src/window.cr:357
+#: src/window.cr:414
 msgid "Not mounted"
 msgstr "未挂载"
 
-#: src/window.cr:359
+#: src/window.cr:416
 msgid "Used by %{devices}"
 msgstr "由 %{devices} 使用"
 
-#: src/window.cr:361
+#: src/window.cr:418
 msgid "Swap (active)"
 msgstr "交换空间（已启用）"
 
-#: src/window.cr:363
+#: src/window.cr:420
 msgid "Encrypted (locked)"
 msgstr "已加密（已锁定）"
 
-#: src/window.cr:370
+#: src/window.cr:427
 msgid "Microsoft reserved (MSR)"
 msgstr "Microsoft 保留分区（MSR）"
 
-#: src/window.cr:371
+#: src/window.cr:428
 msgid "Microsoft basic data"
 msgstr "Microsoft 基本数据分区"
 
-#: src/window.cr:372
+#: src/window.cr:429
 msgid "Windows recovery"
 msgstr "Windows 恢复分区"
 
-#: src/window.cr:373
+#: src/window.cr:430
 msgid "EFI system partition"
 msgstr "EFI 系统分区"
 
-#: src/window.cr:386
+#: src/window.cr:443
 msgid "The filesystem does not report disk usage."
 msgstr "此文件系统未提供磁盘使用情况。"
 
-#: src/window.cr:399
+#: src/window.cr:456
 msgid "Could not read filesystem."
 msgstr "无法读取文件系统。"
 

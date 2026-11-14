@@ -43,6 +43,11 @@ native horizontal GTK progress bars.
   partitions; your expansion choices are preserved across refreshes in the
   current session.
 - Bind mounts and subvolumes of the same filesystem are grouped together.
+- Linked GiB/GB toggle buttons next to the content heading switch between binary
+  (base 1024) and decimal (base 1000) sizes. All capacities, usage figures and
+  tooltips update immediately without rescanning drives or collapsing expanded
+  groups. Decimal units (GB) are the default; the last selected unit is saved
+  automatically and restored on the next launch.
 - Automatic refresh every 15 seconds and a manual refresh button.
 - Light and dark appearance follow the system preference, including live changes,
   using libadwaita's default color scheme.
@@ -104,6 +109,11 @@ crystal tool format --check src/ spec/
 Use the header-bar menu for **About Disk View**, refresh and close. Keyboard
 shortcuts: `Ctrl+R` to refresh, `F1` for About, and `Ctrl+W` to close.
 
+The GiB/GB buttons next to the content heading select the size units. The choice
+is stored in `$XDG_CONFIG_HOME/disk-view/size-unit`, or
+`~/.config/disk-view/size-unit` when `XDG_CONFIG_HOME` is unset. Flatpak uses its
+own application configuration directory automatically.
+
 The play/eject buttons mount and unmount filesystems. Reserved partitions, locked
 encrypted containers, swap, mapped backing devices and running system mounts
 such as `/` and `/boot/efi` are excluded. Current mount points are rechecked via UDisks
@@ -148,12 +158,11 @@ steps. It also explains the current Flathub inclusion/AI-manifest restrictions
 and the remaining manual submission work. The generated Flatpak manifest is for
 local builds, not a Flathub submission.
 
-Download the Linux x86_64 archive from [GitHub Releases](https://github.com/magynhard/disk-view.cr/releases).
-It contains the executable, all ten translation catalogs, the desktop launcher,
-icon and license. Extract it and run `./bin/disk-view`; GTK4, libadwaita and libudev must
-be installed. Keep `bin/` and `share/` together so translations can be found.
-The separate executable download uses English unless translation catalogs are
-also installed under the corresponding `share/locale` directory.
+Download the Linux x86_64 AppImage or standalone Flatpak bundle from
+[GitHub Releases](https://github.com/magynhard/disk-view.cr/releases). Both include
+all ten application languages and have separate SHA-256 files. The AppImage also
+bundles GTK4, libadwaita and the other application libraries; Flatpak uses the
+GNOME runtime. See [Linux packaging](doc/packaging.md) for installation details.
 
 Build an optimized executable from source with:
 
