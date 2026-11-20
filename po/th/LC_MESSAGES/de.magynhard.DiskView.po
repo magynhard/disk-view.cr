@@ -1,0 +1,243 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Disk View 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/magynhard/disk-view.cr/issues\n"
+"POT-Creation-Date: 2026-11-14 20:37+0100\n"
+"Language: th\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/window.cr:26 src/window.cr:33
+msgid "Refresh"
+msgstr "รีเฟรช"
+
+#: src/window.cr:31
+msgid "Main menu"
+msgstr "เมนูหลัก"
+
+#: src/window.cr:34
+msgid "About Disk View"
+msgstr "เกี่ยวกับ Disk View"
+
+#: src/window.cr:35 src/window.cr:258
+msgid "Close"
+msgstr "ปิด"
+
+#: src/window.cr:46
+msgid "Drives & Partitions"
+msgstr "ไดรฟ์และพาร์ทิชัน"
+
+#: src/window.cr:52
+msgid "Size units"
+msgstr "หน่วยขนาด"
+
+#: src/window.cr:55
+msgid "Gibibytes (GiB)"
+msgstr "กิบิไบต์ (GiB)"
+
+#: src/window.cr:57
+msgid "Gigabytes (GB)"
+msgstr "กิกะไบต์ (GB)"
+
+#: src/window.cr:73
+msgid "Used space · refreshes automatically every 15 seconds"
+msgstr "พื้นที่ที่ใช้ · รีเฟรชอัตโนมัติทุก 15 วินาที"
+
+#: src/window.cr:133
+msgid ""
+"Drives, partitions and disk usage at a glance.\n"
+"Built with Crystal, GTK4 and libadwaita."
+msgstr ""
+"ภาพรวมไดรฟ์ พาร์ทิชัน และการใช้พื้นที่ดิสก์\n"
+"สร้างด้วย Crystal, GTK4 และ libadwaita"
+
+#: src/window.cr:162
+msgid "Other filesystems / Network"
+msgstr "ระบบแฟ้มอื่น / เครือข่าย"
+
+#: src/window.cr:170
+msgid "%{count} drive"
+msgid_plural "%{count} drives"
+msgstr[0] "%{count} ไดรฟ์"
+
+#: src/window.cr:170
+msgid "%{drives} · Updated %{time}"
+msgstr "%{drives} · อัปเดตเมื่อ %{time}"
+
+#: src/window.cr:172
+msgid "Could not read drives: %{error}"
+msgstr "ไม่สามารถอ่านไดรฟ์ได้: %{error}"
+
+#: src/window.cr:202
+msgid "Reading …"
+msgstr "กำลังอ่าน …"
+
+#: src/window.cr:229
+msgid "System filesystems cannot be unmounted here."
+msgstr "ไม่สามารถเลิกเมานท์ระบบแฟ้มของระบบได้จากที่นี่"
+
+#: src/window.cr:231
+msgid "No mountable filesystem"
+msgstr "ไม่มีระบบแฟ้มที่เมานท์ได้"
+
+#: src/window.cr:233
+msgid "Unmount all filesystems"
+msgstr "เลิกเมานท์ระบบแฟ้มทั้งหมด"
+
+#: src/window.cr:233
+msgid "Mount all filesystems"
+msgstr "เมานท์ระบบแฟ้มทั้งหมด"
+
+#: src/window.cr:235
+msgid "Unmount filesystem"
+msgstr "เลิกเมานท์ระบบแฟ้ม"
+
+#: src/window.cr:235
+msgid "Mount filesystem"
+msgstr "เมานท์ระบบแฟ้ม"
+
+#: src/window.cr:249
+msgid "Mounting filesystems …"
+msgstr "กำลังเมานท์ระบบแฟ้ม …"
+
+#: src/window.cr:249
+msgid "Unmounting filesystems …"
+msgstr "กำลังเลิกเมานท์ระบบแฟ้ม …"
+
+#: src/window.cr:255
+msgid "Filesystem operation completed"
+msgstr "ดำเนินการกับระบบแฟ้มเสร็จแล้ว"
+
+#: src/window.cr:257
+msgid "Filesystem operation failed"
+msgstr "ดำเนินการกับระบบแฟ้มไม่สำเร็จ"
+
+#: src/window.cr:257
+msgid ""
+"The following operations failed:\n"
+"%{errors}"
+msgstr ""
+"การดำเนินการต่อไปนี้ไม่สำเร็จ:\n"
+"%{errors}"
+
+#: src/window.cr:317 src/window.cr:358 src/window.cr:397
+msgid "%{size} total"
+msgstr "ทั้งหมด %{size}"
+
+#: src/window.cr:318 src/window.cr:384
+msgid "%{state} · Usage unknown"
+msgstr "%{state} · ไม่ทราบการใช้งาน"
+
+#: src/window.cr:344
+msgid "Not mounted · usage unavailable"
+msgstr "ยังไม่ได้เมานท์ · ไม่มีข้อมูลการใช้งาน"
+
+#: src/window.cr:346
+msgid "Usage unknown · no measurable filesystems"
+msgstr "ไม่ทราบการใช้งาน · ไม่มีระบบแฟ้มที่วัดได้"
+
+#: src/window.cr:350 src/window.cr:395
+msgid "%{size} used (%{percent} %%)"
+msgstr "ใช้แล้ว %{size} (%{percent} %%)"
+
+#: src/window.cr:352
+msgid "At least %{size} used (%{percent} %%)"
+msgstr "ใช้แล้วอย่างน้อย %{size} (%{percent} %%)"
+
+#: src/window.cr:354 src/window.cr:396
+msgid "%{size} available"
+msgstr "ใช้ได้ %{size}"
+
+#: src/window.cr:355 src/window.cr:398
+msgid "%{size} reserved"
+msgstr "สงวนไว้ %{size}"
+
+#: src/window.cr:356
+msgid "%{known}/%{total} measured"
+msgstr "วัดแล้ว %{known}/%{total}"
+
+#: src/window.cr:360
+msgid ""
+"Usage is relative to the full drive capacity. Unmounted or multi-device "
+"filesystems are excluded from the total. Unpartitioned space is not "
+"available filesystem space."
+msgstr ""
+"การใช้งานคำนวณเทียบกับความจุทั้งหมดของไดรฟ์ "
+"ระบบแฟ้มที่ไม่ได้เมานท์หรือครอบคลุมหลายอุปกรณ์จะไม่รวมอยู่ในยอดรวม "
+"พื้นที่ที่ยังไม่ได้แบ่งพาร์ทิชันไม่ใช่พื้นที่ว่างของระบบแฟ้ม"
+
+#: src/window.cr:361
+msgid ""
+"Microsoft reserved partitions have no filesystem and are excluded from usage "
+"totals."
+msgstr "พาร์ทิชันที่ Microsoft สงวนไว้ไม่มีระบบแฟ้มและไม่รวมอยู่ในยอดการใช้งาน"
+
+#: src/window.cr:382
+msgid "Reserved partition · no filesystem"
+msgstr "พาร์ทิชันที่สงวนไว้ · ไม่มีระบบแฟ้ม"
+
+#: src/window.cr:386
+msgid "Mount this filesystem to read its disk usage."
+msgstr "เมานท์ระบบแฟ้มนี้เพื่อดูการใช้พื้นที่ดิสก์"
+
+#: src/window.cr:399
+msgid "%{size} filesystem size"
+msgstr "ขนาดระบบแฟ้ม %{size}"
+
+#: src/window.cr:404
+msgid "Usage unavailable"
+msgstr "ไม่มีข้อมูลการใช้งาน"
+
+#: src/window.cr:414
+msgid "Not mounted"
+msgstr "ยังไม่ได้เมานท์"
+
+#: src/window.cr:416
+msgid "Used by %{devices}"
+msgstr "ใช้โดย %{devices}"
+
+#: src/window.cr:418
+msgid "Swap (active)"
+msgstr "พื้นที่สลับ (กำลังใช้งาน)"
+
+#: src/window.cr:420
+msgid "Encrypted (locked)"
+msgstr "เข้ารหัส (ล็อกอยู่)"
+
+#: src/window.cr:427
+msgid "Microsoft reserved (MSR)"
+msgstr "Microsoft สงวนไว้ (MSR)"
+
+#: src/window.cr:428
+msgid "Microsoft basic data"
+msgstr "ข้อมูลพื้นฐานของ Microsoft"
+
+#: src/window.cr:429
+msgid "Windows recovery"
+msgstr "การกู้คืน Windows"
+
+#: src/window.cr:430
+msgid "EFI system partition"
+msgstr "พาร์ทิชันระบบ EFI"
+
+#: src/window.cr:443
+msgid "The filesystem does not report disk usage."
+msgstr "ระบบแฟ้มไม่รายงานการใช้พื้นที่ดิสก์"
+
+#: src/window.cr:456
+msgid "Could not read filesystem."
+msgstr "ไม่สามารถอ่านระบบแฟ้มได้"
+
+#: src/mount_service.cr:32
+msgid "UDisks2 is unavailable."
+msgstr "ไม่สามารถใช้งาน UDisks2 ได้"
+
+#: src/mount_service.cr:46
+msgid "The filesystem is no longer available."
+msgstr "ระบบแฟ้มนี้ไม่สามารถใช้งานได้อีกต่อไป"
+
+#: src/mount_service.cr:84
+msgid "This filesystem cannot be mounted or unmounted here."
+msgstr "ไม่สามารถเมานท์หรือเลิกเมานท์ระบบแฟ้มนี้ได้จากที่นี่"

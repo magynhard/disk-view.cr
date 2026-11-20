@@ -1,0 +1,246 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Disk View 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/magynhard/disk-view.cr/issues\n"
+"POT-Creation-Date: 2026-11-14 20:37+0100\n"
+"Language: is\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);\n"
+
+#: src/window.cr:26 src/window.cr:33
+msgid "Refresh"
+msgstr "Endurnýja"
+
+#: src/window.cr:31
+msgid "Main menu"
+msgstr "Aðalvalmynd"
+
+#: src/window.cr:34
+msgid "About Disk View"
+msgstr "Um Disk View"
+
+#: src/window.cr:35 src/window.cr:258
+msgid "Close"
+msgstr "Loka"
+
+#: src/window.cr:46
+msgid "Drives & Partitions"
+msgstr "Drif og disksneiðar"
+
+#: src/window.cr:52
+msgid "Size units"
+msgstr "Stærðareiningar"
+
+#: src/window.cr:55
+msgid "Gibibytes (GiB)"
+msgstr "Gibibæt (GiB)"
+
+#: src/window.cr:57
+msgid "Gigabytes (GB)"
+msgstr "Gígabæt (GB)"
+
+#: src/window.cr:73
+msgid "Used space · refreshes automatically every 15 seconds"
+msgstr "Notað pláss · endurnýjast sjálfkrafa á 15 sekúndna fresti"
+
+#: src/window.cr:133
+msgid ""
+"Drives, partitions and disk usage at a glance.\n"
+"Built with Crystal, GTK4 and libadwaita."
+msgstr ""
+"Yfirlit yfir drif, disksneiðar og diskanotkun.\n"
+"Byggt með Crystal, GTK4 og libadwaita."
+
+#: src/window.cr:162
+msgid "Other filesystems / Network"
+msgstr "Önnur skráakerfi / Netkerfi"
+
+#: src/window.cr:170
+msgid "%{count} drive"
+msgid_plural "%{count} drives"
+msgstr[0] "%{count} drif"
+msgstr[1] "%{count} drif"
+
+#: src/window.cr:170
+msgid "%{drives} · Updated %{time}"
+msgstr "%{drives} · Uppfært %{time}"
+
+#: src/window.cr:172
+msgid "Could not read drives: %{error}"
+msgstr "Gat ekki lesið drif: %{error}"
+
+#: src/window.cr:202
+msgid "Reading …"
+msgstr "Les …"
+
+#: src/window.cr:229
+msgid "System filesystems cannot be unmounted here."
+msgstr "Ekki er hægt að aftengja skráakerfi kerfisins hér."
+
+#: src/window.cr:231
+msgid "No mountable filesystem"
+msgstr "Ekkert skráakerfi sem hægt er að tengja"
+
+#: src/window.cr:233
+msgid "Unmount all filesystems"
+msgstr "Aftengja öll skráakerfi"
+
+#: src/window.cr:233
+msgid "Mount all filesystems"
+msgstr "Tengja öll skráakerfi"
+
+#: src/window.cr:235
+msgid "Unmount filesystem"
+msgstr "Aftengja skráakerfi"
+
+#: src/window.cr:235
+msgid "Mount filesystem"
+msgstr "Tengja skráakerfi"
+
+#: src/window.cr:249
+msgid "Mounting filesystems …"
+msgstr "Tengi skráakerfi …"
+
+#: src/window.cr:249
+msgid "Unmounting filesystems …"
+msgstr "Aftengi skráakerfi …"
+
+#: src/window.cr:255
+msgid "Filesystem operation completed"
+msgstr "Aðgerð á skráakerfi lokið"
+
+#: src/window.cr:257
+msgid "Filesystem operation failed"
+msgstr "Aðgerð á skráakerfi mistókst"
+
+#: src/window.cr:257
+msgid ""
+"The following operations failed:\n"
+"%{errors}"
+msgstr ""
+"Eftirfarandi aðgerðir mistókust:\n"
+"%{errors}"
+
+#: src/window.cr:317 src/window.cr:358 src/window.cr:397
+msgid "%{size} total"
+msgstr "%{size} samtals"
+
+#: src/window.cr:318 src/window.cr:384
+msgid "%{state} · Usage unknown"
+msgstr "%{state} · Notkun óþekkt"
+
+#: src/window.cr:344
+msgid "Not mounted · usage unavailable"
+msgstr "Ekki tengt · notkunarupplýsingar ekki tiltækar"
+
+#: src/window.cr:346
+msgid "Usage unknown · no measurable filesystems"
+msgstr "Notkun óþekkt · engin mælanleg skráakerfi"
+
+#: src/window.cr:350 src/window.cr:395
+msgid "%{size} used (%{percent} %%)"
+msgstr "%{size} notuð (%{percent} %%)"
+
+#: src/window.cr:352
+msgid "At least %{size} used (%{percent} %%)"
+msgstr "Að minnsta kosti %{size} notuð (%{percent} %%)"
+
+#: src/window.cr:354 src/window.cr:396
+msgid "%{size} available"
+msgstr "%{size} tiltæk"
+
+#: src/window.cr:355 src/window.cr:398
+msgid "%{size} reserved"
+msgstr "%{size} frátekin"
+
+#: src/window.cr:356
+msgid "%{known}/%{total} measured"
+msgstr "%{known}/%{total} mæld"
+
+#: src/window.cr:360
+msgid ""
+"Usage is relative to the full drive capacity. Unmounted or multi-device "
+"filesystems are excluded from the total. Unpartitioned space is not "
+"available filesystem space."
+msgstr ""
+"Notkun miðast við heildarrýmd drifsins. Ótengd skráakerfi og skráakerfi sem "
+"spanna mörg tæki eru ekki talin með í heildinni. Óskipt pláss er ekki "
+"tiltækt pláss í skráakerfi."
+
+#: src/window.cr:361
+msgid ""
+"Microsoft reserved partitions have no filesystem and are excluded from usage "
+"totals."
+msgstr ""
+"Microsoft-fráteknar disksneiðar hafa ekkert skráakerfi og eru ekki taldar "
+"með í heildarnotkun."
+
+#: src/window.cr:382
+msgid "Reserved partition · no filesystem"
+msgstr "Frátekin disksneið · ekkert skráakerfi"
+
+#: src/window.cr:386
+msgid "Mount this filesystem to read its disk usage."
+msgstr "Tengdu þetta skráakerfi til að sjá diskanotkun þess."
+
+#: src/window.cr:399
+msgid "%{size} filesystem size"
+msgstr "Stærð skráakerfis: %{size}"
+
+#: src/window.cr:404
+msgid "Usage unavailable"
+msgstr "Notkunarupplýsingar ekki tiltækar"
+
+#: src/window.cr:414
+msgid "Not mounted"
+msgstr "Ekki tengt"
+
+#: src/window.cr:416
+msgid "Used by %{devices}"
+msgstr "Notað af %{devices}"
+
+#: src/window.cr:418
+msgid "Swap (active)"
+msgstr "Sýndarminni (virkt)"
+
+#: src/window.cr:420
+msgid "Encrypted (locked)"
+msgstr "Dulkóðað (læst)"
+
+#: src/window.cr:427
+msgid "Microsoft reserved (MSR)"
+msgstr "Microsoft-frátekið (MSR)"
+
+#: src/window.cr:428
+msgid "Microsoft basic data"
+msgstr "Microsoft-grunngögn"
+
+#: src/window.cr:429
+msgid "Windows recovery"
+msgstr "Windows-endurheimt"
+
+#: src/window.cr:430
+msgid "EFI system partition"
+msgstr "EFI-kerfisdisksneið"
+
+#: src/window.cr:443
+msgid "The filesystem does not report disk usage."
+msgstr "Skráakerfið gefur ekki upp diskanotkun."
+
+#: src/window.cr:456
+msgid "Could not read filesystem."
+msgstr "Gat ekki lesið skráakerfið."
+
+#: src/mount_service.cr:32
+msgid "UDisks2 is unavailable."
+msgstr "UDisks2 er ekki tiltækt."
+
+#: src/mount_service.cr:46
+msgid "The filesystem is no longer available."
+msgstr "Skráakerfið er ekki lengur tiltækt."
+
+#: src/mount_service.cr:84
+msgid "This filesystem cannot be mounted or unmounted here."
+msgstr "Ekki er hægt að tengja eða aftengja þetta skráakerfi hér."

@@ -1,0 +1,250 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Disk View 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/magynhard/disk-view.cr/issues\n"
+"POT-Creation-Date: 2026-11-14 20:37+0100\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/window.cr:26 src/window.cr:33
+msgid "Refresh"
+msgstr "Ανανέωση"
+
+#: src/window.cr:31
+msgid "Main menu"
+msgstr "Κύριο μενού"
+
+#: src/window.cr:34
+msgid "About Disk View"
+msgstr "Σχετικά με το Disk View"
+
+#: src/window.cr:35 src/window.cr:258
+msgid "Close"
+msgstr "Κλείσιμο"
+
+#: src/window.cr:46
+msgid "Drives & Partitions"
+msgstr "Δίσκοι και κατατμήσεις"
+
+#: src/window.cr:52
+msgid "Size units"
+msgstr "Μονάδες μεγέθους"
+
+#: src/window.cr:55
+msgid "Gibibytes (GiB)"
+msgstr "Γιβιμπάιτ (GiB)"
+
+#: src/window.cr:57
+msgid "Gigabytes (GB)"
+msgstr "Γιγαμπάιτ (GB)"
+
+#: src/window.cr:73
+msgid "Used space · refreshes automatically every 15 seconds"
+msgstr "Χρησιμοποιημένος χώρος · αυτόματη ανανέωση κάθε 15 δευτερόλεπτα"
+
+#: src/window.cr:133
+msgid ""
+"Drives, partitions and disk usage at a glance.\n"
+"Built with Crystal, GTK4 and libadwaita."
+msgstr ""
+"Δίσκοι, κατατμήσεις και χρήση δίσκου με μια ματιά.\n"
+"Δημιουργήθηκε με Crystal, GTK4 και libadwaita."
+
+#: src/window.cr:162
+msgid "Other filesystems / Network"
+msgstr "Άλλα συστήματα αρχείων / Δίκτυο"
+
+#: src/window.cr:170
+msgid "%{count} drive"
+msgid_plural "%{count} drives"
+msgstr[0] "%{count} δίσκος"
+msgstr[1] "%{count} δίσκοι"
+
+#: src/window.cr:170
+msgid "%{drives} · Updated %{time}"
+msgstr "%{drives} · Ενημέρωση: %{time}"
+
+#: src/window.cr:172
+msgid "Could not read drives: %{error}"
+msgstr "Δεν ήταν δυνατή η ανάγνωση των δίσκων: %{error}"
+
+#: src/window.cr:202
+msgid "Reading …"
+msgstr "Ανάγνωση …"
+
+#: src/window.cr:229
+msgid "System filesystems cannot be unmounted here."
+msgstr ""
+"Δεν είναι δυνατή η αποπροσάρτηση συστημάτων αρχείων του συστήματος από εδώ."
+
+#: src/window.cr:231
+msgid "No mountable filesystem"
+msgstr "Δεν υπάρχει σύστημα αρχείων προς προσάρτηση"
+
+#: src/window.cr:233
+msgid "Unmount all filesystems"
+msgstr "Αποπροσάρτηση όλων των συστημάτων αρχείων"
+
+#: src/window.cr:233
+msgid "Mount all filesystems"
+msgstr "Προσάρτηση όλων των συστημάτων αρχείων"
+
+#: src/window.cr:235
+msgid "Unmount filesystem"
+msgstr "Αποπροσάρτηση συστήματος αρχείων"
+
+#: src/window.cr:235
+msgid "Mount filesystem"
+msgstr "Προσάρτηση συστήματος αρχείων"
+
+#: src/window.cr:249
+msgid "Mounting filesystems …"
+msgstr "Προσάρτηση συστημάτων αρχείων …"
+
+#: src/window.cr:249
+msgid "Unmounting filesystems …"
+msgstr "Αποπροσάρτηση συστημάτων αρχείων …"
+
+#: src/window.cr:255
+msgid "Filesystem operation completed"
+msgstr "Η λειτουργία συστήματος αρχείων ολοκληρώθηκε"
+
+#: src/window.cr:257
+msgid "Filesystem operation failed"
+msgstr "Η λειτουργία συστήματος αρχείων απέτυχε"
+
+#: src/window.cr:257
+msgid ""
+"The following operations failed:\n"
+"%{errors}"
+msgstr ""
+"Οι παρακάτω λειτουργίες απέτυχαν:\n"
+"%{errors}"
+
+#: src/window.cr:317 src/window.cr:358 src/window.cr:397
+msgid "%{size} total"
+msgstr "%{size} συνολικά"
+
+#: src/window.cr:318 src/window.cr:384
+msgid "%{state} · Usage unknown"
+msgstr "%{state} · Άγνωστη χρήση"
+
+#: src/window.cr:344
+msgid "Not mounted · usage unavailable"
+msgstr "Δεν έχει προσαρτηθεί · η χρήση δεν είναι διαθέσιμη"
+
+#: src/window.cr:346
+msgid "Usage unknown · no measurable filesystems"
+msgstr "Άγνωστη χρήση · δεν υπάρχουν μετρήσιμα συστήματα αρχείων"
+
+#: src/window.cr:350 src/window.cr:395
+msgid "%{size} used (%{percent} %%)"
+msgstr "%{size} χρησιμοποιούνται (%{percent} %%)"
+
+#: src/window.cr:352
+msgid "At least %{size} used (%{percent} %%)"
+msgstr "Τουλάχιστον %{size} χρησιμοποιούνται (%{percent} %%)"
+
+#: src/window.cr:354 src/window.cr:396
+msgid "%{size} available"
+msgstr "%{size} διαθέσιμα"
+
+#: src/window.cr:355 src/window.cr:398
+msgid "%{size} reserved"
+msgstr "%{size} δεσμευμένα"
+
+#: src/window.cr:356
+msgid "%{known}/%{total} measured"
+msgstr "%{known}/%{total} μετρήθηκαν"
+
+#: src/window.cr:360
+msgid ""
+"Usage is relative to the full drive capacity. Unmounted or multi-device "
+"filesystems are excluded from the total. Unpartitioned space is not "
+"available filesystem space."
+msgstr ""
+"Η χρήση υπολογίζεται ως προς τη συνολική χωρητικότητα του δίσκου. Συστήματα "
+"αρχείων που δεν έχουν προσαρτηθεί ή εκτείνονται σε πολλές συσκευές δεν "
+"περιλαμβάνονται στο σύνολο. Ο χώρος χωρίς κατάτμηση δεν είναι διαθέσιμος "
+"χώρος συστήματος αρχείων."
+
+#: src/window.cr:361
+msgid ""
+"Microsoft reserved partitions have no filesystem and are excluded from usage "
+"totals."
+msgstr ""
+"Οι δεσμευμένες κατατμήσεις Microsoft δεν έχουν σύστημα αρχείων και δεν "
+"περιλαμβάνονται στη συνολική χρήση."
+
+#: src/window.cr:382
+msgid "Reserved partition · no filesystem"
+msgstr "Δεσμευμένη κατάτμηση · χωρίς σύστημα αρχείων"
+
+#: src/window.cr:386
+msgid "Mount this filesystem to read its disk usage."
+msgstr "Προσαρτήστε αυτό το σύστημα αρχείων για να δείτε τη χρήση του δίσκου."
+
+#: src/window.cr:399
+msgid "%{size} filesystem size"
+msgstr "Μέγεθος συστήματος αρχείων: %{size}"
+
+#: src/window.cr:404
+msgid "Usage unavailable"
+msgstr "Η χρήση δεν είναι διαθέσιμη"
+
+#: src/window.cr:414
+msgid "Not mounted"
+msgstr "Δεν έχει προσαρτηθεί"
+
+#: src/window.cr:416
+msgid "Used by %{devices}"
+msgstr "Χρησιμοποιείται από: %{devices}"
+
+#: src/window.cr:418
+msgid "Swap (active)"
+msgstr "Χώρος ανταλλαγής (ενεργός)"
+
+#: src/window.cr:420
+msgid "Encrypted (locked)"
+msgstr "Κρυπτογραφημένο (κλειδωμένο)"
+
+#: src/window.cr:427
+msgid "Microsoft reserved (MSR)"
+msgstr "Δεσμευμένη κατάτμηση Microsoft (MSR)"
+
+#: src/window.cr:428
+msgid "Microsoft basic data"
+msgstr "Βασικά δεδομένα Microsoft"
+
+#: src/window.cr:429
+msgid "Windows recovery"
+msgstr "Αποκατάσταση Windows"
+
+#: src/window.cr:430
+msgid "EFI system partition"
+msgstr "Κατάτμηση συστήματος EFI"
+
+#: src/window.cr:443
+msgid "The filesystem does not report disk usage."
+msgstr "Το σύστημα αρχείων δεν αναφέρει τη χρήση του δίσκου."
+
+#: src/window.cr:456
+msgid "Could not read filesystem."
+msgstr "Δεν ήταν δυνατή η ανάγνωση του συστήματος αρχείων."
+
+#: src/mount_service.cr:32
+msgid "UDisks2 is unavailable."
+msgstr "Το UDisks2 δεν είναι διαθέσιμο."
+
+#: src/mount_service.cr:46
+msgid "The filesystem is no longer available."
+msgstr "Το σύστημα αρχείων δεν είναι πλέον διαθέσιμο."
+
+#: src/mount_service.cr:84
+msgid "This filesystem cannot be mounted or unmounted here."
+msgstr ""
+"Δεν είναι δυνατή η προσάρτηση ή αποπροσάρτηση αυτού του συστήματος αρχείων "
+"από εδώ."

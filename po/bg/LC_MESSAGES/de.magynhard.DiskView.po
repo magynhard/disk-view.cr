@@ -1,0 +1,246 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Disk View 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/magynhard/disk-view.cr/issues\n"
+"POT-Creation-Date: 2026-11-14 20:37+0100\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/window.cr:26 src/window.cr:33
+msgid "Refresh"
+msgstr "Обновяване"
+
+#: src/window.cr:31
+msgid "Main menu"
+msgstr "Основно меню"
+
+#: src/window.cr:34
+msgid "About Disk View"
+msgstr "Относно Disk View"
+
+#: src/window.cr:35 src/window.cr:258
+msgid "Close"
+msgstr "Затваряне"
+
+#: src/window.cr:46
+msgid "Drives & Partitions"
+msgstr "Дискове и дялове"
+
+#: src/window.cr:52
+msgid "Size units"
+msgstr "Мерни единици"
+
+#: src/window.cr:55
+msgid "Gibibytes (GiB)"
+msgstr "Гибибайти (GiB)"
+
+#: src/window.cr:57
+msgid "Gigabytes (GB)"
+msgstr "Гигабайти (GB)"
+
+#: src/window.cr:73
+msgid "Used space · refreshes automatically every 15 seconds"
+msgstr "Използвано пространство · автоматично обновяване на всеки 15 секунди"
+
+#: src/window.cr:133
+msgid ""
+"Drives, partitions and disk usage at a glance.\n"
+"Built with Crystal, GTK4 and libadwaita."
+msgstr ""
+"Преглед на дисковете, дяловете и използваното пространство.\n"
+"Създадено с Crystal, GTK4 и libadwaita."
+
+#: src/window.cr:162
+msgid "Other filesystems / Network"
+msgstr "Други файлови системи / Мрежа"
+
+#: src/window.cr:170
+msgid "%{count} drive"
+msgid_plural "%{count} drives"
+msgstr[0] "%{count} диск"
+msgstr[1] "%{count} диска"
+
+#: src/window.cr:170
+msgid "%{drives} · Updated %{time}"
+msgstr "%{drives} · Обновено в %{time}"
+
+#: src/window.cr:172
+msgid "Could not read drives: %{error}"
+msgstr "Дисковете не могат да бъдат прочетени: %{error}"
+
+#: src/window.cr:202
+msgid "Reading …"
+msgstr "Прочитане …"
+
+#: src/window.cr:229
+msgid "System filesystems cannot be unmounted here."
+msgstr "Системните файлови системи не могат да бъдат демонтирани оттук."
+
+#: src/window.cr:231
+msgid "No mountable filesystem"
+msgstr "Няма файлова система за монтиране"
+
+#: src/window.cr:233
+msgid "Unmount all filesystems"
+msgstr "Демонтиране на всички файлови системи"
+
+#: src/window.cr:233
+msgid "Mount all filesystems"
+msgstr "Монтиране на всички файлови системи"
+
+#: src/window.cr:235
+msgid "Unmount filesystem"
+msgstr "Демонтиране на файловата система"
+
+#: src/window.cr:235
+msgid "Mount filesystem"
+msgstr "Монтиране на файловата система"
+
+#: src/window.cr:249
+msgid "Mounting filesystems …"
+msgstr "Монтиране на файловите системи …"
+
+#: src/window.cr:249
+msgid "Unmounting filesystems …"
+msgstr "Демонтиране на файловите системи …"
+
+#: src/window.cr:255
+msgid "Filesystem operation completed"
+msgstr "Операцията с файловата система завърши"
+
+#: src/window.cr:257
+msgid "Filesystem operation failed"
+msgstr "Операцията с файловата система е неуспешна"
+
+#: src/window.cr:257
+msgid ""
+"The following operations failed:\n"
+"%{errors}"
+msgstr ""
+"Следните операции са неуспешни:\n"
+"%{errors}"
+
+#: src/window.cr:317 src/window.cr:358 src/window.cr:397
+msgid "%{size} total"
+msgstr "Общо %{size}"
+
+#: src/window.cr:318 src/window.cr:384
+msgid "%{state} · Usage unknown"
+msgstr "%{state} · Използването е неизвестно"
+
+#: src/window.cr:344
+msgid "Not mounted · usage unavailable"
+msgstr "Не е монтирана · използването не е достъпно"
+
+#: src/window.cr:346
+msgid "Usage unknown · no measurable filesystems"
+msgstr "Използването е неизвестно · няма измерими файлови системи"
+
+#: src/window.cr:350 src/window.cr:395
+msgid "%{size} used (%{percent} %%)"
+msgstr "%{size} използвани (%{percent} %%)"
+
+#: src/window.cr:352
+msgid "At least %{size} used (%{percent} %%)"
+msgstr "Поне %{size} използвани (%{percent} %%)"
+
+#: src/window.cr:354 src/window.cr:396
+msgid "%{size} available"
+msgstr "%{size} налични"
+
+#: src/window.cr:355 src/window.cr:398
+msgid "%{size} reserved"
+msgstr "%{size} резервирани"
+
+#: src/window.cr:356
+msgid "%{known}/%{total} measured"
+msgstr "%{known}/%{total} измерени"
+
+#: src/window.cr:360
+msgid ""
+"Usage is relative to the full drive capacity. Unmounted or multi-device "
+"filesystems are excluded from the total. Unpartitioned space is not "
+"available filesystem space."
+msgstr ""
+"Използването е спрямо пълния капацитет на диска. Немонтираните файлови "
+"системи и тези върху няколко устройства не се включват в общия резултат. "
+"Неразпределеното пространство не е налично пространство във файлова система."
+
+#: src/window.cr:361
+msgid ""
+"Microsoft reserved partitions have no filesystem and are excluded from usage "
+"totals."
+msgstr ""
+"Резервираните дялове на Microsoft нямат файлова система и не се включват в "
+"общото използване."
+
+#: src/window.cr:382
+msgid "Reserved partition · no filesystem"
+msgstr "Резервиран дял · без файлова система"
+
+#: src/window.cr:386
+msgid "Mount this filesystem to read its disk usage."
+msgstr "Монтирайте файловата система, за да видите използваното пространство."
+
+#: src/window.cr:399
+msgid "%{size} filesystem size"
+msgstr "Размер на файловата система: %{size}"
+
+#: src/window.cr:404
+msgid "Usage unavailable"
+msgstr "Данните за използването не са достъпни"
+
+#: src/window.cr:414
+msgid "Not mounted"
+msgstr "Не е монтирана"
+
+#: src/window.cr:416
+msgid "Used by %{devices}"
+msgstr "Използва се от %{devices}"
+
+#: src/window.cr:418
+msgid "Swap (active)"
+msgstr "Област за размяна (активна)"
+
+#: src/window.cr:420
+msgid "Encrypted (locked)"
+msgstr "Шифровано (заключено)"
+
+#: src/window.cr:427
+msgid "Microsoft reserved (MSR)"
+msgstr "Резервиран от Microsoft (MSR)"
+
+#: src/window.cr:428
+msgid "Microsoft basic data"
+msgstr "Основни данни на Microsoft"
+
+#: src/window.cr:429
+msgid "Windows recovery"
+msgstr "Възстановяване на Windows"
+
+#: src/window.cr:430
+msgid "EFI system partition"
+msgstr "Системен дял EFI"
+
+#: src/window.cr:443
+msgid "The filesystem does not report disk usage."
+msgstr "Файловата система не отчита използваното пространство."
+
+#: src/window.cr:456
+msgid "Could not read filesystem."
+msgstr "Файловата система не може да бъде прочетена."
+
+#: src/mount_service.cr:32
+msgid "UDisks2 is unavailable."
+msgstr "UDisks2 не е достъпен."
+
+#: src/mount_service.cr:46
+msgid "The filesystem is no longer available."
+msgstr "Файловата система вече не е достъпна."
+
+#: src/mount_service.cr:84
+msgid "This filesystem cannot be mounted or unmounted here."
+msgstr "Тази файлова система не може да бъде монтирана или демонтирана оттук."

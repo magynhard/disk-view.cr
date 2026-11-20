@@ -1,0 +1,246 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Disk View 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/magynhard/disk-view.cr/issues\n"
+"POT-Creation-Date: 2026-11-14 20:37+0100\n"
+"Language: et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/window.cr:26 src/window.cr:33
+msgid "Refresh"
+msgstr "Värskenda"
+
+#: src/window.cr:31
+msgid "Main menu"
+msgstr "Peamenüü"
+
+#: src/window.cr:34
+msgid "About Disk View"
+msgstr "Disk View teave"
+
+#: src/window.cr:35 src/window.cr:258
+msgid "Close"
+msgstr "Sulge"
+
+#: src/window.cr:46
+msgid "Drives & Partitions"
+msgstr "Kettad ja partitsioonid"
+
+#: src/window.cr:52
+msgid "Size units"
+msgstr "Suuruse ühikud"
+
+#: src/window.cr:55
+msgid "Gibibytes (GiB)"
+msgstr "Gibibaidid (GiB)"
+
+#: src/window.cr:57
+msgid "Gigabytes (GB)"
+msgstr "Gigabaidid (GB)"
+
+#: src/window.cr:73
+msgid "Used space · refreshes automatically every 15 seconds"
+msgstr "Kasutatud ruum · värskendatakse automaatselt iga 15 sekundi järel"
+
+#: src/window.cr:133
+msgid ""
+"Drives, partitions and disk usage at a glance.\n"
+"Built with Crystal, GTK4 and libadwaita."
+msgstr ""
+"Ülevaade ketastest, partitsioonidest ja kettakasutusest.\n"
+"Loodud Crystali, GTK4 ja libadwaita abil."
+
+#: src/window.cr:162
+msgid "Other filesystems / Network"
+msgstr "Muud failisüsteemid / Võrk"
+
+#: src/window.cr:170
+msgid "%{count} drive"
+msgid_plural "%{count} drives"
+msgstr[0] "%{count} ketas"
+msgstr[1] "%{count} ketast"
+
+#: src/window.cr:170
+msgid "%{drives} · Updated %{time}"
+msgstr "%{drives} · Värskendatud %{time}"
+
+#: src/window.cr:172
+msgid "Could not read drives: %{error}"
+msgstr "Kettaid ei õnnestunud lugeda: %{error}"
+
+#: src/window.cr:202
+msgid "Reading …"
+msgstr "Lugemine …"
+
+#: src/window.cr:229
+msgid "System filesystems cannot be unmounted here."
+msgstr "Süsteemi failisüsteeme ei saa siin lahti ühendada."
+
+#: src/window.cr:231
+msgid "No mountable filesystem"
+msgstr "Ühendatavat failisüsteemi pole"
+
+#: src/window.cr:233
+msgid "Unmount all filesystems"
+msgstr "Ühenda kõik failisüsteemid lahti"
+
+#: src/window.cr:233
+msgid "Mount all filesystems"
+msgstr "Ühenda kõik failisüsteemid"
+
+#: src/window.cr:235
+msgid "Unmount filesystem"
+msgstr "Ühenda failisüsteem lahti"
+
+#: src/window.cr:235
+msgid "Mount filesystem"
+msgstr "Ühenda failisüsteem"
+
+#: src/window.cr:249
+msgid "Mounting filesystems …"
+msgstr "Failisüsteemide ühendamine …"
+
+#: src/window.cr:249
+msgid "Unmounting filesystems …"
+msgstr "Failisüsteemide lahtiühendamine …"
+
+#: src/window.cr:255
+msgid "Filesystem operation completed"
+msgstr "Failisüsteemi toiming lõpetati"
+
+#: src/window.cr:257
+msgid "Filesystem operation failed"
+msgstr "Failisüsteemi toiming nurjus"
+
+#: src/window.cr:257
+msgid ""
+"The following operations failed:\n"
+"%{errors}"
+msgstr ""
+"Järgmised toimingud nurjusid:\n"
+"%{errors}"
+
+#: src/window.cr:317 src/window.cr:358 src/window.cr:397
+msgid "%{size} total"
+msgstr "Kokku %{size}"
+
+#: src/window.cr:318 src/window.cr:384
+msgid "%{state} · Usage unknown"
+msgstr "%{state} · Kasutus teadmata"
+
+#: src/window.cr:344
+msgid "Not mounted · usage unavailable"
+msgstr "Ühendamata · kasutus pole saadaval"
+
+#: src/window.cr:346
+msgid "Usage unknown · no measurable filesystems"
+msgstr "Kasutus teadmata · mõõdetavaid failisüsteeme pole"
+
+#: src/window.cr:350 src/window.cr:395
+msgid "%{size} used (%{percent} %%)"
+msgstr "Kasutusel %{size} (%{percent} %%)"
+
+#: src/window.cr:352
+msgid "At least %{size} used (%{percent} %%)"
+msgstr "Kasutusel vähemalt %{size} (%{percent} %%)"
+
+#: src/window.cr:354 src/window.cr:396
+msgid "%{size} available"
+msgstr "Saadaval %{size}"
+
+#: src/window.cr:355 src/window.cr:398
+msgid "%{size} reserved"
+msgstr "Reserveeritud %{size}"
+
+#: src/window.cr:356
+msgid "%{known}/%{total} measured"
+msgstr "Mõõdetud %{known}/%{total}"
+
+#: src/window.cr:360
+msgid ""
+"Usage is relative to the full drive capacity. Unmounted or multi-device "
+"filesystems are excluded from the total. Unpartitioned space is not "
+"available filesystem space."
+msgstr ""
+"Kasutus on suhteline ketta kogumahuga. Ühendamata ja mitmel seadmel asuvaid "
+"failisüsteeme ei arvestata kogusummas. Partitsioneerimata ruum ei ole "
+"failisüsteemi vaba ruum."
+
+#: src/window.cr:361
+msgid ""
+"Microsoft reserved partitions have no filesystem and are excluded from usage "
+"totals."
+msgstr ""
+"Microsofti reserveeritud partitsioonidel pole failisüsteemi ja neid ei "
+"arvestata kasutuse kogusummas."
+
+#: src/window.cr:382
+msgid "Reserved partition · no filesystem"
+msgstr "Reserveeritud partitsioon · failisüsteem puudub"
+
+#: src/window.cr:386
+msgid "Mount this filesystem to read its disk usage."
+msgstr "Kettakasutuse vaatamiseks ühenda see failisüsteem."
+
+#: src/window.cr:399
+msgid "%{size} filesystem size"
+msgstr "Failisüsteemi suurus: %{size}"
+
+#: src/window.cr:404
+msgid "Usage unavailable"
+msgstr "Kasutus pole saadaval"
+
+#: src/window.cr:414
+msgid "Not mounted"
+msgstr "Ühendamata"
+
+#: src/window.cr:416
+msgid "Used by %{devices}"
+msgstr "Kasutab %{devices}"
+
+#: src/window.cr:418
+msgid "Swap (active)"
+msgstr "Saaleala (aktiivne)"
+
+#: src/window.cr:420
+msgid "Encrypted (locked)"
+msgstr "Krüptitud (lukustatud)"
+
+#: src/window.cr:427
+msgid "Microsoft reserved (MSR)"
+msgstr "Microsofti reserveeritud (MSR)"
+
+#: src/window.cr:428
+msgid "Microsoft basic data"
+msgstr "Microsofti põhiandmed"
+
+#: src/window.cr:429
+msgid "Windows recovery"
+msgstr "Windowsi taaste"
+
+#: src/window.cr:430
+msgid "EFI system partition"
+msgstr "EFI-süsteemipartitsioon"
+
+#: src/window.cr:443
+msgid "The filesystem does not report disk usage."
+msgstr "Failisüsteem ei teata kettakasutust."
+
+#: src/window.cr:456
+msgid "Could not read filesystem."
+msgstr "Failisüsteemi ei õnnestunud lugeda."
+
+#: src/mount_service.cr:32
+msgid "UDisks2 is unavailable."
+msgstr "UDisks2 pole saadaval."
+
+#: src/mount_service.cr:46
+msgid "The filesystem is no longer available."
+msgstr "Failisüsteem pole enam saadaval."
+
+#: src/mount_service.cr:84
+msgid "This filesystem cannot be mounted or unmounted here."
+msgstr "Seda failisüsteemi ei saa siin ühendada ega lahti ühendada."

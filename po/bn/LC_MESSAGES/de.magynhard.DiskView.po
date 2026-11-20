@@ -1,0 +1,246 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Disk View 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/magynhard/disk-view.cr/issues\n"
+"POT-Creation-Date: 2026-11-14 20:37+0100\n"
+"Language: bn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/window.cr:26 src/window.cr:33
+msgid "Refresh"
+msgstr "রিফ্রেশ করুন"
+
+#: src/window.cr:31
+msgid "Main menu"
+msgstr "প্রধান মেনু"
+
+#: src/window.cr:34
+msgid "About Disk View"
+msgstr "Disk View সম্পর্কে"
+
+#: src/window.cr:35 src/window.cr:258
+msgid "Close"
+msgstr "বন্ধ করুন"
+
+#: src/window.cr:46
+msgid "Drives & Partitions"
+msgstr "ড্রাইভ ও পার্টিশন"
+
+#: src/window.cr:52
+msgid "Size units"
+msgstr "আকারের একক"
+
+#: src/window.cr:55
+msgid "Gibibytes (GiB)"
+msgstr "গিবিবাইট (GiB)"
+
+#: src/window.cr:57
+msgid "Gigabytes (GB)"
+msgstr "গিগাবাইট (GB)"
+
+#: src/window.cr:73
+msgid "Used space · refreshes automatically every 15 seconds"
+msgstr "ব্যবহৃত স্থান · প্রতি ১৫ সেকেন্ডে স্বয়ংক্রিয়ভাবে হালনাগাদ হয়"
+
+#: src/window.cr:133
+msgid ""
+"Drives, partitions and disk usage at a glance.\n"
+"Built with Crystal, GTK4 and libadwaita."
+msgstr ""
+"ড্রাইভ, পার্টিশন ও ডিস্ক ব্যবহারের একনজরে বিবরণ।\n"
+"Crystal, GTK4 ও libadwaita দিয়ে তৈরি।"
+
+#: src/window.cr:162
+msgid "Other filesystems / Network"
+msgstr "অন্যান্য ফাইল সিস্টেম / নেটওয়ার্ক"
+
+#: src/window.cr:170
+msgid "%{count} drive"
+msgid_plural "%{count} drives"
+msgstr[0] "%{count}টি ড্রাইভ"
+msgstr[1] "%{count}টি ড্রাইভ"
+
+#: src/window.cr:170
+msgid "%{drives} · Updated %{time}"
+msgstr "%{drives} · হালনাগাদ: %{time}"
+
+#: src/window.cr:172
+msgid "Could not read drives: %{error}"
+msgstr "ড্রাইভ পড়া যায়নি: %{error}"
+
+#: src/window.cr:202
+msgid "Reading …"
+msgstr "পড়া হচ্ছে …"
+
+#: src/window.cr:229
+msgid "System filesystems cannot be unmounted here."
+msgstr "সিস্টেমের ফাইল সিস্টেম এখানে আনমাউন্ট করা যায় না।"
+
+#: src/window.cr:231
+msgid "No mountable filesystem"
+msgstr "মাউন্ট করার মতো কোনো ফাইল সিস্টেম নেই"
+
+#: src/window.cr:233
+msgid "Unmount all filesystems"
+msgstr "সব ফাইল সিস্টেম আনমাউন্ট করুন"
+
+#: src/window.cr:233
+msgid "Mount all filesystems"
+msgstr "সব ফাইল সিস্টেম মাউন্ট করুন"
+
+#: src/window.cr:235
+msgid "Unmount filesystem"
+msgstr "ফাইল সিস্টেম আনমাউন্ট করুন"
+
+#: src/window.cr:235
+msgid "Mount filesystem"
+msgstr "ফাইল সিস্টেম মাউন্ট করুন"
+
+#: src/window.cr:249
+msgid "Mounting filesystems …"
+msgstr "ফাইল সিস্টেম মাউন্ট করা হচ্ছে …"
+
+#: src/window.cr:249
+msgid "Unmounting filesystems …"
+msgstr "ফাইল সিস্টেম আনমাউন্ট করা হচ্ছে …"
+
+#: src/window.cr:255
+msgid "Filesystem operation completed"
+msgstr "ফাইল সিস্টেমের কাজ সম্পন্ন হয়েছে"
+
+#: src/window.cr:257
+msgid "Filesystem operation failed"
+msgstr "ফাইল সিস্টেমের কাজ ব্যর্থ হয়েছে"
+
+#: src/window.cr:257
+msgid ""
+"The following operations failed:\n"
+"%{errors}"
+msgstr ""
+"নিচের কাজগুলো ব্যর্থ হয়েছে:\n"
+"%{errors}"
+
+#: src/window.cr:317 src/window.cr:358 src/window.cr:397
+msgid "%{size} total"
+msgstr "মোট %{size}"
+
+#: src/window.cr:318 src/window.cr:384
+msgid "%{state} · Usage unknown"
+msgstr "%{state} · ব্যবহারের পরিমাণ অজানা"
+
+#: src/window.cr:344
+msgid "Not mounted · usage unavailable"
+msgstr "মাউন্ট করা নেই · ব্যবহারের তথ্য পাওয়া যায়নি"
+
+#: src/window.cr:346
+msgid "Usage unknown · no measurable filesystems"
+msgstr "ব্যবহার অজানা · পরিমাপযোগ্য ফাইল সিস্টেম নেই"
+
+#: src/window.cr:350 src/window.cr:395
+msgid "%{size} used (%{percent} %%)"
+msgstr "%{size} ব্যবহৃত (%{percent} %%)"
+
+#: src/window.cr:352
+msgid "At least %{size} used (%{percent} %%)"
+msgstr "অন্তত %{size} ব্যবহৃত (%{percent} %%)"
+
+#: src/window.cr:354 src/window.cr:396
+msgid "%{size} available"
+msgstr "%{size} উপলব্ধ"
+
+#: src/window.cr:355 src/window.cr:398
+msgid "%{size} reserved"
+msgstr "%{size} সংরক্ষিত"
+
+#: src/window.cr:356
+msgid "%{known}/%{total} measured"
+msgstr "%{known}/%{total} পরিমাপ করা হয়েছে"
+
+#: src/window.cr:360
+msgid ""
+"Usage is relative to the full drive capacity. Unmounted or multi-device "
+"filesystems are excluded from the total. Unpartitioned space is not "
+"available filesystem space."
+msgstr ""
+"ড্রাইভের সম্পূর্ণ ধারণক্ষমতার অনুপাতে ব্যবহার দেখানো হয়। আনমাউন্ট করা বা একাধিক "
+"ডিভাইসে বিস্তৃত ফাইল সিস্টেম মোটের মধ্যে ধরা হয় না। পার্টিশনবিহীন স্থান ফাইল "
+"সিস্টেমের উপলব্ধ স্থান নয়।"
+
+#: src/window.cr:361
+msgid ""
+"Microsoft reserved partitions have no filesystem and are excluded from usage "
+"totals."
+msgstr ""
+"Microsoft-এর সংরক্ষিত পার্টিশনে ফাইল সিস্টেম নেই এবং সেগুলো মোট ব্যবহারে ধরা হয় "
+"না।"
+
+#: src/window.cr:382
+msgid "Reserved partition · no filesystem"
+msgstr "সংরক্ষিত পার্টিশন · ফাইল সিস্টেম নেই"
+
+#: src/window.cr:386
+msgid "Mount this filesystem to read its disk usage."
+msgstr "ডিস্ক ব্যবহার দেখতে এই ফাইল সিস্টেম মাউন্ট করুন।"
+
+#: src/window.cr:399
+msgid "%{size} filesystem size"
+msgstr "ফাইল সিস্টেমের আকার: %{size}"
+
+#: src/window.cr:404
+msgid "Usage unavailable"
+msgstr "ব্যবহারের তথ্য পাওয়া যায়নি"
+
+#: src/window.cr:414
+msgid "Not mounted"
+msgstr "মাউন্ট করা নেই"
+
+#: src/window.cr:416
+msgid "Used by %{devices}"
+msgstr "%{devices} ব্যবহার করছে"
+
+#: src/window.cr:418
+msgid "Swap (active)"
+msgstr "সোয়াপ (সক্রিয়)"
+
+#: src/window.cr:420
+msgid "Encrypted (locked)"
+msgstr "এনক্রিপ্ট করা (লক করা)"
+
+#: src/window.cr:427
+msgid "Microsoft reserved (MSR)"
+msgstr "Microsoft সংরক্ষিত (MSR)"
+
+#: src/window.cr:428
+msgid "Microsoft basic data"
+msgstr "Microsoft মৌলিক তথ্য"
+
+#: src/window.cr:429
+msgid "Windows recovery"
+msgstr "Windows পুনরুদ্ধার"
+
+#: src/window.cr:430
+msgid "EFI system partition"
+msgstr "EFI সিস্টেম পার্টিশন"
+
+#: src/window.cr:443
+msgid "The filesystem does not report disk usage."
+msgstr "ফাইল সিস্টেম ডিস্ক ব্যবহারের তথ্য দেয় না।"
+
+#: src/window.cr:456
+msgid "Could not read filesystem."
+msgstr "ফাইল সিস্টেম পড়া যায়নি।"
+
+#: src/mount_service.cr:32
+msgid "UDisks2 is unavailable."
+msgstr "UDisks2 উপলব্ধ নয়।"
+
+#: src/mount_service.cr:46
+msgid "The filesystem is no longer available."
+msgstr "ফাইল সিস্টেম আর উপলব্ধ নেই।"
+
+#: src/mount_service.cr:84
+msgid "This filesystem cannot be mounted or unmounted here."
+msgstr "এই ফাইল সিস্টেম এখানে মাউন্ট বা আনমাউন্ট করা যায় না।"

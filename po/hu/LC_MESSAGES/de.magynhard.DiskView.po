@@ -1,0 +1,247 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Disk View 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/magynhard/disk-view.cr/issues\n"
+"POT-Creation-Date: 2026-11-14 20:37+0100\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/window.cr:26 src/window.cr:33
+msgid "Refresh"
+msgstr "Frissítés"
+
+#: src/window.cr:31
+msgid "Main menu"
+msgstr "Főmenü"
+
+#: src/window.cr:34
+msgid "About Disk View"
+msgstr "A Disk View névjegye"
+
+#: src/window.cr:35 src/window.cr:258
+msgid "Close"
+msgstr "Bezárás"
+
+#: src/window.cr:46
+msgid "Drives & Partitions"
+msgstr "Meghajtók és partíciók"
+
+#: src/window.cr:52
+msgid "Size units"
+msgstr "Méret mértékegységei"
+
+#: src/window.cr:55
+msgid "Gibibytes (GiB)"
+msgstr "Gibibájt (GiB)"
+
+#: src/window.cr:57
+msgid "Gigabytes (GB)"
+msgstr "Gigabájt (GB)"
+
+#: src/window.cr:73
+msgid "Used space · refreshes automatically every 15 seconds"
+msgstr "Foglalt terület · automatikus frissítés 15 másodpercenként"
+
+#: src/window.cr:133
+msgid ""
+"Drives, partitions and disk usage at a glance.\n"
+"Built with Crystal, GTK4 and libadwaita."
+msgstr ""
+"Meghajtók, partíciók és lemezhasználat egy áttekintésben.\n"
+"Crystal, GTK4 és libadwaita használatával készült."
+
+#: src/window.cr:162
+msgid "Other filesystems / Network"
+msgstr "Egyéb fájlrendszerek / Hálózat"
+
+#: src/window.cr:170
+msgid "%{count} drive"
+msgid_plural "%{count} drives"
+msgstr[0] "%{count} meghajtó"
+msgstr[1] "%{count} meghajtó"
+
+#: src/window.cr:170
+msgid "%{drives} · Updated %{time}"
+msgstr "%{drives} · Frissítve: %{time}"
+
+#: src/window.cr:172
+msgid "Could not read drives: %{error}"
+msgstr "A meghajtók nem olvashatók: %{error}"
+
+#: src/window.cr:202
+msgid "Reading …"
+msgstr "Beolvasás …"
+
+#: src/window.cr:229
+msgid "System filesystems cannot be unmounted here."
+msgstr "A rendszer fájlrendszerei itt nem választhatók le."
+
+#: src/window.cr:231
+msgid "No mountable filesystem"
+msgstr "Nincs csatolható fájlrendszer"
+
+#: src/window.cr:233
+msgid "Unmount all filesystems"
+msgstr "Összes fájlrendszer leválasztása"
+
+#: src/window.cr:233
+msgid "Mount all filesystems"
+msgstr "Összes fájlrendszer csatolása"
+
+#: src/window.cr:235
+msgid "Unmount filesystem"
+msgstr "Fájlrendszer leválasztása"
+
+#: src/window.cr:235
+msgid "Mount filesystem"
+msgstr "Fájlrendszer csatolása"
+
+#: src/window.cr:249
+msgid "Mounting filesystems …"
+msgstr "Fájlrendszerek csatolása …"
+
+#: src/window.cr:249
+msgid "Unmounting filesystems …"
+msgstr "Fájlrendszerek leválasztása …"
+
+#: src/window.cr:255
+msgid "Filesystem operation completed"
+msgstr "A fájlrendszerművelet befejeződött"
+
+#: src/window.cr:257
+msgid "Filesystem operation failed"
+msgstr "A fájlrendszerművelet sikertelen"
+
+#: src/window.cr:257
+msgid ""
+"The following operations failed:\n"
+"%{errors}"
+msgstr ""
+"A következő műveletek sikertelenek voltak:\n"
+"%{errors}"
+
+#: src/window.cr:317 src/window.cr:358 src/window.cr:397
+msgid "%{size} total"
+msgstr "Összesen %{size}"
+
+#: src/window.cr:318 src/window.cr:384
+msgid "%{state} · Usage unknown"
+msgstr "%{state} · A használat ismeretlen"
+
+#: src/window.cr:344
+msgid "Not mounted · usage unavailable"
+msgstr "Nincs csatolva · a használat nem érhető el"
+
+#: src/window.cr:346
+msgid "Usage unknown · no measurable filesystems"
+msgstr "A használat ismeretlen · nincs mérhető fájlrendszer"
+
+#: src/window.cr:350 src/window.cr:395
+msgid "%{size} used (%{percent} %%)"
+msgstr "%{size} foglalt (%{percent} %%)"
+
+#: src/window.cr:352
+msgid "At least %{size} used (%{percent} %%)"
+msgstr "Legalább %{size} foglalt (%{percent} %%)"
+
+#: src/window.cr:354 src/window.cr:396
+msgid "%{size} available"
+msgstr "%{size} elérhető"
+
+#: src/window.cr:355 src/window.cr:398
+msgid "%{size} reserved"
+msgstr "%{size} fenntartott"
+
+#: src/window.cr:356
+msgid "%{known}/%{total} measured"
+msgstr "%{known}/%{total} mérve"
+
+#: src/window.cr:360
+msgid ""
+"Usage is relative to the full drive capacity. Unmounted or multi-device "
+"filesystems are excluded from the total. Unpartitioned space is not "
+"available filesystem space."
+msgstr ""
+"A használat a meghajtó teljes kapacitásához viszonyított érték. A nem "
+"csatolt és a több eszközre kiterjedő fájlrendszerek nem szerepelnek az "
+"összesítésben. A particionálatlan terület nem a fájlrendszerben elérhető "
+"hely."
+
+#: src/window.cr:361
+msgid ""
+"Microsoft reserved partitions have no filesystem and are excluded from usage "
+"totals."
+msgstr ""
+"A Microsoft által fenntartott partíciókon nincs fájlrendszer, ezért nem "
+"szerepelnek a használati összesítésben."
+
+#: src/window.cr:382
+msgid "Reserved partition · no filesystem"
+msgstr "Fenntartott partíció · nincs fájlrendszer"
+
+#: src/window.cr:386
+msgid "Mount this filesystem to read its disk usage."
+msgstr "A lemezhasználat megtekintéséhez csatolja ezt a fájlrendszert."
+
+#: src/window.cr:399
+msgid "%{size} filesystem size"
+msgstr "Fájlrendszer mérete: %{size}"
+
+#: src/window.cr:404
+msgid "Usage unavailable"
+msgstr "A használati adatok nem érhetők el"
+
+#: src/window.cr:414
+msgid "Not mounted"
+msgstr "Nincs csatolva"
+
+#: src/window.cr:416
+msgid "Used by %{devices}"
+msgstr "Használja: %{devices}"
+
+#: src/window.cr:418
+msgid "Swap (active)"
+msgstr "Cserehely (aktív)"
+
+#: src/window.cr:420
+msgid "Encrypted (locked)"
+msgstr "Titkosított (zárolt)"
+
+#: src/window.cr:427
+msgid "Microsoft reserved (MSR)"
+msgstr "Microsoft által fenntartott (MSR)"
+
+#: src/window.cr:428
+msgid "Microsoft basic data"
+msgstr "Microsoft alapadatok"
+
+#: src/window.cr:429
+msgid "Windows recovery"
+msgstr "Windows-helyreállítás"
+
+#: src/window.cr:430
+msgid "EFI system partition"
+msgstr "EFI rendszerpartíció"
+
+#: src/window.cr:443
+msgid "The filesystem does not report disk usage."
+msgstr "A fájlrendszer nem szolgáltat lemezhasználati adatokat."
+
+#: src/window.cr:456
+msgid "Could not read filesystem."
+msgstr "A fájlrendszer nem olvasható."
+
+#: src/mount_service.cr:32
+msgid "UDisks2 is unavailable."
+msgstr "Az UDisks2 nem érhető el."
+
+#: src/mount_service.cr:46
+msgid "The filesystem is no longer available."
+msgstr "A fájlrendszer már nem érhető el."
+
+#: src/mount_service.cr:84
+msgid "This filesystem cannot be mounted or unmounted here."
+msgstr "Ez a fájlrendszer itt nem csatolható és nem választható le."

@@ -1,0 +1,246 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Disk View 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/magynhard/disk-view.cr/issues\n"
+"POT-Creation-Date: 2026-11-14 20:37+0100\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/window.cr:26 src/window.cr:33
+msgid "Refresh"
+msgstr "Opdater"
+
+#: src/window.cr:31
+msgid "Main menu"
+msgstr "Hovedmenu"
+
+#: src/window.cr:34
+msgid "About Disk View"
+msgstr "Om Disk View"
+
+#: src/window.cr:35 src/window.cr:258
+msgid "Close"
+msgstr "Luk"
+
+#: src/window.cr:46
+msgid "Drives & Partitions"
+msgstr "Drev og partitioner"
+
+#: src/window.cr:52
+msgid "Size units"
+msgstr "Størrelsesenheder"
+
+#: src/window.cr:55
+msgid "Gibibytes (GiB)"
+msgstr "Gibibyte (GiB)"
+
+#: src/window.cr:57
+msgid "Gigabytes (GB)"
+msgstr "Gigabyte (GB)"
+
+#: src/window.cr:73
+msgid "Used space · refreshes automatically every 15 seconds"
+msgstr "Brugt plads · opdateres automatisk hvert 15. sekund"
+
+#: src/window.cr:133
+msgid ""
+"Drives, partitions and disk usage at a glance.\n"
+"Built with Crystal, GTK4 and libadwaita."
+msgstr ""
+"Overblik over drev, partitioner og diskforbrug.\n"
+"Bygget med Crystal, GTK4 og libadwaita."
+
+#: src/window.cr:162
+msgid "Other filesystems / Network"
+msgstr "Andre filsystemer / Netværk"
+
+#: src/window.cr:170
+msgid "%{count} drive"
+msgid_plural "%{count} drives"
+msgstr[0] "%{count} drev"
+msgstr[1] "%{count} drev"
+
+#: src/window.cr:170
+msgid "%{drives} · Updated %{time}"
+msgstr "%{drives} · Opdateret %{time}"
+
+#: src/window.cr:172
+msgid "Could not read drives: %{error}"
+msgstr "Kunne ikke læse drevene: %{error}"
+
+#: src/window.cr:202
+msgid "Reading …"
+msgstr "Læser …"
+
+#: src/window.cr:229
+msgid "System filesystems cannot be unmounted here."
+msgstr "Systemfilsystemer kan ikke afmonteres her."
+
+#: src/window.cr:231
+msgid "No mountable filesystem"
+msgstr "Intet filsystem, der kan monteres"
+
+#: src/window.cr:233
+msgid "Unmount all filesystems"
+msgstr "Afmontér alle filsystemer"
+
+#: src/window.cr:233
+msgid "Mount all filesystems"
+msgstr "Montér alle filsystemer"
+
+#: src/window.cr:235
+msgid "Unmount filesystem"
+msgstr "Afmontér filsystem"
+
+#: src/window.cr:235
+msgid "Mount filesystem"
+msgstr "Montér filsystem"
+
+#: src/window.cr:249
+msgid "Mounting filesystems …"
+msgstr "Monterer filsystemer …"
+
+#: src/window.cr:249
+msgid "Unmounting filesystems …"
+msgstr "Afmonterer filsystemer …"
+
+#: src/window.cr:255
+msgid "Filesystem operation completed"
+msgstr "Filsystemhandlingen er fuldført"
+
+#: src/window.cr:257
+msgid "Filesystem operation failed"
+msgstr "Filsystemhandlingen mislykkedes"
+
+#: src/window.cr:257
+msgid ""
+"The following operations failed:\n"
+"%{errors}"
+msgstr ""
+"Følgende handlinger mislykkedes:\n"
+"%{errors}"
+
+#: src/window.cr:317 src/window.cr:358 src/window.cr:397
+msgid "%{size} total"
+msgstr "%{size} i alt"
+
+#: src/window.cr:318 src/window.cr:384
+msgid "%{state} · Usage unknown"
+msgstr "%{state} · Forbrug ukendt"
+
+#: src/window.cr:344
+msgid "Not mounted · usage unavailable"
+msgstr "Ikke monteret · forbrug utilgængeligt"
+
+#: src/window.cr:346
+msgid "Usage unknown · no measurable filesystems"
+msgstr "Forbrug ukendt · ingen målbare filsystemer"
+
+#: src/window.cr:350 src/window.cr:395
+msgid "%{size} used (%{percent} %%)"
+msgstr "%{size} brugt (%{percent} %%)"
+
+#: src/window.cr:352
+msgid "At least %{size} used (%{percent} %%)"
+msgstr "Mindst %{size} brugt (%{percent} %%)"
+
+#: src/window.cr:354 src/window.cr:396
+msgid "%{size} available"
+msgstr "%{size} tilgængeligt"
+
+#: src/window.cr:355 src/window.cr:398
+msgid "%{size} reserved"
+msgstr "%{size} reserveret"
+
+#: src/window.cr:356
+msgid "%{known}/%{total} measured"
+msgstr "%{known}/%{total} målt"
+
+#: src/window.cr:360
+msgid ""
+"Usage is relative to the full drive capacity. Unmounted or multi-device "
+"filesystems are excluded from the total. Unpartitioned space is not "
+"available filesystem space."
+msgstr ""
+"Forbruget vises i forhold til drevets samlede kapacitet. Umonterede "
+"filsystemer og filsystemer på flere enheder indgår ikke i totalen. "
+"Upartitioneret plads er ikke tilgængelig plads på et filsystem."
+
+#: src/window.cr:361
+msgid ""
+"Microsoft reserved partitions have no filesystem and are excluded from usage "
+"totals."
+msgstr ""
+"Partitioner reserveret af Microsoft har intet filsystem og indgår ikke i det "
+"samlede forbrug."
+
+#: src/window.cr:382
+msgid "Reserved partition · no filesystem"
+msgstr "Reserveret partition · intet filsystem"
+
+#: src/window.cr:386
+msgid "Mount this filesystem to read its disk usage."
+msgstr "Montér filsystemet for at se dets diskforbrug."
+
+#: src/window.cr:399
+msgid "%{size} filesystem size"
+msgstr "Filsystemstørrelse: %{size}"
+
+#: src/window.cr:404
+msgid "Usage unavailable"
+msgstr "Forbrug utilgængeligt"
+
+#: src/window.cr:414
+msgid "Not mounted"
+msgstr "Ikke monteret"
+
+#: src/window.cr:416
+msgid "Used by %{devices}"
+msgstr "Bruges af %{devices}"
+
+#: src/window.cr:418
+msgid "Swap (active)"
+msgstr "Swap (aktiv)"
+
+#: src/window.cr:420
+msgid "Encrypted (locked)"
+msgstr "Krypteret (låst)"
+
+#: src/window.cr:427
+msgid "Microsoft reserved (MSR)"
+msgstr "Reserveret af Microsoft (MSR)"
+
+#: src/window.cr:428
+msgid "Microsoft basic data"
+msgstr "Grundlæggende Microsoft-data"
+
+#: src/window.cr:429
+msgid "Windows recovery"
+msgstr "Windows-gendannelse"
+
+#: src/window.cr:430
+msgid "EFI system partition"
+msgstr "EFI-systempartition"
+
+#: src/window.cr:443
+msgid "The filesystem does not report disk usage."
+msgstr "Filsystemet rapporterer ikke diskforbrug."
+
+#: src/window.cr:456
+msgid "Could not read filesystem."
+msgstr "Kunne ikke læse filsystemet."
+
+#: src/mount_service.cr:32
+msgid "UDisks2 is unavailable."
+msgstr "UDisks2 er ikke tilgængelig."
+
+#: src/mount_service.cr:46
+msgid "The filesystem is no longer available."
+msgstr "Filsystemet er ikke længere tilgængeligt."
+
+#: src/mount_service.cr:84
+msgid "This filesystem cannot be mounted or unmounted here."
+msgstr "Dette filsystem kan ikke monteres eller afmonteres her."

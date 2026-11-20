@@ -1,0 +1,246 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Disk View 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/magynhard/disk-view.cr/issues\n"
+"POT-Creation-Date: 2026-11-14 20:37+0100\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/window.cr:26 src/window.cr:33
+msgid "Refresh"
+msgstr "புதுப்பி"
+
+#: src/window.cr:31
+msgid "Main menu"
+msgstr "முதன்மை பட்டியல்"
+
+#: src/window.cr:34
+msgid "About Disk View"
+msgstr "Disk View பற்றி"
+
+#: src/window.cr:35 src/window.cr:258
+msgid "Close"
+msgstr "மூடு"
+
+#: src/window.cr:46
+msgid "Drives & Partitions"
+msgstr "இயக்கிகளும் பகிர்வுகளும்"
+
+#: src/window.cr:52
+msgid "Size units"
+msgstr "அளவு அலகுகள்"
+
+#: src/window.cr:55
+msgid "Gibibytes (GiB)"
+msgstr "கிபிபைட்டுகள் (GiB)"
+
+#: src/window.cr:57
+msgid "Gigabytes (GB)"
+msgstr "ஜிகாபைட்டுகள் (GB)"
+
+#: src/window.cr:73
+msgid "Used space · refreshes automatically every 15 seconds"
+msgstr "பயன்படுத்திய இடம் · ஒவ்வொரு 15 விநாடிகளிலும் தானாகப் புதுப்பிக்கப்படும்"
+
+#: src/window.cr:133
+msgid ""
+"Drives, partitions and disk usage at a glance.\n"
+"Built with Crystal, GTK4 and libadwaita."
+msgstr ""
+"இயக்கிகள், பகிர்வுகள் மற்றும் வட்டுப் பயன்பாட்டின் கண்ணோட்டம்.\n"
+"Crystal, GTK4 மற்றும் libadwaita கொண்டு உருவாக்கப்பட்டது."
+
+#: src/window.cr:162
+msgid "Other filesystems / Network"
+msgstr "மற்ற கோப்பு முறைமைகள் / பிணையம்"
+
+#: src/window.cr:170
+msgid "%{count} drive"
+msgid_plural "%{count} drives"
+msgstr[0] "%{count} இயக்கி"
+msgstr[1] "%{count} இயக்கிகள்"
+
+#: src/window.cr:170
+msgid "%{drives} · Updated %{time}"
+msgstr "%{drives} · புதுப்பித்த நேரம் %{time}"
+
+#: src/window.cr:172
+msgid "Could not read drives: %{error}"
+msgstr "இயக்கிகளைப் படிக்க முடியவில்லை: %{error}"
+
+#: src/window.cr:202
+msgid "Reading …"
+msgstr "படிக்கிறது …"
+
+#: src/window.cr:229
+msgid "System filesystems cannot be unmounted here."
+msgstr "கணினியின் கோப்பு முறைமைகளை இங்கிருந்து பிரிக்க முடியாது."
+
+#: src/window.cr:231
+msgid "No mountable filesystem"
+msgstr "இணைக்கக்கூடிய கோப்பு முறைமை இல்லை"
+
+#: src/window.cr:233
+msgid "Unmount all filesystems"
+msgstr "அனைத்து கோப்பு முறைமைகளையும் பிரி"
+
+#: src/window.cr:233
+msgid "Mount all filesystems"
+msgstr "அனைத்து கோப்பு முறைமைகளையும் இணை"
+
+#: src/window.cr:235
+msgid "Unmount filesystem"
+msgstr "கோப்பு முறைமையைப் பிரி"
+
+#: src/window.cr:235
+msgid "Mount filesystem"
+msgstr "கோப்பு முறைமையை இணை"
+
+#: src/window.cr:249
+msgid "Mounting filesystems …"
+msgstr "கோப்பு முறைமைகளை இணைக்கிறது …"
+
+#: src/window.cr:249
+msgid "Unmounting filesystems …"
+msgstr "கோப்பு முறைமைகளைப் பிரிக்கிறது …"
+
+#: src/window.cr:255
+msgid "Filesystem operation completed"
+msgstr "கோப்பு முறைமைச் செயல் முடிந்தது"
+
+#: src/window.cr:257
+msgid "Filesystem operation failed"
+msgstr "கோப்பு முறைமைச் செயல் தோல்வியடைந்தது"
+
+#: src/window.cr:257
+msgid ""
+"The following operations failed:\n"
+"%{errors}"
+msgstr ""
+"பின்வரும் செயல்கள் தோல்வியடைந்தன:\n"
+"%{errors}"
+
+#: src/window.cr:317 src/window.cr:358 src/window.cr:397
+msgid "%{size} total"
+msgstr "மொத்தம் %{size}"
+
+#: src/window.cr:318 src/window.cr:384
+msgid "%{state} · Usage unknown"
+msgstr "%{state} · பயன்பாடு தெரியவில்லை"
+
+#: src/window.cr:344
+msgid "Not mounted · usage unavailable"
+msgstr "இணைக்கப்படவில்லை · பயன்பாட்டுத் தகவல் இல்லை"
+
+#: src/window.cr:346
+msgid "Usage unknown · no measurable filesystems"
+msgstr "பயன்பாடு தெரியவில்லை · அளவிடக்கூடிய கோப்பு முறைமைகள் இல்லை"
+
+#: src/window.cr:350 src/window.cr:395
+msgid "%{size} used (%{percent} %%)"
+msgstr "%{size} பயன்படுத்தப்பட்டது (%{percent} %%)"
+
+#: src/window.cr:352
+msgid "At least %{size} used (%{percent} %%)"
+msgstr "குறைந்தது %{size} பயன்படுத்தப்பட்டது (%{percent} %%)"
+
+#: src/window.cr:354 src/window.cr:396
+msgid "%{size} available"
+msgstr "%{size} கிடைக்கிறது"
+
+#: src/window.cr:355 src/window.cr:398
+msgid "%{size} reserved"
+msgstr "%{size} ஒதுக்கப்பட்டது"
+
+#: src/window.cr:356
+msgid "%{known}/%{total} measured"
+msgstr "%{known}/%{total} அளவிடப்பட்டது"
+
+#: src/window.cr:360
+msgid ""
+"Usage is relative to the full drive capacity. Unmounted or multi-device "
+"filesystems are excluded from the total. Unpartitioned space is not "
+"available filesystem space."
+msgstr ""
+"இயக்கியின் முழுக் கொள்ளளவுடன் ஒப்பிட்டுப் பயன்பாடு காட்டப்படுகிறது. இணைக்கப்படாத அல்லது பல "
+"சாதனங்களில் பரவியுள்ள கோப்பு முறைமைகள் மொத்தத்தில் சேர்க்கப்படுவதில்லை. பகிர்வு செய்யப்படாத "
+"இடம் கோப்பு முறைமையின் கிடைக்கும் இடம் அல்ல."
+
+#: src/window.cr:361
+msgid ""
+"Microsoft reserved partitions have no filesystem and are excluded from usage "
+"totals."
+msgstr ""
+"Microsoft ஒதுக்கிய பகிர்வுகளில் கோப்பு முறைமை இல்லை; அவை மொத்தப் பயன்பாட்டில் "
+"சேர்க்கப்படுவதில்லை."
+
+#: src/window.cr:382
+msgid "Reserved partition · no filesystem"
+msgstr "ஒதுக்கப்பட்ட பகிர்வு · கோப்பு முறைமை இல்லை"
+
+#: src/window.cr:386
+msgid "Mount this filesystem to read its disk usage."
+msgstr "வட்டுப் பயன்பாட்டைக் காண இந்தக் கோப்பு முறைமையை இணைக்கவும்."
+
+#: src/window.cr:399
+msgid "%{size} filesystem size"
+msgstr "கோப்பு முறைமையின் அளவு: %{size}"
+
+#: src/window.cr:404
+msgid "Usage unavailable"
+msgstr "பயன்பாட்டுத் தகவல் இல்லை"
+
+#: src/window.cr:414
+msgid "Not mounted"
+msgstr "இணைக்கப்படவில்லை"
+
+#: src/window.cr:416
+msgid "Used by %{devices}"
+msgstr "%{devices} பயன்படுத்துகிறது"
+
+#: src/window.cr:418
+msgid "Swap (active)"
+msgstr "இடமாற்றுப் பகுதி (செயலில்)"
+
+#: src/window.cr:420
+msgid "Encrypted (locked)"
+msgstr "மறையாக்கப்பட்டது (பூட்டப்பட்டது)"
+
+#: src/window.cr:427
+msgid "Microsoft reserved (MSR)"
+msgstr "Microsoft ஒதுக்கியது (MSR)"
+
+#: src/window.cr:428
+msgid "Microsoft basic data"
+msgstr "Microsoft அடிப்படைத் தரவு"
+
+#: src/window.cr:429
+msgid "Windows recovery"
+msgstr "Windows மீட்பு"
+
+#: src/window.cr:430
+msgid "EFI system partition"
+msgstr "EFI கணினிப் பகிர்வு"
+
+#: src/window.cr:443
+msgid "The filesystem does not report disk usage."
+msgstr "கோப்பு முறைமை வட்டுப் பயன்பாட்டுத் தகவலை வழங்கவில்லை."
+
+#: src/window.cr:456
+msgid "Could not read filesystem."
+msgstr "கோப்பு முறைமையைப் படிக்க முடியவில்லை."
+
+#: src/mount_service.cr:32
+msgid "UDisks2 is unavailable."
+msgstr "UDisks2 கிடைக்கவில்லை."
+
+#: src/mount_service.cr:46
+msgid "The filesystem is no longer available."
+msgstr "கோப்பு முறைமை இனி கிடைக்காது."
+
+#: src/mount_service.cr:84
+msgid "This filesystem cannot be mounted or unmounted here."
+msgstr "இந்தக் கோப்பு முறைமையை இங்கு இணைக்கவோ பிரிக்கவோ முடியாது."

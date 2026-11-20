@@ -1,0 +1,246 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Disk View 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/magynhard/disk-view.cr/issues\n"
+"POT-Creation-Date: 2026-11-14 20:37+0100\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: src/window.cr:26 src/window.cr:33
+msgid "Refresh"
+msgstr "Yenile"
+
+#: src/window.cr:31
+msgid "Main menu"
+msgstr "Ana menü"
+
+#: src/window.cr:34
+msgid "About Disk View"
+msgstr "Disk View Hakkında"
+
+#: src/window.cr:35 src/window.cr:258
+msgid "Close"
+msgstr "Kapat"
+
+#: src/window.cr:46
+msgid "Drives & Partitions"
+msgstr "Sürücüler ve Bölümler"
+
+#: src/window.cr:52
+msgid "Size units"
+msgstr "Boyut birimleri"
+
+#: src/window.cr:55
+msgid "Gibibytes (GiB)"
+msgstr "Gibibayt (GiB)"
+
+#: src/window.cr:57
+msgid "Gigabytes (GB)"
+msgstr "Gigabayt (GB)"
+
+#: src/window.cr:73
+msgid "Used space · refreshes automatically every 15 seconds"
+msgstr "Kullanılan alan · 15 saniyede bir otomatik olarak yenilenir"
+
+#: src/window.cr:133
+msgid ""
+"Drives, partitions and disk usage at a glance.\n"
+"Built with Crystal, GTK4 and libadwaita."
+msgstr ""
+"Sürücüler, bölümler ve disk kullanımı bir bakışta.\n"
+"Crystal, GTK4 ve libadwaita ile geliştirildi."
+
+#: src/window.cr:162
+msgid "Other filesystems / Network"
+msgstr "Diğer dosya sistemleri / Ağ"
+
+#: src/window.cr:170
+msgid "%{count} drive"
+msgid_plural "%{count} drives"
+msgstr[0] "%{count} sürücü"
+msgstr[1] "%{count} sürücü"
+
+#: src/window.cr:170
+msgid "%{drives} · Updated %{time}"
+msgstr "%{drives} · Güncelleme: %{time}"
+
+#: src/window.cr:172
+msgid "Could not read drives: %{error}"
+msgstr "Sürücüler okunamadı: %{error}"
+
+#: src/window.cr:202
+msgid "Reading …"
+msgstr "Okunuyor …"
+
+#: src/window.cr:229
+msgid "System filesystems cannot be unmounted here."
+msgstr "Sistem dosya sistemlerinin bağlantısı buradan kaldırılamaz."
+
+#: src/window.cr:231
+msgid "No mountable filesystem"
+msgstr "Bağlanabilir dosya sistemi yok"
+
+#: src/window.cr:233
+msgid "Unmount all filesystems"
+msgstr "Tüm dosya sistemlerinin bağlantısını kaldır"
+
+#: src/window.cr:233
+msgid "Mount all filesystems"
+msgstr "Tüm dosya sistemlerini bağla"
+
+#: src/window.cr:235
+msgid "Unmount filesystem"
+msgstr "Dosya sisteminin bağlantısını kaldır"
+
+#: src/window.cr:235
+msgid "Mount filesystem"
+msgstr "Dosya sistemini bağla"
+
+#: src/window.cr:249
+msgid "Mounting filesystems …"
+msgstr "Dosya sistemleri bağlanıyor …"
+
+#: src/window.cr:249
+msgid "Unmounting filesystems …"
+msgstr "Dosya sistemlerinin bağlantısı kaldırılıyor …"
+
+#: src/window.cr:255
+msgid "Filesystem operation completed"
+msgstr "Dosya sistemi işlemi tamamlandı"
+
+#: src/window.cr:257
+msgid "Filesystem operation failed"
+msgstr "Dosya sistemi işlemi başarısız oldu"
+
+#: src/window.cr:257
+msgid ""
+"The following operations failed:\n"
+"%{errors}"
+msgstr ""
+"Aşağıdaki işlemler başarısız oldu:\n"
+"%{errors}"
+
+#: src/window.cr:317 src/window.cr:358 src/window.cr:397
+msgid "%{size} total"
+msgstr "Toplam %{size}"
+
+#: src/window.cr:318 src/window.cr:384
+msgid "%{state} · Usage unknown"
+msgstr "%{state} · Kullanım bilinmiyor"
+
+#: src/window.cr:344
+msgid "Not mounted · usage unavailable"
+msgstr "Bağlı değil · kullanım bilgisi yok"
+
+#: src/window.cr:346
+msgid "Usage unknown · no measurable filesystems"
+msgstr "Kullanım bilinmiyor · ölçülebilir dosya sistemi yok"
+
+#: src/window.cr:350 src/window.cr:395
+msgid "%{size} used (%{percent} %%)"
+msgstr "%{size} kullanılıyor (%% %{percent})"
+
+#: src/window.cr:352
+msgid "At least %{size} used (%{percent} %%)"
+msgstr "En az %{size} kullanılıyor (%% %{percent})"
+
+#: src/window.cr:354 src/window.cr:396
+msgid "%{size} available"
+msgstr "%{size} kullanılabilir"
+
+#: src/window.cr:355 src/window.cr:398
+msgid "%{size} reserved"
+msgstr "%{size} ayrılmış"
+
+#: src/window.cr:356
+msgid "%{known}/%{total} measured"
+msgstr "%{known}/%{total} ölçüldü"
+
+#: src/window.cr:360
+msgid ""
+"Usage is relative to the full drive capacity. Unmounted or multi-device "
+"filesystems are excluded from the total. Unpartitioned space is not "
+"available filesystem space."
+msgstr ""
+"Kullanım, sürücünün toplam kapasitesine göredir. Bağlı olmayan veya birden "
+"fazla aygıta yayılan dosya sistemleri toplama dahil edilmez. Bölümlenmemiş "
+"alan, kullanılabilir dosya sistemi alanı değildir."
+
+#: src/window.cr:361
+msgid ""
+"Microsoft reserved partitions have no filesystem and are excluded from usage "
+"totals."
+msgstr ""
+"Microsoft için ayrılmış bölümlerde dosya sistemi yoktur ve bu bölümler "
+"toplam kullanıma dahil edilmez."
+
+#: src/window.cr:382
+msgid "Reserved partition · no filesystem"
+msgstr "Ayrılmış bölüm · dosya sistemi yok"
+
+#: src/window.cr:386
+msgid "Mount this filesystem to read its disk usage."
+msgstr "Disk kullanımını okumak için bu dosya sistemini bağlayın."
+
+#: src/window.cr:399
+msgid "%{size} filesystem size"
+msgstr "Dosya sistemi boyutu: %{size}"
+
+#: src/window.cr:404
+msgid "Usage unavailable"
+msgstr "Kullanım bilgisi yok"
+
+#: src/window.cr:414
+msgid "Not mounted"
+msgstr "Bağlı değil"
+
+#: src/window.cr:416
+msgid "Used by %{devices}"
+msgstr "%{devices} tarafından kullanılıyor"
+
+#: src/window.cr:418
+msgid "Swap (active)"
+msgstr "Takas alanı (etkin)"
+
+#: src/window.cr:420
+msgid "Encrypted (locked)"
+msgstr "Şifreli (kilitli)"
+
+#: src/window.cr:427
+msgid "Microsoft reserved (MSR)"
+msgstr "Microsoft için ayrılmış (MSR)"
+
+#: src/window.cr:428
+msgid "Microsoft basic data"
+msgstr "Microsoft temel veri bölümü"
+
+#: src/window.cr:429
+msgid "Windows recovery"
+msgstr "Windows kurtarma"
+
+#: src/window.cr:430
+msgid "EFI system partition"
+msgstr "EFI sistem bölümü"
+
+#: src/window.cr:443
+msgid "The filesystem does not report disk usage."
+msgstr "Dosya sistemi disk kullanımını bildirmiyor."
+
+#: src/window.cr:456
+msgid "Could not read filesystem."
+msgstr "Dosya sistemi okunamadı."
+
+#: src/mount_service.cr:32
+msgid "UDisks2 is unavailable."
+msgstr "UDisks2 kullanılamıyor."
+
+#: src/mount_service.cr:46
+msgid "The filesystem is no longer available."
+msgstr "Dosya sistemi artık kullanılamıyor."
+
+#: src/mount_service.cr:84
+msgid "This filesystem cannot be mounted or unmounted here."
+msgstr "Bu dosya sistemi buradan bağlanamaz veya bağlantısı kaldırılamaz."

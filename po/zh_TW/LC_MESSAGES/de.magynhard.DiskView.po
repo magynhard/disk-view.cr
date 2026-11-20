@@ -1,0 +1,242 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Disk View 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/magynhard/disk-view.cr/issues\n"
+"POT-Creation-Date: 2026-11-14 20:37+0100\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/window.cr:26 src/window.cr:33
+msgid "Refresh"
+msgstr "重新整理"
+
+#: src/window.cr:31
+msgid "Main menu"
+msgstr "主選單"
+
+#: src/window.cr:34
+msgid "About Disk View"
+msgstr "關於 Disk View"
+
+#: src/window.cr:35 src/window.cr:258
+msgid "Close"
+msgstr "關閉"
+
+#: src/window.cr:46
+msgid "Drives & Partitions"
+msgstr "磁碟與分割區"
+
+#: src/window.cr:52
+msgid "Size units"
+msgstr "容量單位"
+
+#: src/window.cr:55
+msgid "Gibibytes (GiB)"
+msgstr "Gibibyte (GiB)"
+
+#: src/window.cr:57
+msgid "Gigabytes (GB)"
+msgstr "Gigabyte (GB)"
+
+#: src/window.cr:73
+msgid "Used space · refreshes automatically every 15 seconds"
+msgstr "已使用空間 · 每 15 秒自動重新整理"
+
+#: src/window.cr:133
+msgid ""
+"Drives, partitions and disk usage at a glance.\n"
+"Built with Crystal, GTK4 and libadwaita."
+msgstr ""
+"一目瞭然地檢視磁碟、分割區與磁碟使用量。\n"
+"使用 Crystal、GTK4 與 libadwaita 建立。"
+
+#: src/window.cr:162
+msgid "Other filesystems / Network"
+msgstr "其他檔案系統 / 網路"
+
+#: src/window.cr:170
+msgid "%{count} drive"
+msgid_plural "%{count} drives"
+msgstr[0] "%{count} 個磁碟"
+
+#: src/window.cr:170
+msgid "%{drives} · Updated %{time}"
+msgstr "%{drives} · 更新時間 %{time}"
+
+#: src/window.cr:172
+msgid "Could not read drives: %{error}"
+msgstr "無法讀取磁碟：%{error}"
+
+#: src/window.cr:202
+msgid "Reading …"
+msgstr "正在讀取 …"
+
+#: src/window.cr:229
+msgid "System filesystems cannot be unmounted here."
+msgstr "無法在此卸載系統檔案系統。"
+
+#: src/window.cr:231
+msgid "No mountable filesystem"
+msgstr "沒有可掛載的檔案系統"
+
+#: src/window.cr:233
+msgid "Unmount all filesystems"
+msgstr "卸載所有檔案系統"
+
+#: src/window.cr:233
+msgid "Mount all filesystems"
+msgstr "掛載所有檔案系統"
+
+#: src/window.cr:235
+msgid "Unmount filesystem"
+msgstr "卸載檔案系統"
+
+#: src/window.cr:235
+msgid "Mount filesystem"
+msgstr "掛載檔案系統"
+
+#: src/window.cr:249
+msgid "Mounting filesystems …"
+msgstr "正在掛載檔案系統 …"
+
+#: src/window.cr:249
+msgid "Unmounting filesystems …"
+msgstr "正在卸載檔案系統 …"
+
+#: src/window.cr:255
+msgid "Filesystem operation completed"
+msgstr "檔案系統操作已完成"
+
+#: src/window.cr:257
+msgid "Filesystem operation failed"
+msgstr "檔案系統操作失敗"
+
+#: src/window.cr:257
+msgid ""
+"The following operations failed:\n"
+"%{errors}"
+msgstr ""
+"以下操作失敗：\n"
+"%{errors}"
+
+#: src/window.cr:317 src/window.cr:358 src/window.cr:397
+msgid "%{size} total"
+msgstr "總計 %{size}"
+
+#: src/window.cr:318 src/window.cr:384
+msgid "%{state} · Usage unknown"
+msgstr "%{state} · 使用量未知"
+
+#: src/window.cr:344
+msgid "Not mounted · usage unavailable"
+msgstr "未掛載 · 無法取得使用量"
+
+#: src/window.cr:346
+msgid "Usage unknown · no measurable filesystems"
+msgstr "使用量未知 · 沒有可測量的檔案系統"
+
+#: src/window.cr:350 src/window.cr:395
+msgid "%{size} used (%{percent} %%)"
+msgstr "已使用 %{size}（%{percent} %%）"
+
+#: src/window.cr:352
+msgid "At least %{size} used (%{percent} %%)"
+msgstr "至少已使用 %{size}（%{percent} %%）"
+
+#: src/window.cr:354 src/window.cr:396
+msgid "%{size} available"
+msgstr "可用 %{size}"
+
+#: src/window.cr:355 src/window.cr:398
+msgid "%{size} reserved"
+msgstr "保留 %{size}"
+
+#: src/window.cr:356
+msgid "%{known}/%{total} measured"
+msgstr "已測量 %{known}/%{total}"
+
+#: src/window.cr:360
+msgid ""
+"Usage is relative to the full drive capacity. Unmounted or multi-device "
+"filesystems are excluded from the total. Unpartitioned space is not "
+"available filesystem space."
+msgstr ""
+"使用量以磁碟的完整容量為基準。未掛載或跨多個裝置的檔案系統不計入總量。未分割"
+"的空間並非檔案系統的可用空間。"
+
+#: src/window.cr:361
+msgid ""
+"Microsoft reserved partitions have no filesystem and are excluded from usage "
+"totals."
+msgstr "Microsoft 保留分割區沒有檔案系統，不計入總使用量。"
+
+#: src/window.cr:382
+msgid "Reserved partition · no filesystem"
+msgstr "保留分割區 · 沒有檔案系統"
+
+#: src/window.cr:386
+msgid "Mount this filesystem to read its disk usage."
+msgstr "掛載此檔案系統以查看磁碟使用量。"
+
+#: src/window.cr:399
+msgid "%{size} filesystem size"
+msgstr "檔案系統大小：%{size}"
+
+#: src/window.cr:404
+msgid "Usage unavailable"
+msgstr "無法取得使用量"
+
+#: src/window.cr:414
+msgid "Not mounted"
+msgstr "未掛載"
+
+#: src/window.cr:416
+msgid "Used by %{devices}"
+msgstr "由 %{devices} 使用"
+
+#: src/window.cr:418
+msgid "Swap (active)"
+msgstr "置換空間（使用中）"
+
+#: src/window.cr:420
+msgid "Encrypted (locked)"
+msgstr "已加密（已鎖定）"
+
+#: src/window.cr:427
+msgid "Microsoft reserved (MSR)"
+msgstr "Microsoft 保留分割區（MSR）"
+
+#: src/window.cr:428
+msgid "Microsoft basic data"
+msgstr "Microsoft 基本資料"
+
+#: src/window.cr:429
+msgid "Windows recovery"
+msgstr "Windows 復原"
+
+#: src/window.cr:430
+msgid "EFI system partition"
+msgstr "EFI 系統分割區"
+
+#: src/window.cr:443
+msgid "The filesystem does not report disk usage."
+msgstr "檔案系統未提供磁碟使用量。"
+
+#: src/window.cr:456
+msgid "Could not read filesystem."
+msgstr "無法讀取檔案系統。"
+
+#: src/mount_service.cr:32
+msgid "UDisks2 is unavailable."
+msgstr "UDisks2 無法使用。"
+
+#: src/mount_service.cr:46
+msgid "The filesystem is no longer available."
+msgstr "檔案系統已無法使用。"
+
+#: src/mount_service.cr:84
+msgid "This filesystem cannot be mounted or unmounted here."
+msgstr "無法在此掛載或卸載此檔案系統。"

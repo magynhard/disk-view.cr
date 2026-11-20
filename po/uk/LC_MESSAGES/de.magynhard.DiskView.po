@@ -1,0 +1,250 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Disk View 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/magynhard/disk-view.cr/issues\n"
+"POT-Creation-Date: 2026-11-14 20:37+0100\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+
+#: src/window.cr:26 src/window.cr:33
+msgid "Refresh"
+msgstr "Оновити"
+
+#: src/window.cr:31
+msgid "Main menu"
+msgstr "Головне меню"
+
+#: src/window.cr:34
+msgid "About Disk View"
+msgstr "Про Disk View"
+
+#: src/window.cr:35 src/window.cr:258
+msgid "Close"
+msgstr "Закрити"
+
+#: src/window.cr:46
+msgid "Drives & Partitions"
+msgstr "Накопичувачі та розділи"
+
+#: src/window.cr:52
+msgid "Size units"
+msgstr "Одиниці розміру"
+
+#: src/window.cr:55
+msgid "Gibibytes (GiB)"
+msgstr "Гібібайти (GiB)"
+
+#: src/window.cr:57
+msgid "Gigabytes (GB)"
+msgstr "Гігабайти (GB)"
+
+#: src/window.cr:73
+msgid "Used space · refreshes automatically every 15 seconds"
+msgstr "Використаний простір · автоматичне оновлення кожні 15 секунд"
+
+#: src/window.cr:133
+msgid ""
+"Drives, partitions and disk usage at a glance.\n"
+"Built with Crystal, GTK4 and libadwaita."
+msgstr ""
+"Накопичувачі, розділи та використання дискового простору в одному огляді.\n"
+"Створено за допомогою Crystal, GTK4 і libadwaita."
+
+#: src/window.cr:162
+msgid "Other filesystems / Network"
+msgstr "Інші файлові системи / Мережа"
+
+#: src/window.cr:170
+msgid "%{count} drive"
+msgid_plural "%{count} drives"
+msgstr[0] "%{count} накопичувач"
+msgstr[1] "%{count} накопичувачі"
+msgstr[2] "%{count} накопичувачів"
+
+#: src/window.cr:170
+msgid "%{drives} · Updated %{time}"
+msgstr "%{drives} · Оновлено о %{time}"
+
+#: src/window.cr:172
+msgid "Could not read drives: %{error}"
+msgstr "Не вдалося прочитати дані накопичувачів: %{error}"
+
+#: src/window.cr:202
+msgid "Reading …"
+msgstr "Читання …"
+
+#: src/window.cr:229
+msgid "System filesystems cannot be unmounted here."
+msgstr "Тут не можна відмонтувати системні файлові системи."
+
+#: src/window.cr:231
+msgid "No mountable filesystem"
+msgstr "Немає файлової системи, яку можна змонтувати"
+
+#: src/window.cr:233
+msgid "Unmount all filesystems"
+msgstr "Відмонтувати всі файлові системи"
+
+#: src/window.cr:233
+msgid "Mount all filesystems"
+msgstr "Змонтувати всі файлові системи"
+
+#: src/window.cr:235
+msgid "Unmount filesystem"
+msgstr "Відмонтувати файлову систему"
+
+#: src/window.cr:235
+msgid "Mount filesystem"
+msgstr "Змонтувати файлову систему"
+
+#: src/window.cr:249
+msgid "Mounting filesystems …"
+msgstr "Монтування файлових систем …"
+
+#: src/window.cr:249
+msgid "Unmounting filesystems …"
+msgstr "Відмонтування файлових систем …"
+
+#: src/window.cr:255
+msgid "Filesystem operation completed"
+msgstr "Операцію з файловою системою завершено"
+
+#: src/window.cr:257
+msgid "Filesystem operation failed"
+msgstr "Не вдалося виконати операцію з файловою системою"
+
+#: src/window.cr:257
+msgid ""
+"The following operations failed:\n"
+"%{errors}"
+msgstr ""
+"Не вдалося виконати такі операції:\n"
+"%{errors}"
+
+#: src/window.cr:317 src/window.cr:358 src/window.cr:397
+msgid "%{size} total"
+msgstr "Усього %{size}"
+
+#: src/window.cr:318 src/window.cr:384
+msgid "%{state} · Usage unknown"
+msgstr "%{state} · Використання невідоме"
+
+#: src/window.cr:344
+msgid "Not mounted · usage unavailable"
+msgstr "Не змонтовано · дані про використання недоступні"
+
+#: src/window.cr:346
+msgid "Usage unknown · no measurable filesystems"
+msgstr "Використання невідоме · немає файлових систем, які можна виміряти"
+
+#: src/window.cr:350 src/window.cr:395
+msgid "%{size} used (%{percent} %%)"
+msgstr "Використано %{size} (%{percent} %%)"
+
+#: src/window.cr:352
+msgid "At least %{size} used (%{percent} %%)"
+msgstr "Використано щонайменше %{size} (%{percent} %%)"
+
+#: src/window.cr:354 src/window.cr:396
+msgid "%{size} available"
+msgstr "Доступно %{size}"
+
+#: src/window.cr:355 src/window.cr:398
+msgid "%{size} reserved"
+msgstr "Зарезервовано %{size}"
+
+#: src/window.cr:356
+msgid "%{known}/%{total} measured"
+msgstr "Виміряно %{known}/%{total}"
+
+#: src/window.cr:360
+msgid ""
+"Usage is relative to the full drive capacity. Unmounted or multi-device "
+"filesystems are excluded from the total. Unpartitioned space is not "
+"available filesystem space."
+msgstr ""
+"Використання наведено відносно повної місткості накопичувача. Незмонтовані "
+"файлові системи та системи на кількох пристроях не враховано в загальному "
+"підсумку. Нерозподілений простір не є доступним простором файлової системи."
+
+#: src/window.cr:361
+msgid ""
+"Microsoft reserved partitions have no filesystem and are excluded from usage "
+"totals."
+msgstr ""
+"Зарезервовані розділи Microsoft не мають файлової системи і не враховуються "
+"в загальному використанні."
+
+#: src/window.cr:382
+msgid "Reserved partition · no filesystem"
+msgstr "Зарезервований розділ · немає файлової системи"
+
+#: src/window.cr:386
+msgid "Mount this filesystem to read its disk usage."
+msgstr ""
+"Змонтуйте цю файлову систему, щоб переглянути використання дискового "
+"простору."
+
+#: src/window.cr:399
+msgid "%{size} filesystem size"
+msgstr "Розмір файлової системи: %{size}"
+
+#: src/window.cr:404
+msgid "Usage unavailable"
+msgstr "Дані про використання недоступні"
+
+#: src/window.cr:414
+msgid "Not mounted"
+msgstr "Не змонтовано"
+
+#: src/window.cr:416
+msgid "Used by %{devices}"
+msgstr "Використовується: %{devices}"
+
+#: src/window.cr:418
+msgid "Swap (active)"
+msgstr "Резервна пам’ять (активна)"
+
+#: src/window.cr:420
+msgid "Encrypted (locked)"
+msgstr "Зашифровано (заблоковано)"
+
+#: src/window.cr:427
+msgid "Microsoft reserved (MSR)"
+msgstr "Зарезервовано Microsoft (MSR)"
+
+#: src/window.cr:428
+msgid "Microsoft basic data"
+msgstr "Основні дані Microsoft"
+
+#: src/window.cr:429
+msgid "Windows recovery"
+msgstr "Відновлення Windows"
+
+#: src/window.cr:430
+msgid "EFI system partition"
+msgstr "Системний розділ EFI"
+
+#: src/window.cr:443
+msgid "The filesystem does not report disk usage."
+msgstr "Файлова система не надає даних про використання простору."
+
+#: src/window.cr:456
+msgid "Could not read filesystem."
+msgstr "Не вдалося прочитати файлову систему."
+
+#: src/mount_service.cr:32
+msgid "UDisks2 is unavailable."
+msgstr "UDisks2 недоступний."
+
+#: src/mount_service.cr:46
+msgid "The filesystem is no longer available."
+msgstr "Файлова система більше недоступна."
+
+#: src/mount_service.cr:84
+msgid "This filesystem cannot be mounted or unmounted here."
+msgstr "Тут неможливо змонтувати або відмонтувати цю файлову систему."

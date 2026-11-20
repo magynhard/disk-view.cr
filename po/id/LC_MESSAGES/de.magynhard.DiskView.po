@@ -1,0 +1,245 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Disk View 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/magynhard/disk-view.cr/issues\n"
+"POT-Creation-Date: 2026-11-14 20:37+0100\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/window.cr:26 src/window.cr:33
+msgid "Refresh"
+msgstr "Segarkan"
+
+#: src/window.cr:31
+msgid "Main menu"
+msgstr "Menu utama"
+
+#: src/window.cr:34
+msgid "About Disk View"
+msgstr "Tentang Disk View"
+
+#: src/window.cr:35 src/window.cr:258
+msgid "Close"
+msgstr "Tutup"
+
+#: src/window.cr:46
+msgid "Drives & Partitions"
+msgstr "Drive dan Partisi"
+
+#: src/window.cr:52
+msgid "Size units"
+msgstr "Satuan ukuran"
+
+#: src/window.cr:55
+msgid "Gibibytes (GiB)"
+msgstr "Gibibita (GiB)"
+
+#: src/window.cr:57
+msgid "Gigabytes (GB)"
+msgstr "Gigabita (GB)"
+
+#: src/window.cr:73
+msgid "Used space · refreshes automatically every 15 seconds"
+msgstr "Ruang terpakai · diperbarui otomatis setiap 15 detik"
+
+#: src/window.cr:133
+msgid ""
+"Drives, partitions and disk usage at a glance.\n"
+"Built with Crystal, GTK4 and libadwaita."
+msgstr ""
+"Ringkasan drive, partisi, dan penggunaan disk.\n"
+"Dibuat dengan Crystal, GTK4, dan libadwaita."
+
+#: src/window.cr:162
+msgid "Other filesystems / Network"
+msgstr "Sistem berkas lain / Jaringan"
+
+#: src/window.cr:170
+msgid "%{count} drive"
+msgid_plural "%{count} drives"
+msgstr[0] "%{count} drive"
+
+#: src/window.cr:170
+msgid "%{drives} · Updated %{time}"
+msgstr "%{drives} · Diperbarui %{time}"
+
+#: src/window.cr:172
+msgid "Could not read drives: %{error}"
+msgstr "Tidak dapat membaca drive: %{error}"
+
+#: src/window.cr:202
+msgid "Reading …"
+msgstr "Membaca …"
+
+#: src/window.cr:229
+msgid "System filesystems cannot be unmounted here."
+msgstr "Sistem berkas sistem tidak dapat dilepas di sini."
+
+#: src/window.cr:231
+msgid "No mountable filesystem"
+msgstr "Tidak ada sistem berkas yang dapat dipasang"
+
+#: src/window.cr:233
+msgid "Unmount all filesystems"
+msgstr "Lepas semua sistem berkas"
+
+#: src/window.cr:233
+msgid "Mount all filesystems"
+msgstr "Pasang semua sistem berkas"
+
+#: src/window.cr:235
+msgid "Unmount filesystem"
+msgstr "Lepas sistem berkas"
+
+#: src/window.cr:235
+msgid "Mount filesystem"
+msgstr "Pasang sistem berkas"
+
+#: src/window.cr:249
+msgid "Mounting filesystems …"
+msgstr "Memasang sistem berkas …"
+
+#: src/window.cr:249
+msgid "Unmounting filesystems …"
+msgstr "Melepas sistem berkas …"
+
+#: src/window.cr:255
+msgid "Filesystem operation completed"
+msgstr "Operasi sistem berkas selesai"
+
+#: src/window.cr:257
+msgid "Filesystem operation failed"
+msgstr "Operasi sistem berkas gagal"
+
+#: src/window.cr:257
+msgid ""
+"The following operations failed:\n"
+"%{errors}"
+msgstr ""
+"Operasi berikut gagal:\n"
+"%{errors}"
+
+#: src/window.cr:317 src/window.cr:358 src/window.cr:397
+msgid "%{size} total"
+msgstr "Total %{size}"
+
+#: src/window.cr:318 src/window.cr:384
+msgid "%{state} · Usage unknown"
+msgstr "%{state} · Penggunaan tidak diketahui"
+
+#: src/window.cr:344
+msgid "Not mounted · usage unavailable"
+msgstr "Belum dipasang · penggunaan tidak tersedia"
+
+#: src/window.cr:346
+msgid "Usage unknown · no measurable filesystems"
+msgstr "Penggunaan tidak diketahui · tidak ada sistem berkas yang dapat diukur"
+
+#: src/window.cr:350 src/window.cr:395
+msgid "%{size} used (%{percent} %%)"
+msgstr "%{size} terpakai (%{percent} %%)"
+
+#: src/window.cr:352
+msgid "At least %{size} used (%{percent} %%)"
+msgstr "Setidaknya %{size} terpakai (%{percent} %%)"
+
+#: src/window.cr:354 src/window.cr:396
+msgid "%{size} available"
+msgstr "%{size} tersedia"
+
+#: src/window.cr:355 src/window.cr:398
+msgid "%{size} reserved"
+msgstr "%{size} dicadangkan"
+
+#: src/window.cr:356
+msgid "%{known}/%{total} measured"
+msgstr "%{known}/%{total} terukur"
+
+#: src/window.cr:360
+msgid ""
+"Usage is relative to the full drive capacity. Unmounted or multi-device "
+"filesystems are excluded from the total. Unpartitioned space is not "
+"available filesystem space."
+msgstr ""
+"Penggunaan dihitung terhadap kapasitas penuh drive. Sistem berkas yang belum "
+"dipasang atau mencakup beberapa perangkat tidak termasuk dalam total. Ruang "
+"yang belum dipartisi bukan ruang sistem berkas yang tersedia."
+
+#: src/window.cr:361
+msgid ""
+"Microsoft reserved partitions have no filesystem and are excluded from usage "
+"totals."
+msgstr ""
+"Partisi yang dicadangkan Microsoft tidak memiliki sistem berkas dan tidak "
+"termasuk dalam total penggunaan."
+
+#: src/window.cr:382
+msgid "Reserved partition · no filesystem"
+msgstr "Partisi cadangan · tidak ada sistem berkas"
+
+#: src/window.cr:386
+msgid "Mount this filesystem to read its disk usage."
+msgstr "Pasang sistem berkas ini untuk melihat penggunaan disknya."
+
+#: src/window.cr:399
+msgid "%{size} filesystem size"
+msgstr "Ukuran sistem berkas: %{size}"
+
+#: src/window.cr:404
+msgid "Usage unavailable"
+msgstr "Penggunaan tidak tersedia"
+
+#: src/window.cr:414
+msgid "Not mounted"
+msgstr "Belum dipasang"
+
+#: src/window.cr:416
+msgid "Used by %{devices}"
+msgstr "Digunakan oleh %{devices}"
+
+#: src/window.cr:418
+msgid "Swap (active)"
+msgstr "Ruang swap (aktif)"
+
+#: src/window.cr:420
+msgid "Encrypted (locked)"
+msgstr "Terenkripsi (terkunci)"
+
+#: src/window.cr:427
+msgid "Microsoft reserved (MSR)"
+msgstr "Dicadangkan Microsoft (MSR)"
+
+#: src/window.cr:428
+msgid "Microsoft basic data"
+msgstr "Data dasar Microsoft"
+
+#: src/window.cr:429
+msgid "Windows recovery"
+msgstr "Pemulihan Windows"
+
+#: src/window.cr:430
+msgid "EFI system partition"
+msgstr "Partisi sistem EFI"
+
+#: src/window.cr:443
+msgid "The filesystem does not report disk usage."
+msgstr "Sistem berkas tidak melaporkan penggunaan disk."
+
+#: src/window.cr:456
+msgid "Could not read filesystem."
+msgstr "Tidak dapat membaca sistem berkas."
+
+#: src/mount_service.cr:32
+msgid "UDisks2 is unavailable."
+msgstr "UDisks2 tidak tersedia."
+
+#: src/mount_service.cr:46
+msgid "The filesystem is no longer available."
+msgstr "Sistem berkas tidak lagi tersedia."
+
+#: src/mount_service.cr:84
+msgid "This filesystem cannot be mounted or unmounted here."
+msgstr "Sistem berkas ini tidak dapat dipasang atau dilepas di sini."

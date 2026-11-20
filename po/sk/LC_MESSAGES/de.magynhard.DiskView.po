@@ -1,0 +1,247 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Disk View 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/magynhard/disk-view.cr/issues\n"
+"POT-Creation-Date: 2026-11-14 20:37+0100\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
+
+#: src/window.cr:26 src/window.cr:33
+msgid "Refresh"
+msgstr "Obnoviť"
+
+#: src/window.cr:31
+msgid "Main menu"
+msgstr "Hlavná ponuka"
+
+#: src/window.cr:34
+msgid "About Disk View"
+msgstr "O aplikácii Disk View"
+
+#: src/window.cr:35 src/window.cr:258
+msgid "Close"
+msgstr "Zavrieť"
+
+#: src/window.cr:46
+msgid "Drives & Partitions"
+msgstr "Disky a oddiely"
+
+#: src/window.cr:52
+msgid "Size units"
+msgstr "Jednotky veľkosti"
+
+#: src/window.cr:55
+msgid "Gibibytes (GiB)"
+msgstr "Gibibajty (GiB)"
+
+#: src/window.cr:57
+msgid "Gigabytes (GB)"
+msgstr "Gigabajty (GB)"
+
+#: src/window.cr:73
+msgid "Used space · refreshes automatically every 15 seconds"
+msgstr "Použité miesto · automatická obnova každých 15 sekúnd"
+
+#: src/window.cr:133
+msgid ""
+"Drives, partitions and disk usage at a glance.\n"
+"Built with Crystal, GTK4 and libadwaita."
+msgstr ""
+"Prehľad diskov, oddielov a využitia miesta.\n"
+"Vytvorené pomocou Crystal, GTK4 a libadwaita."
+
+#: src/window.cr:162
+msgid "Other filesystems / Network"
+msgstr "Ostatné súborové systémy / Sieť"
+
+#: src/window.cr:170
+msgid "%{count} drive"
+msgid_plural "%{count} drives"
+msgstr[0] "%{count} disk"
+msgstr[1] "%{count} disky"
+msgstr[2] "%{count} diskov"
+
+#: src/window.cr:170
+msgid "%{drives} · Updated %{time}"
+msgstr "%{drives} · Aktualizované %{time}"
+
+#: src/window.cr:172
+msgid "Could not read drives: %{error}"
+msgstr "Disky sa nepodarilo načítať: %{error}"
+
+#: src/window.cr:202
+msgid "Reading …"
+msgstr "Načítava sa …"
+
+#: src/window.cr:229
+msgid "System filesystems cannot be unmounted here."
+msgstr "Systémové súborové systémy tu nemožno odpojiť."
+
+#: src/window.cr:231
+msgid "No mountable filesystem"
+msgstr "Žiadny pripojiteľný súborový systém"
+
+#: src/window.cr:233
+msgid "Unmount all filesystems"
+msgstr "Odpojiť všetky súborové systémy"
+
+#: src/window.cr:233
+msgid "Mount all filesystems"
+msgstr "Pripojiť všetky súborové systémy"
+
+#: src/window.cr:235
+msgid "Unmount filesystem"
+msgstr "Odpojiť súborový systém"
+
+#: src/window.cr:235
+msgid "Mount filesystem"
+msgstr "Pripojiť súborový systém"
+
+#: src/window.cr:249
+msgid "Mounting filesystems …"
+msgstr "Pripájajú sa súborové systémy …"
+
+#: src/window.cr:249
+msgid "Unmounting filesystems …"
+msgstr "Odpájajú sa súborové systémy …"
+
+#: src/window.cr:255
+msgid "Filesystem operation completed"
+msgstr "Operácia so súborovým systémom bola dokončená"
+
+#: src/window.cr:257
+msgid "Filesystem operation failed"
+msgstr "Operácia so súborovým systémom zlyhala"
+
+#: src/window.cr:257
+msgid ""
+"The following operations failed:\n"
+"%{errors}"
+msgstr ""
+"Nasledujúce operácie zlyhali:\n"
+"%{errors}"
+
+#: src/window.cr:317 src/window.cr:358 src/window.cr:397
+msgid "%{size} total"
+msgstr "Celkovo %{size}"
+
+#: src/window.cr:318 src/window.cr:384
+msgid "%{state} · Usage unknown"
+msgstr "%{state} · Využitie nie je známe"
+
+#: src/window.cr:344
+msgid "Not mounted · usage unavailable"
+msgstr "Nepripojené · využitie nie je dostupné"
+
+#: src/window.cr:346
+msgid "Usage unknown · no measurable filesystems"
+msgstr "Využitie nie je známe · žiadne merateľné súborové systémy"
+
+#: src/window.cr:350 src/window.cr:395
+msgid "%{size} used (%{percent} %%)"
+msgstr "Použité %{size} (%{percent} %%)"
+
+#: src/window.cr:352
+msgid "At least %{size} used (%{percent} %%)"
+msgstr "Použité najmenej %{size} (%{percent} %%)"
+
+#: src/window.cr:354 src/window.cr:396
+msgid "%{size} available"
+msgstr "Dostupné %{size}"
+
+#: src/window.cr:355 src/window.cr:398
+msgid "%{size} reserved"
+msgstr "Rezervované %{size}"
+
+#: src/window.cr:356
+msgid "%{known}/%{total} measured"
+msgstr "Zmerané %{known}/%{total}"
+
+#: src/window.cr:360
+msgid ""
+"Usage is relative to the full drive capacity. Unmounted or multi-device "
+"filesystems are excluded from the total. Unpartitioned space is not "
+"available filesystem space."
+msgstr ""
+"Využitie sa vzťahuje na celkovú kapacitu disku. Nepripojené súborové systémy "
+"a súborové systémy na viacerých zariadeniach nie sú zahrnuté do súčtu. "
+"Nerozdelené miesto nie je dostupným miestom súborového systému."
+
+#: src/window.cr:361
+msgid ""
+"Microsoft reserved partitions have no filesystem and are excluded from usage "
+"totals."
+msgstr ""
+"Oddiely rezervované spoločnosťou Microsoft nemajú súborový systém a nie sú "
+"zahrnuté do celkového využitia."
+
+#: src/window.cr:382
+msgid "Reserved partition · no filesystem"
+msgstr "Rezervovaný oddiel · bez súborového systému"
+
+#: src/window.cr:386
+msgid "Mount this filesystem to read its disk usage."
+msgstr "Pripojte tento súborový systém na zistenie využitia miesta."
+
+#: src/window.cr:399
+msgid "%{size} filesystem size"
+msgstr "Veľkosť súborového systému: %{size}"
+
+#: src/window.cr:404
+msgid "Usage unavailable"
+msgstr "Využitie nie je dostupné"
+
+#: src/window.cr:414
+msgid "Not mounted"
+msgstr "Nepripojené"
+
+#: src/window.cr:416
+msgid "Used by %{devices}"
+msgstr "Používa: %{devices}"
+
+#: src/window.cr:418
+msgid "Swap (active)"
+msgstr "Odkladací priestor (aktívny)"
+
+#: src/window.cr:420
+msgid "Encrypted (locked)"
+msgstr "Šifrované (zamknuté)"
+
+#: src/window.cr:427
+msgid "Microsoft reserved (MSR)"
+msgstr "Rezervované spoločnosťou Microsoft (MSR)"
+
+#: src/window.cr:428
+msgid "Microsoft basic data"
+msgstr "Základné údaje Microsoft"
+
+#: src/window.cr:429
+msgid "Windows recovery"
+msgstr "Obnovenie systému Windows"
+
+#: src/window.cr:430
+msgid "EFI system partition"
+msgstr "Systémový oddiel EFI"
+
+#: src/window.cr:443
+msgid "The filesystem does not report disk usage."
+msgstr "Súborový systém neposkytuje údaje o využití miesta."
+
+#: src/window.cr:456
+msgid "Could not read filesystem."
+msgstr "Súborový systém sa nepodarilo načítať."
+
+#: src/mount_service.cr:32
+msgid "UDisks2 is unavailable."
+msgstr "UDisks2 nie je dostupný."
+
+#: src/mount_service.cr:46
+msgid "The filesystem is no longer available."
+msgstr "Súborový systém už nie je dostupný."
+
+#: src/mount_service.cr:84
+msgid "This filesystem cannot be mounted or unmounted here."
+msgstr "Tento súborový systém tu nemožno pripojiť ani odpojiť."

@@ -1,0 +1,245 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Disk View 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/magynhard/disk-view.cr/issues\n"
+"POT-Creation-Date: 2026-11-14 20:37+0100\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/window.cr:26 src/window.cr:33
+msgid "Refresh"
+msgstr "רענון"
+
+#: src/window.cr:31
+msgid "Main menu"
+msgstr "תפריט ראשי"
+
+#: src/window.cr:34
+msgid "About Disk View"
+msgstr "על אודות Disk View"
+
+#: src/window.cr:35 src/window.cr:258
+msgid "Close"
+msgstr "סגירה"
+
+#: src/window.cr:46
+msgid "Drives & Partitions"
+msgstr "כוננים ומחיצות"
+
+#: src/window.cr:52
+msgid "Size units"
+msgstr "יחידות גודל"
+
+#: src/window.cr:55
+msgid "Gibibytes (GiB)"
+msgstr "גיביבייטים (GiB)"
+
+#: src/window.cr:57
+msgid "Gigabytes (GB)"
+msgstr "גיגה־בייטים (GB)"
+
+#: src/window.cr:73
+msgid "Used space · refreshes automatically every 15 seconds"
+msgstr "שטח בשימוש · מתעדכן אוטומטית כל 15 שניות"
+
+#: src/window.cr:133
+msgid ""
+"Drives, partitions and disk usage at a glance.\n"
+"Built with Crystal, GTK4 and libadwaita."
+msgstr ""
+"סקירה של כוננים, מחיצות ושימוש בדיסק.\n"
+"נבנה באמצעות Crystal, GTK4 ו־libadwaita."
+
+#: src/window.cr:162
+msgid "Other filesystems / Network"
+msgstr "מערכות קבצים אחרות / רשת"
+
+#: src/window.cr:170
+msgid "%{count} drive"
+msgid_plural "%{count} drives"
+msgstr[0] "כונן אחד (%{count})"
+msgstr[1] "%{count} כוננים"
+
+#: src/window.cr:170
+msgid "%{drives} · Updated %{time}"
+msgstr "%{drives} · עודכן ב־%{time}"
+
+#: src/window.cr:172
+msgid "Could not read drives: %{error}"
+msgstr "לא ניתן לקרוא את הכוננים: %{error}"
+
+#: src/window.cr:202
+msgid "Reading …"
+msgstr "מתבצעת קריאה …"
+
+#: src/window.cr:229
+msgid "System filesystems cannot be unmounted here."
+msgstr "לא ניתן לנתק מכאן מערכות קבצים של המערכת."
+
+#: src/window.cr:231
+msgid "No mountable filesystem"
+msgstr "אין מערכת קבצים שניתן לעגן"
+
+#: src/window.cr:233
+msgid "Unmount all filesystems"
+msgstr "ניתוק כל מערכות הקבצים"
+
+#: src/window.cr:233
+msgid "Mount all filesystems"
+msgstr "עיגון כל מערכות הקבצים"
+
+#: src/window.cr:235
+msgid "Unmount filesystem"
+msgstr "ניתוק מערכת הקבצים"
+
+#: src/window.cr:235
+msgid "Mount filesystem"
+msgstr "עיגון מערכת הקבצים"
+
+#: src/window.cr:249
+msgid "Mounting filesystems …"
+msgstr "מערכות הקבצים מעוגנות כעת …"
+
+#: src/window.cr:249
+msgid "Unmounting filesystems …"
+msgstr "מערכות הקבצים מנותקות כעת …"
+
+#: src/window.cr:255
+msgid "Filesystem operation completed"
+msgstr "הפעולה במערכת הקבצים הושלמה"
+
+#: src/window.cr:257
+msgid "Filesystem operation failed"
+msgstr "הפעולה במערכת הקבצים נכשלה"
+
+#: src/window.cr:257
+msgid ""
+"The following operations failed:\n"
+"%{errors}"
+msgstr ""
+"הפעולות הבאות נכשלו:\n"
+"%{errors}"
+
+#: src/window.cr:317 src/window.cr:358 src/window.cr:397
+msgid "%{size} total"
+msgstr "%{size} בסך הכול"
+
+#: src/window.cr:318 src/window.cr:384
+msgid "%{state} · Usage unknown"
+msgstr "%{state} · השימוש לא ידוע"
+
+#: src/window.cr:344
+msgid "Not mounted · usage unavailable"
+msgstr "לא מעוגן · נתוני השימוש אינם זמינים"
+
+#: src/window.cr:346
+msgid "Usage unknown · no measurable filesystems"
+msgstr "השימוש לא ידוע · אין מערכות קבצים שניתן למדוד"
+
+#: src/window.cr:350 src/window.cr:395
+msgid "%{size} used (%{percent} %%)"
+msgstr "%{size} בשימוש (%{percent} %%)"
+
+#: src/window.cr:352
+msgid "At least %{size} used (%{percent} %%)"
+msgstr "לפחות %{size} בשימוש (%{percent} %%)"
+
+#: src/window.cr:354 src/window.cr:396
+msgid "%{size} available"
+msgstr "%{size} זמינים"
+
+#: src/window.cr:355 src/window.cr:398
+msgid "%{size} reserved"
+msgstr "%{size} שמורים"
+
+#: src/window.cr:356
+msgid "%{known}/%{total} measured"
+msgstr "נמדדו %{known}/%{total}"
+
+#: src/window.cr:360
+msgid ""
+"Usage is relative to the full drive capacity. Unmounted or multi-device "
+"filesystems are excluded from the total. Unpartitioned space is not "
+"available filesystem space."
+msgstr ""
+"השימוש מוצג ביחס לקיבולת המלאה של הכונן. מערכות קבצים שאינן מעוגנות או "
+"המשתרעות על כמה התקנים אינן נכללות בסך הכול. שטח שלא חולק למחיצות אינו שטח "
+"זמין במערכת קבצים."
+
+#: src/window.cr:361
+msgid ""
+"Microsoft reserved partitions have no filesystem and are excluded from usage "
+"totals."
+msgstr ""
+"למחיצות השמורות של Microsoft אין מערכת קבצים והן אינן נכללות בסיכום השימוש."
+
+#: src/window.cr:382
+msgid "Reserved partition · no filesystem"
+msgstr "מחיצה שמורה · אין מערכת קבצים"
+
+#: src/window.cr:386
+msgid "Mount this filesystem to read its disk usage."
+msgstr "יש לעגן את מערכת הקבצים כדי לראות את השימוש בדיסק."
+
+#: src/window.cr:399
+msgid "%{size} filesystem size"
+msgstr "גודל מערכת הקבצים: %{size}"
+
+#: src/window.cr:404
+msgid "Usage unavailable"
+msgstr "נתוני השימוש אינם זמינים"
+
+#: src/window.cr:414
+msgid "Not mounted"
+msgstr "לא מעוגן"
+
+#: src/window.cr:416
+msgid "Used by %{devices}"
+msgstr "בשימוש על ידי %{devices}"
+
+#: src/window.cr:418
+msgid "Swap (active)"
+msgstr "שטח דפדוף (פעיל)"
+
+#: src/window.cr:420
+msgid "Encrypted (locked)"
+msgstr "מוצפן (נעול)"
+
+#: src/window.cr:427
+msgid "Microsoft reserved (MSR)"
+msgstr "שמור ל־Microsoft ‏(MSR)"
+
+#: src/window.cr:428
+msgid "Microsoft basic data"
+msgstr "נתונים בסיסיים של Microsoft"
+
+#: src/window.cr:429
+msgid "Windows recovery"
+msgstr "שחזור Windows"
+
+#: src/window.cr:430
+msgid "EFI system partition"
+msgstr "מחיצת מערכת EFI"
+
+#: src/window.cr:443
+msgid "The filesystem does not report disk usage."
+msgstr "מערכת הקבצים אינה מדווחת על השימוש בדיסק."
+
+#: src/window.cr:456
+msgid "Could not read filesystem."
+msgstr "לא ניתן לקרוא את מערכת הקבצים."
+
+#: src/mount_service.cr:32
+msgid "UDisks2 is unavailable."
+msgstr "UDisks2 אינו זמין."
+
+#: src/mount_service.cr:46
+msgid "The filesystem is no longer available."
+msgstr "מערכת הקבצים אינה זמינה עוד."
+
+#: src/mount_service.cr:84
+msgid "This filesystem cannot be mounted or unmounted here."
+msgstr "לא ניתן לעגן או לנתק את מערכת הקבצים הזאת מכאן."

@@ -1,0 +1,247 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Disk View 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/magynhard/disk-view.cr/issues\n"
+"POT-Creation-Date: 2026-11-14 20:37+0100\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/window.cr:26 src/window.cr:33
+msgid "Refresh"
+msgstr "Vernieuwen"
+
+#: src/window.cr:31
+msgid "Main menu"
+msgstr "Hoofdmenu"
+
+#: src/window.cr:34
+msgid "About Disk View"
+msgstr "Over Disk View"
+
+#: src/window.cr:35 src/window.cr:258
+msgid "Close"
+msgstr "Sluiten"
+
+#: src/window.cr:46
+msgid "Drives & Partitions"
+msgstr "Schijven en partities"
+
+#: src/window.cr:52
+msgid "Size units"
+msgstr "Grootte-eenheden"
+
+#: src/window.cr:55
+msgid "Gibibytes (GiB)"
+msgstr "Gibibytes (GiB)"
+
+#: src/window.cr:57
+msgid "Gigabytes (GB)"
+msgstr "Gigabytes (GB)"
+
+#: src/window.cr:73
+msgid "Used space · refreshes automatically every 15 seconds"
+msgstr "Gebruikte ruimte · wordt elke 15 seconden automatisch vernieuwd"
+
+#: src/window.cr:133
+msgid ""
+"Drives, partitions and disk usage at a glance.\n"
+"Built with Crystal, GTK4 and libadwaita."
+msgstr ""
+"Schijven, partities en schijfgebruik in één overzicht.\n"
+"Gemaakt met Crystal, GTK4 en libadwaita."
+
+#: src/window.cr:162
+msgid "Other filesystems / Network"
+msgstr "Andere bestandssystemen / Netwerk"
+
+#: src/window.cr:170
+msgid "%{count} drive"
+msgid_plural "%{count} drives"
+msgstr[0] "%{count} schijf"
+msgstr[1] "%{count} schijven"
+
+#: src/window.cr:170
+msgid "%{drives} · Updated %{time}"
+msgstr "%{drives} · Bijgewerkt om %{time}"
+
+#: src/window.cr:172
+msgid "Could not read drives: %{error}"
+msgstr "Kan schijven niet lezen: %{error}"
+
+#: src/window.cr:202
+msgid "Reading …"
+msgstr "Bezig met lezen …"
+
+#: src/window.cr:229
+msgid "System filesystems cannot be unmounted here."
+msgstr "Systeembestandssystemen kunnen hier niet worden ontkoppeld."
+
+#: src/window.cr:231
+msgid "No mountable filesystem"
+msgstr "Geen aankoppelbaar bestandssysteem"
+
+#: src/window.cr:233
+msgid "Unmount all filesystems"
+msgstr "Alle bestandssystemen ontkoppelen"
+
+#: src/window.cr:233
+msgid "Mount all filesystems"
+msgstr "Alle bestandssystemen aankoppelen"
+
+#: src/window.cr:235
+msgid "Unmount filesystem"
+msgstr "Bestandssysteem ontkoppelen"
+
+#: src/window.cr:235
+msgid "Mount filesystem"
+msgstr "Bestandssysteem aankoppelen"
+
+#: src/window.cr:249
+msgid "Mounting filesystems …"
+msgstr "Bestandssystemen worden aangekoppeld …"
+
+#: src/window.cr:249
+msgid "Unmounting filesystems …"
+msgstr "Bestandssystemen worden ontkoppeld …"
+
+#: src/window.cr:255
+msgid "Filesystem operation completed"
+msgstr "Bestandssysteembewerking voltooid"
+
+#: src/window.cr:257
+msgid "Filesystem operation failed"
+msgstr "Bestandssysteembewerking mislukt"
+
+#: src/window.cr:257
+msgid ""
+"The following operations failed:\n"
+"%{errors}"
+msgstr ""
+"De volgende bewerkingen zijn mislukt:\n"
+"%{errors}"
+
+#: src/window.cr:317 src/window.cr:358 src/window.cr:397
+msgid "%{size} total"
+msgstr "%{size} totaal"
+
+#: src/window.cr:318 src/window.cr:384
+msgid "%{state} · Usage unknown"
+msgstr "%{state} · Gebruik onbekend"
+
+#: src/window.cr:344
+msgid "Not mounted · usage unavailable"
+msgstr "Niet aangekoppeld · gebruik niet beschikbaar"
+
+#: src/window.cr:346
+msgid "Usage unknown · no measurable filesystems"
+msgstr "Gebruik onbekend · geen meetbare bestandssystemen"
+
+#: src/window.cr:350 src/window.cr:395
+msgid "%{size} used (%{percent} %%)"
+msgstr "%{size} gebruikt (%{percent} %%)"
+
+#: src/window.cr:352
+msgid "At least %{size} used (%{percent} %%)"
+msgstr "Minstens %{size} gebruikt (%{percent} %%)"
+
+#: src/window.cr:354 src/window.cr:396
+msgid "%{size} available"
+msgstr "%{size} beschikbaar"
+
+#: src/window.cr:355 src/window.cr:398
+msgid "%{size} reserved"
+msgstr "%{size} gereserveerd"
+
+#: src/window.cr:356
+msgid "%{known}/%{total} measured"
+msgstr "%{known}/%{total} gemeten"
+
+#: src/window.cr:360
+msgid ""
+"Usage is relative to the full drive capacity. Unmounted or multi-device "
+"filesystems are excluded from the total. Unpartitioned space is not "
+"available filesystem space."
+msgstr ""
+"Het gebruik is relatief aan de volledige schijfcapaciteit. Niet-"
+"aangekoppelde bestandssystemen en bestandssystemen op meerdere apparaten "
+"zijn niet opgenomen in het totaal. Niet-gepartitioneerde ruimte is geen "
+"beschikbare ruimte op een bestandssysteem."
+
+#: src/window.cr:361
+msgid ""
+"Microsoft reserved partitions have no filesystem and are excluded from usage "
+"totals."
+msgstr ""
+"Door Microsoft gereserveerde partities hebben geen bestandssysteem en worden "
+"niet meegerekend in het totale gebruik."
+
+#: src/window.cr:382
+msgid "Reserved partition · no filesystem"
+msgstr "Gereserveerde partitie · geen bestandssysteem"
+
+#: src/window.cr:386
+msgid "Mount this filesystem to read its disk usage."
+msgstr "Koppel dit bestandssysteem aan om het schijfgebruik te bekijken."
+
+#: src/window.cr:399
+msgid "%{size} filesystem size"
+msgstr "%{size} bestandssysteemgrootte"
+
+#: src/window.cr:404
+msgid "Usage unavailable"
+msgstr "Gebruik niet beschikbaar"
+
+#: src/window.cr:414
+msgid "Not mounted"
+msgstr "Niet aangekoppeld"
+
+#: src/window.cr:416
+msgid "Used by %{devices}"
+msgstr "Gebruikt door %{devices}"
+
+#: src/window.cr:418
+msgid "Swap (active)"
+msgstr "Wisselgeheugen (actief)"
+
+#: src/window.cr:420
+msgid "Encrypted (locked)"
+msgstr "Versleuteld (vergrendeld)"
+
+#: src/window.cr:427
+msgid "Microsoft reserved (MSR)"
+msgstr "Microsoft gereserveerd (MSR)"
+
+#: src/window.cr:428
+msgid "Microsoft basic data"
+msgstr "Microsoft-basisgegevens"
+
+#: src/window.cr:429
+msgid "Windows recovery"
+msgstr "Windows-herstel"
+
+#: src/window.cr:430
+msgid "EFI system partition"
+msgstr "EFI-systeempartitie"
+
+#: src/window.cr:443
+msgid "The filesystem does not report disk usage."
+msgstr "Het bestandssysteem rapporteert geen schijfgebruik."
+
+#: src/window.cr:456
+msgid "Could not read filesystem."
+msgstr "Kan bestandssysteem niet lezen."
+
+#: src/mount_service.cr:32
+msgid "UDisks2 is unavailable."
+msgstr "UDisks2 is niet beschikbaar."
+
+#: src/mount_service.cr:46
+msgid "The filesystem is no longer available."
+msgstr "Het bestandssysteem is niet meer beschikbaar."
+
+#: src/mount_service.cr:84
+msgid "This filesystem cannot be mounted or unmounted here."
+msgstr "Dit bestandssysteem kan hier niet worden aan- of ontkoppeld."

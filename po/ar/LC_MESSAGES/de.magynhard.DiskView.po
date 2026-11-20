@@ -1,0 +1,251 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Disk View 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/magynhard/disk-view.cr/issues\n"
+"POT-Creation-Date: 2026-11-14 20:37+0100\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+
+#: src/window.cr:26 src/window.cr:33
+msgid "Refresh"
+msgstr "حدّث"
+
+#: src/window.cr:31
+msgid "Main menu"
+msgstr "القائمة الرئيسية"
+
+#: src/window.cr:34
+msgid "About Disk View"
+msgstr "عن Disk View"
+
+#: src/window.cr:35 src/window.cr:258
+msgid "Close"
+msgstr "أغلق"
+
+#: src/window.cr:46
+msgid "Drives & Partitions"
+msgstr "الأقراص والأقسام"
+
+#: src/window.cr:52
+msgid "Size units"
+msgstr "وحدات الحجم"
+
+#: src/window.cr:55
+msgid "Gibibytes (GiB)"
+msgstr "غيبيبايت (GiB)"
+
+#: src/window.cr:57
+msgid "Gigabytes (GB)"
+msgstr "غيغابايت (GB)"
+
+#: src/window.cr:73
+msgid "Used space · refreshes automatically every 15 seconds"
+msgstr "المساحة المستخدمة · تتحدث تلقائيًا كل 15 ثانية"
+
+#: src/window.cr:133
+msgid ""
+"Drives, partitions and disk usage at a glance.\n"
+"Built with Crystal, GTK4 and libadwaita."
+msgstr ""
+"نظرة عامة على الأقراص والأقسام واستخدام المساحة.\n"
+"بُني باستخدام Crystal وGTK4 وlibadwaita."
+
+#: src/window.cr:162
+msgid "Other filesystems / Network"
+msgstr "أنظمة ملفات أخرى / الشبكة"
+
+#: src/window.cr:170
+msgid "%{count} drive"
+msgid_plural "%{count} drives"
+msgstr[0] "%{count} قرص"
+msgstr[1] "%{count} قرص"
+msgstr[2] "%{count} قرصان"
+msgstr[3] "%{count} أقراص"
+msgstr[4] "%{count} قرصًا"
+msgstr[5] "%{count} قرص"
+
+#: src/window.cr:170
+msgid "%{drives} · Updated %{time}"
+msgstr "%{drives} · حُدّث في %{time}"
+
+#: src/window.cr:172
+msgid "Could not read drives: %{error}"
+msgstr "تعذرت قراءة الأقراص: %{error}"
+
+#: src/window.cr:202
+msgid "Reading …"
+msgstr "جارٍ القراءة …"
+
+#: src/window.cr:229
+msgid "System filesystems cannot be unmounted here."
+msgstr "لا يمكن إلغاء ضم أنظمة ملفات النظام من هنا."
+
+#: src/window.cr:231
+msgid "No mountable filesystem"
+msgstr "لا يوجد نظام ملفات قابل للضم"
+
+#: src/window.cr:233
+msgid "Unmount all filesystems"
+msgstr "ألغِ ضم جميع أنظمة الملفات"
+
+#: src/window.cr:233
+msgid "Mount all filesystems"
+msgstr "ضم جميع أنظمة الملفات"
+
+#: src/window.cr:235
+msgid "Unmount filesystem"
+msgstr "ألغِ ضم نظام الملفات"
+
+#: src/window.cr:235
+msgid "Mount filesystem"
+msgstr "ضم نظام الملفات"
+
+#: src/window.cr:249
+msgid "Mounting filesystems …"
+msgstr "جارٍ ضم أنظمة الملفات …"
+
+#: src/window.cr:249
+msgid "Unmounting filesystems …"
+msgstr "جارٍ إلغاء ضم أنظمة الملفات …"
+
+#: src/window.cr:255
+msgid "Filesystem operation completed"
+msgstr "اكتملت عملية نظام الملفات"
+
+#: src/window.cr:257
+msgid "Filesystem operation failed"
+msgstr "فشلت عملية نظام الملفات"
+
+#: src/window.cr:257
+msgid ""
+"The following operations failed:\n"
+"%{errors}"
+msgstr ""
+"فشلت العمليات التالية:\n"
+"%{errors}"
+
+#: src/window.cr:317 src/window.cr:358 src/window.cr:397
+msgid "%{size} total"
+msgstr "%{size} إجمالًا"
+
+#: src/window.cr:318 src/window.cr:384
+msgid "%{state} · Usage unknown"
+msgstr "%{state} · الاستخدام غير معروف"
+
+#: src/window.cr:344
+msgid "Not mounted · usage unavailable"
+msgstr "غير مضموم · معلومات الاستخدام غير متاحة"
+
+#: src/window.cr:346
+msgid "Usage unknown · no measurable filesystems"
+msgstr "الاستخدام غير معروف · لا توجد أنظمة ملفات قابلة للقياس"
+
+#: src/window.cr:350 src/window.cr:395
+msgid "%{size} used (%{percent} %%)"
+msgstr "%{size} مستخدم (%{percent} %%)"
+
+#: src/window.cr:352
+msgid "At least %{size} used (%{percent} %%)"
+msgstr "%{size} مستخدم على الأقل (%{percent} %%)"
+
+#: src/window.cr:354 src/window.cr:396
+msgid "%{size} available"
+msgstr "%{size} متاح"
+
+#: src/window.cr:355 src/window.cr:398
+msgid "%{size} reserved"
+msgstr "%{size} محجوز"
+
+#: src/window.cr:356
+msgid "%{known}/%{total} measured"
+msgstr "قيس %{known}/%{total}"
+
+#: src/window.cr:360
+msgid ""
+"Usage is relative to the full drive capacity. Unmounted or multi-device "
+"filesystems are excluded from the total. Unpartitioned space is not "
+"available filesystem space."
+msgstr ""
+"يُحسب الاستخدام نسبةً إلى السعة الكاملة للقرص. لا تُدرج أنظمة الملفات غير "
+"المضمومة أو الممتدة عبر أجهزة متعددة في الإجمالي. المساحة غير المقسمة ليست "
+"مساحة متاحة في نظام ملفات."
+
+#: src/window.cr:361
+msgid ""
+"Microsoft reserved partitions have no filesystem and are excluded from usage "
+"totals."
+msgstr ""
+"لا تحتوي الأقسام المحجوزة من Microsoft على نظام ملفات ولا تُدرج في إجمالي "
+"الاستخدام."
+
+#: src/window.cr:382
+msgid "Reserved partition · no filesystem"
+msgstr "قسم محجوز · لا يوجد نظام ملفات"
+
+#: src/window.cr:386
+msgid "Mount this filesystem to read its disk usage."
+msgstr "ضم نظام الملفات هذا لعرض استخدامه لمساحة القرص."
+
+#: src/window.cr:399
+msgid "%{size} filesystem size"
+msgstr "حجم نظام الملفات: %{size}"
+
+#: src/window.cr:404
+msgid "Usage unavailable"
+msgstr "معلومات الاستخدام غير متاحة"
+
+#: src/window.cr:414
+msgid "Not mounted"
+msgstr "غير مضموم"
+
+#: src/window.cr:416
+msgid "Used by %{devices}"
+msgstr "يستخدمه %{devices}"
+
+#: src/window.cr:418
+msgid "Swap (active)"
+msgstr "مساحة المبادلة (نشطة)"
+
+#: src/window.cr:420
+msgid "Encrypted (locked)"
+msgstr "مشفّر (مقفل)"
+
+#: src/window.cr:427
+msgid "Microsoft reserved (MSR)"
+msgstr "محجوز من Microsoft ‏(MSR)"
+
+#: src/window.cr:428
+msgid "Microsoft basic data"
+msgstr "بيانات Microsoft الأساسية"
+
+#: src/window.cr:429
+msgid "Windows recovery"
+msgstr "استرداد Windows"
+
+#: src/window.cr:430
+msgid "EFI system partition"
+msgstr "قسم نظام EFI"
+
+#: src/window.cr:443
+msgid "The filesystem does not report disk usage."
+msgstr "لا يوفّر نظام الملفات معلومات استخدام مساحة القرص."
+
+#: src/window.cr:456
+msgid "Could not read filesystem."
+msgstr "تعذرت قراءة نظام الملفات."
+
+#: src/mount_service.cr:32
+msgid "UDisks2 is unavailable."
+msgstr "خدمة UDisks2 غير متاحة."
+
+#: src/mount_service.cr:46
+msgid "The filesystem is no longer available."
+msgstr "لم يعد نظام الملفات متاحًا."
+
+#: src/mount_service.cr:84
+msgid "This filesystem cannot be mounted or unmounted here."
+msgstr "لا يمكن ضم نظام الملفات هذا أو إلغاء ضمه من هنا."

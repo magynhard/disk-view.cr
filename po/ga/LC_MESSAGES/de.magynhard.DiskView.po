@@ -1,0 +1,250 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Disk View 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/magynhard/disk-view.cr/issues\n"
+"POT-Creation-Date: 2026-11-14 20:37+0100\n"
+"Language: ga\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=5; plural=(n==1 ? 0 : n==2 ? 1 : n>=3 && n<=6 ? 2 : "
+"n>=7 && n<=10 ? 3 : 4);\n"
+
+#: src/window.cr:26 src/window.cr:33
+msgid "Refresh"
+msgstr "Athnuaigh"
+
+#: src/window.cr:31
+msgid "Main menu"
+msgstr "Príomh-roghchlár"
+
+#: src/window.cr:34
+msgid "About Disk View"
+msgstr "Maidir le Disk View"
+
+#: src/window.cr:35 src/window.cr:258
+msgid "Close"
+msgstr "Dún"
+
+#: src/window.cr:46
+msgid "Drives & Partitions"
+msgstr "Tiomántáin agus deighiltí"
+
+#: src/window.cr:52
+msgid "Size units"
+msgstr "Aonaid mhéide"
+
+#: src/window.cr:55
+msgid "Gibibytes (GiB)"
+msgstr "Gibibheart (GiB)"
+
+#: src/window.cr:57
+msgid "Gigabytes (GB)"
+msgstr "Gigibheart (GB)"
+
+#: src/window.cr:73
+msgid "Used space · refreshes automatically every 15 seconds"
+msgstr "Spás úsáidte · athnuachan uathoibríoch gach 15 shoicind"
+
+#: src/window.cr:133
+msgid ""
+"Drives, partitions and disk usage at a glance.\n"
+"Built with Crystal, GTK4 and libadwaita."
+msgstr ""
+"Forléargas ar thiomántáin, deighiltí agus úsáid diosca.\n"
+"Tógtha le Crystal, GTK4 agus libadwaita."
+
+#: src/window.cr:162
+msgid "Other filesystems / Network"
+msgstr "Córais chomhad eile / Líonra"
+
+#: src/window.cr:170
+msgid "%{count} drive"
+msgid_plural "%{count} drives"
+msgstr[0] "%{count} tiomántán"
+msgstr[1] "%{count} thiomántán"
+msgstr[2] "%{count} thiomántán"
+msgstr[3] "%{count} dtiomántán"
+msgstr[4] "%{count} tiomántán"
+
+#: src/window.cr:170
+msgid "%{drives} · Updated %{time}"
+msgstr "%{drives} · Nuashonraithe %{time}"
+
+#: src/window.cr:172
+msgid "Could not read drives: %{error}"
+msgstr "Níorbh fhéidir na tiomántáin a léamh: %{error}"
+
+#: src/window.cr:202
+msgid "Reading …"
+msgstr "Á léamh …"
+
+#: src/window.cr:229
+msgid "System filesystems cannot be unmounted here."
+msgstr "Ní féidir córais chomhad an chórais a dhífheistiú anseo."
+
+#: src/window.cr:231
+msgid "No mountable filesystem"
+msgstr "Níl aon chóras comhad infheistithe ann"
+
+#: src/window.cr:233
+msgid "Unmount all filesystems"
+msgstr "Dífheistigh gach córas comhad"
+
+#: src/window.cr:233
+msgid "Mount all filesystems"
+msgstr "Feistigh gach córas comhad"
+
+#: src/window.cr:235
+msgid "Unmount filesystem"
+msgstr "Dífheistigh an córas comhad"
+
+#: src/window.cr:235
+msgid "Mount filesystem"
+msgstr "Feistigh an córas comhad"
+
+#: src/window.cr:249
+msgid "Mounting filesystems …"
+msgstr "Córais chomhad á bhfeistiú …"
+
+#: src/window.cr:249
+msgid "Unmounting filesystems …"
+msgstr "Córais chomhad á ndífheistiú …"
+
+#: src/window.cr:255
+msgid "Filesystem operation completed"
+msgstr "Oibríocht an chórais comhad críochnaithe"
+
+#: src/window.cr:257
+msgid "Filesystem operation failed"
+msgstr "Theip ar oibríocht an chórais comhad"
+
+#: src/window.cr:257
+msgid ""
+"The following operations failed:\n"
+"%{errors}"
+msgstr ""
+"Theip ar na hoibríochtaí seo a leanas:\n"
+"%{errors}"
+
+#: src/window.cr:317 src/window.cr:358 src/window.cr:397
+msgid "%{size} total"
+msgstr "%{size} san iomlán"
+
+#: src/window.cr:318 src/window.cr:384
+msgid "%{state} · Usage unknown"
+msgstr "%{state} · Úsáid anaithnid"
+
+#: src/window.cr:344
+msgid "Not mounted · usage unavailable"
+msgstr "Gan fheistiú · níl an úsáid ar fáil"
+
+#: src/window.cr:346
+msgid "Usage unknown · no measurable filesystems"
+msgstr "Úsáid anaithnid · níl aon chórais chomhad intomhaiste ann"
+
+#: src/window.cr:350 src/window.cr:395
+msgid "%{size} used (%{percent} %%)"
+msgstr "%{size} úsáidte (%{percent} %%)"
+
+#: src/window.cr:352
+msgid "At least %{size} used (%{percent} %%)"
+msgstr "%{size} ar a laghad úsáidte (%{percent} %%)"
+
+#: src/window.cr:354 src/window.cr:396
+msgid "%{size} available"
+msgstr "%{size} ar fáil"
+
+#: src/window.cr:355 src/window.cr:398
+msgid "%{size} reserved"
+msgstr "%{size} curtha i leataobh"
+
+#: src/window.cr:356
+msgid "%{known}/%{total} measured"
+msgstr "%{known}/%{total} tomhaiste"
+
+#: src/window.cr:360
+msgid ""
+"Usage is relative to the full drive capacity. Unmounted or multi-device "
+"filesystems are excluded from the total. Unpartitioned space is not "
+"available filesystem space."
+msgstr ""
+"Tá an úsáid i gcoibhneas le hacmhainn iomlán an tiomántáin. Ní áirítear "
+"córais chomhad neamhfheistithe ná córais a théann thar ilghléasanna san "
+"iomlán. Ní spás ar fáil i gcóras comhad é spás gan deighilt."
+
+#: src/window.cr:361
+msgid ""
+"Microsoft reserved partitions have no filesystem and are excluded from usage "
+"totals."
+msgstr ""
+"Níl córas comhad ar dheighiltí atá curtha i leataobh ag Microsoft agus ní "
+"áirítear iad sna hiomláin úsáide."
+
+#: src/window.cr:382
+msgid "Reserved partition · no filesystem"
+msgstr "Deighilt fhorchoimeádta · gan chóras comhad"
+
+#: src/window.cr:386
+msgid "Mount this filesystem to read its disk usage."
+msgstr "Feistigh an córas comhad seo chun a úsáid diosca a fheiceáil."
+
+#: src/window.cr:399
+msgid "%{size} filesystem size"
+msgstr "Méid an chórais comhad: %{size}"
+
+#: src/window.cr:404
+msgid "Usage unavailable"
+msgstr "Níl an úsáid ar fáil"
+
+#: src/window.cr:414
+msgid "Not mounted"
+msgstr "Gan fheistiú"
+
+#: src/window.cr:416
+msgid "Used by %{devices}"
+msgstr "In úsáid ag %{devices}"
+
+#: src/window.cr:418
+msgid "Swap (active)"
+msgstr "Spás babhtála (gníomhach)"
+
+#: src/window.cr:420
+msgid "Encrypted (locked)"
+msgstr "Criptithe (faoi ghlas)"
+
+#: src/window.cr:427
+msgid "Microsoft reserved (MSR)"
+msgstr "Curtha i leataobh ag Microsoft (MSR)"
+
+#: src/window.cr:428
+msgid "Microsoft basic data"
+msgstr "Sonraí bunúsacha Microsoft"
+
+#: src/window.cr:429
+msgid "Windows recovery"
+msgstr "Athshlánú Windows"
+
+#: src/window.cr:430
+msgid "EFI system partition"
+msgstr "Deighilt chórais EFI"
+
+#: src/window.cr:443
+msgid "The filesystem does not report disk usage."
+msgstr "Ní thuairiscíonn an córas comhad úsáid diosca."
+
+#: src/window.cr:456
+msgid "Could not read filesystem."
+msgstr "Níorbh fhéidir an córas comhad a léamh."
+
+#: src/mount_service.cr:32
+msgid "UDisks2 is unavailable."
+msgstr "Níl UDisks2 ar fáil."
+
+#: src/mount_service.cr:46
+msgid "The filesystem is no longer available."
+msgstr "Níl an córas comhad ar fáil a thuilleadh."
+
+#: src/mount_service.cr:84
+msgid "This filesystem cannot be mounted or unmounted here."
+msgstr "Ní féidir an córas comhad seo a fheistiú ná a dhífheistiú anseo."
