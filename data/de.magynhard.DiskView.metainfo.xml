@@ -210,6 +210,13 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="0.1.4" date="2026-11-20">
+      <description>
+        <p>Add translations in 34 additional languages, bringing the total to 44, and expand localized application metadata.</p>
+        <p xml:lang="de">Ergänzt Übersetzungen in 34 weiteren Sprachen, sodass Disk View nun insgesamt 44 Sprachen unterstützt, und erweitert die übersetzten Anwendungsinformationen.</p>
+      </description>
+      <url>https://github.com/magynhard/disk-view.cr/releases/tag/0.1.4</url>
+    </release>
     <release version="0.1.3" date="2026-11-14">
       <description>
         <p>Switch instantly between GiB and GB using buttons beside the heading. Default to GB, remember the selected unit across restarts, and use the full window width.</p>

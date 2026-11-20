@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.4] - 2026-11-20
+
+### Added
+- Add translations in 34 additional languages, bringing the total to 44.
+- Localize the desktop entry and expand translated application metadata.
+
+### Documentation
+- Streamline the README and add contributor guidance.
+
 ## [0.1.3] - 2026-11-14
 
 ### Added
@@ -65,6 +74,7 @@
   Italian, Polish, Korean and Japanese.
 - Application metadata, icon and installation instructions.
 
+[0.1.4]: https://github.com/magynhard/disk-view.cr/compare/0.1.3...0.1.4
 [0.1.3]: https://github.com/magynhard/disk-view.cr/compare/0.1.2...0.1.3
 [0.1.2]: https://github.com/magynhard/disk-view.cr/compare/0.1.1...0.1.2
 [0.1.1]: https://github.com/magynhard/disk-view.cr/compare/0.1.0...0.1.1
